@@ -642,8 +642,6 @@
         
           <p>有时候界面上会用到统一的布局，比如<code>toolbar</code>，你可能会想到在用到的地方都去加上<code>toobar</code></p>
 <p>这样对于程序的开发与维护来说都显得特别麻烦，我们可以将他写在父类中。</p>
-<p>首先创建一个<code>BaseActivity</code>，<code>MainActivity</code>继承<code>BaseActivity</code>。通过重写<code>setContentView</code>和将子布局和父布局<code>add</code></p>
-<p>到同一布局中的方式来实现。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/07/22/布局共享/#more" rel="contents">
               阅读全文 &raquo;
@@ -766,8 +764,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/" itemprop="url">
-                ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得
+              <a class="post-title-link" href="/2015/07/22/Studio使用心得和常见错误/" itemprop="url">
+                Studio使用心得和常见错误
               </a>
             
           
@@ -799,8 +797,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/" itemprop="commentsCount"></span>
+              <a href="/2015/07/22/Studio使用心得和常见错误/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/22/Studio使用心得和常见错误/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -816,10 +814,12 @@
       
         
           <p><code>Eclipse</code>项目导入<code>Android Stuio</code>配置出现</p>
-<pre><code>Error:Timeout waiting to lock buildscript class cache for build file 'H:<span class="command">\studioproject</span><span class="command">\Generic</span>_SN<span class="command">\build</span>.gradle'(C:<span class="command">\Users</span><span class="command">\Administrator</span><span class="command">\.</span>gradle<span class="command">\caches</span>\2.2.1<span class="command">\scripts</span><span class="command">\build</span>_81ep6udn3nlzszbotl32uedjz<span class="command">\ProjectScript</span><span class="command">\buildscript</span>). It is currently in use by another Gradle instance.
+<pre><code>Error:Timeout waiting to lock buildscript class cache for build file 
+'H:<span class="command">\studioproject</span><span class="command">\Generic</span>_SN<span class="command">\build</span>.gradle'(C:<span class="command">\Users</span><span class="command">\Administrator</span><span class="command">\.</span>gradle<span class="command">\caches</span>\2.2.1<span class="command">\scripts</span><span class="command">\build</span>_81ep6udn3nlzszbotl32uedjz<span class="command">\ProjectScript</span><span class="command">\buildscript</span>).
+It is currently in use by another Gradle instance.
 </code></pre>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/#more" rel="contents">
+            <a class="btn" href="/2015/07/22/Studio使用心得和常见错误/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -903,8 +903,6 @@
         
           <p><code>AndroidBar</code>返回为<code>NULL</code>。是因为<code>values-v11</code>和<code>values-v14</code>下面的<code>style</code>的主题的设置的原因。</p>
 <p>在SDK 11的设备上，会使用第二处，SDK 14会使用第三处。</p>
-<p><img src="http://7xkko2.com1.z0.glb.clouddn.com/hexoblog/actionbar_value.jpg" /></p>
-<p>只需要将三个地方的主题分别设置就可以，结构如下：</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/#more" rel="contents">
               阅读全文 &raquo;
