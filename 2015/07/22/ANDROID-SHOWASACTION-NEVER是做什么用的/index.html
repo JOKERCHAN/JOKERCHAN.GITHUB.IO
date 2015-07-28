@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Hexo</title>
+  <title>ANDROID:SHOWASACTION=NEVER的作用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="安卓开发项目文件中有一个目录叫做menu，里面有main.xml
+item选项里有一句android:showAsAction = &amp;quot;never&amp;quot;那么这句话是做什么用的呢？
+原来是特定版本用到的，当你的应用程序目标设为蜂巢平台（即 Android 3.0）时
+你可以利用ActionBar部件提供的全部功能，将你的选项菜单项放在ActionBar的右上角
+对用户来说使用更方便，控">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ANDROID:SHOWASACTION=NEVER的作用">
+<meta property="og:url" content="http://yoursite.com/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="安卓开发项目文件中有一个目录叫做menu，里面有main.xml
+item选项里有一句android:showAsAction = &amp;quot;never&amp;quot;那么这句话是做什么用的呢？
+原来是特定版本用到的，当你的应用程序目标设为蜂巢平台（即 Android 3.0）时
+你可以利用ActionBar部件提供的全部功能，将你的选项菜单项放在ActionBar的右上角
+对用户来说使用更方便，控">
+<meta property="og:updated_time" content="2015-07-23T08:27:47.137Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="ANDROID:SHOWASACTION=NEVER的作用">
+<meta name="twitter:description" content="安卓开发项目文件中有一个目录叫做menu，里面有main.xml
+item选项里有一句android:showAsAction = &amp;quot;never&amp;quot;那么这句话是做什么用的呢？
+原来是特定版本用到的，当你的应用程序目标设为蜂巢平台（即 Android 3.0）时
+你可以利用ActionBar部件提供的全部功能，将你的选项菜单项放在ActionBar的右上角
+对用户来说使用更方便，控">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,210 +72,76 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/27/解决GitHub-Pages-Warning邮件提醒/" class="archive-article-date">
-  <time datetime="2015-07-27T02:42:15.000Z" itemprop="datePublished">Jul 27</time>
+        <section id="main"><article id="post-ANDROID-SHOWASACTION-NEVER是做什么用的" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/" class="article-date">
+  <time datetime="2015-07-22T08:36:29.000Z" itemprop="datePublished">2015-07-22</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/27/解决GitHub-Pages-Warning邮件提醒/">解决GitHub Pages Warning邮件提醒</a>
+    <h1 class="article-title" itemprop="name">
+      ANDROID:SHOWASACTION=NEVER的作用
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/" class="archive-article-date">
-  <time datetime="2015-07-23T02:01:12.000Z" itemprop="datePublished">Jul 23</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/">WINDOWS 平台下GIT服务器搭建</a>
-    </h1>
-  
+        <p>安卓开发项目文件中有一个目录叫做<code>menu</code>，里面有<code>main.xml</code></p>
+<p><code>item</code>选项里有一句<code>android:showAsAction = &quot;never&quot;</code>那么这句话是做什么用的呢？</p>
+<p>原来是特定版本用到的，当你的应用程序目标设为蜂巢平台（即 <code>Android 3.0</code>）时</p>
+<p>你可以利用<code>ActionBar</code>部件提供的全部功能，将你的选项菜单项放在<code>ActionBar</code>的右上角</p>
+<p>对用户来说使用更方便，控制该行为的主菜单项属性是<code>android:showAsAction</code>。</p>
+<a id="more"></a>
+<p>这个属性可接受的值有：</p>
+<p>1.<code>alaways:</code>这个值会使菜单项一直显示在<code>ActionBar</code>上。</p>
+<p>2.<code>ifRoom:</code>如果有足够的空间,这个值会使菜单显示在<code>ActionBar</code>上。</p>
+<p>3.<code>never:</code>这个值菜单永远不会出现在<code>ActionBar</code>是。</p>
+<p>4.<code>withText:</code>这个值使菜单和它的图标，菜单文本一起显示。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/图片三级缓存的原理/" class="archive-article-date">
-  <time datetime="2015-07-22T08:46:28.000Z" itemprop="datePublished">Jul 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/图片三级缓存的原理/">图片三级缓存的原理</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/布局共享/" class="archive-article-date">
-  <time datetime="2015-07-22T08:40:32.000Z" itemprop="datePublished">Jul 22</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/" data-id="cicmrab9n0013fkjmonw8zi0o" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/布局共享/">布局共享（列如所有ACTIVITY拥有相同的布局部分）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/" class="archive-article-date">
-  <time datetime="2015-07-22T08:36:29.000Z" itemprop="datePublished">Jul 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/">ANDROID:SHOWASACTION=NEVER的作用</a>
-    </h1>
-  
-
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/" class="archive-article-date">
-  <time datetime="2015-07-22T08:31:43.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/">ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得</a>
-    </h1>
+    <a href="/2015/07/22/布局共享/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          布局共享（列如所有ACTIVITY拥有相同的布局部分）
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/" class="archive-article-date">
-  <time datetime="2015-07-22T08:12:24.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/">ANDROID ACTIONBAR 返回为NULL</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/" class="archive-article-date">
-  <time datetime="2015-07-22T08:04:52.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/">JAVA回调函数ANDROID中典型的回调地方</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/JAVA三大特性之多态/" class="archive-article-date">
-  <time datetime="2015-07-22T07:59:19.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/JAVA三大特性之多态/">JAVA三大特性之多态</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/《转》JAVA动态代理-JDK和CGLIB/" class="archive-article-date">
-  <time datetime="2015-07-22T07:27:01.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/《转》JAVA动态代理-JDK和CGLIB/">《转》JAVA动态代理(JDK和CGLIB)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 </section>
         
           <aside id="sidebar">

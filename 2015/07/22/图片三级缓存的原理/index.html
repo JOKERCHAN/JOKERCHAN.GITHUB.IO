@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Hexo</title>
+  <title>图片三级缓存的原理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="内存、硬盘、网络。Android高效加载大图、多图解决方案、有效避免程序OOM使用的核心技术就是LruCache。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片三级缓存的原理">
+<meta property="og:url" content="http://yoursite.com/2015/07/22/图片三级缓存的原理/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="内存、硬盘、网络。Android高效加载大图、多图解决方案、有效避免程序OOM使用的核心技术就是LruCache。">
+<meta property="og:updated_time" content="2015-07-23T08:24:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="图片三级缓存的原理">
+<meta name="twitter:description" content="内存、硬盘、网络。Android高效加载大图、多图解决方案、有效避免程序OOM使用的核心技术就是LruCache。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,210 +60,76 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/27/解决GitHub-Pages-Warning邮件提醒/" class="archive-article-date">
-  <time datetime="2015-07-27T02:42:15.000Z" itemprop="datePublished">Jul 27</time>
+        <section id="main"><article id="post-图片三级缓存的原理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/22/图片三级缓存的原理/" class="article-date">
+  <time datetime="2015-07-22T08:46:28.000Z" itemprop="datePublished">2015-07-22</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/27/解决GitHub-Pages-Warning邮件提醒/">解决GitHub Pages Warning邮件提醒</a>
+    <h1 class="article-title" itemprop="name">
+      图片三级缓存的原理
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/" class="archive-article-date">
-  <time datetime="2015-07-23T02:01:12.000Z" itemprop="datePublished">Jul 23</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/">WINDOWS 平台下GIT服务器搭建</a>
-    </h1>
-  
+        <h2 id="三级缓存的概念">三级缓存的概念</h2><p>内存 &gt; 硬盘 &gt; 网络</p>
+<p>由内存、硬盘、网络缓存形成。</p>
+<h3 id="关于三级缓存用到的技术">关于三级缓存用到的技术</h3><p><code>Android</code>高效加载大图、多图解决方案、有效避免程序OOM使用的核心技术就是<code>LruCache</code>。</p>
+<a id="more"></a>
+<p><code>LruCache</code>只是管理了内存中图片的存储与释放，如果图片从内存中被移除的话，那么又需要从网络上重新加载一次图片，这显然非常耗时。对此，</p>
+<p><code>Google</code>又提供了一套硬盘缓存的解决方案：<code>DiskLruCache</code>(非Google官方编写，但获得官方认证。)</p>
+<h2 id="用法和流程">用法和流程</h2><p>当每次加载图片的时候都优先去内存加载图片、当内存中获取不到图片的时候则去硬盘缓存读取、如果硬盘缓存读取不到数据就去网络获取数据。不</p>
+<p>管是从硬盘缓存还是从网络获取，读取到了数据之后都应该添加到内存缓存当中，这样的话我们下次再去读取图片的时候就能迅速从内存当中读取到</p>
+<p>，而如果该图片从内存中被移除了的话，那就重复再执行一遍上述流程。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/图片三级缓存的原理/" class="archive-article-date">
-  <time datetime="2015-07-22T08:46:28.000Z" itemprop="datePublished">Jul 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/图片三级缓存的原理/">图片三级缓存的原理</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/布局共享/" class="archive-article-date">
-  <time datetime="2015-07-22T08:40:32.000Z" itemprop="datePublished">Jul 22</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/07/22/图片三级缓存的原理/" data-id="cicmrab95000cfkjmicanvk8o" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/布局共享/">布局共享（列如所有ACTIVITY拥有相同的布局部分）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/" class="archive-article-date">
-  <time datetime="2015-07-22T08:36:29.000Z" itemprop="datePublished">Jul 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/">ANDROID:SHOWASACTION=NEVER的作用</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Image/">Image</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/" class="archive-article-date">
-  <time datetime="2015-07-22T08:31:43.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/">ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得</a>
-    </h1>
+    <a href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          WINDOWS 平台下GIT服务器搭建
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/07/22/布局共享/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">布局共享（列如所有ACTIVITY拥有相同的布局部分）</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/" class="archive-article-date">
-  <time datetime="2015-07-22T08:12:24.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/">ANDROID ACTIONBAR 返回为NULL</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/" class="archive-article-date">
-  <time datetime="2015-07-22T08:04:52.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/">JAVA回调函数ANDROID中典型的回调地方</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/JAVA三大特性之多态/" class="archive-article-date">
-  <time datetime="2015-07-22T07:59:19.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/JAVA三大特性之多态/">JAVA三大特性之多态</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/《转》JAVA动态代理-JDK和CGLIB/" class="archive-article-date">
-  <time datetime="2015-07-22T07:27:01.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/《转》JAVA动态代理-JDK和CGLIB/">《转》JAVA动态代理(JDK和CGLIB)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 </section>
         
           <aside id="sidebar">

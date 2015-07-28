@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Hexo</title>
+  <title>ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Eclipse项目导入Android Stuio配置出现
+Error:Timeout waiting to lock buildscript class cache for build file &apos;H:\studioproject\Generic_SN\build.gradle&apos;(C:\Users\Administrator\.gradle\caches\2.2.1\scripts\build_8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得">
+<meta property="og:url" content="http://yoursite.com/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="Eclipse项目导入Android Stuio配置出现
+Error:Timeout waiting to lock buildscript class cache for build file &apos;H:\studioproject\Generic_SN\build.gradle&apos;(C:\Users\Administrator\.gradle\caches\2.2.1\scripts\build_8">
+<meta property="og:updated_time" content="2015-07-23T08:30:58.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得">
+<meta name="twitter:description" content="Eclipse项目导入Android Stuio配置出现
+Error:Timeout waiting to lock buildscript class cache for build file &apos;H:\studioproject\Generic_SN\build.gradle&apos;(C:\Users\Administrator\.gradle\caches\2.2.1\scripts\build_8">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,210 +63,77 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/27/解决GitHub-Pages-Warning邮件提醒/" class="archive-article-date">
-  <time datetime="2015-07-27T02:42:15.000Z" itemprop="datePublished">Jul 27</time>
+        <section id="main"><article id="post-ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/" class="article-date">
+  <time datetime="2015-07-22T08:31:43.000Z" itemprop="datePublished">2015-07-22</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android-Studio/">Android Studio</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/27/解决GitHub-Pages-Warning邮件提醒/">解决GitHub Pages Warning邮件提醒</a>
+    <h1 class="article-title" itemprop="name">
+      ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/" class="archive-article-date">
-  <time datetime="2015-07-23T02:01:12.000Z" itemprop="datePublished">Jul 23</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/">WINDOWS 平台下GIT服务器搭建</a>
-    </h1>
-  
+        <p><code>Eclipse</code>项目导入<code>Android Stuio</code>配置出现</p>
+<pre><code>Error:Timeout waiting to lock buildscript class cache for build file 'H:<span class="command">\studioproject</span><span class="command">\Generic</span>_SN<span class="command">\build</span>.gradle'(C:<span class="command">\Users</span><span class="command">\Administrator</span><span class="command">\.</span>gradle<span class="command">\caches</span>\2.2.1<span class="command">\scripts</span><span class="command">\build</span>_81ep6udn3nlzszbotl32uedjz<span class="command">\ProjectScript</span><span class="command">\buildscript</span>). It is currently in use by another Gradle instance.
+</code></pre><a id="more"></a>
+<pre><code>Owner PID: unknown
+Our PID: 8496
+Owner Operation: unknown
+Our operation: Initialize cache
+Lock file: C:<span class="command">\Users</span><span class="command">\Administrator</span><span class="command">\.</span>gradle<span class="command">\caches</span>\2.2.1<span class="command">\scripts</span><span class="command">\build</span>_81ep6udn3nlzszbotl32uedjz<span class="command">\ProjectScript</span><span class="command">\buildscript</span><span class="command">\cache</span>.properties.lock
+</code></pre><p>找到红色标识部分文件然后删除文件。删除的时候会提示文件被占用。开打进程管理器把关于<code>java</code>的进程结束后，在<code>Android</code></p>
+<p><code>Stuido</code>中重新<code>build</code>就可以。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/图片三级缓存的原理/" class="archive-article-date">
-  <time datetime="2015-07-22T08:46:28.000Z" itemprop="datePublished">Jul 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/图片三级缓存的原理/">图片三级缓存的原理</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/布局共享/" class="archive-article-date">
-  <time datetime="2015-07-22T08:40:32.000Z" itemprop="datePublished">Jul 22</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/" data-id="cicmrab9j000yfkjmagaupluj" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/布局共享/">布局共享（列如所有ACTIVITY拥有相同的布局部分）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/" class="archive-article-date">
-  <time datetime="2015-07-22T08:36:29.000Z" itemprop="datePublished">Jul 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/">ANDROID:SHOWASACTION=NEVER的作用</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Code-Tools/">Code Tools</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/" class="archive-article-date">
-  <time datetime="2015-07-22T08:31:43.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/">ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得</a>
-    </h1>
+    <a href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ANDROID:SHOWASACTION=NEVER的作用
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ANDROID ACTIONBAR 返回为NULL</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/" class="archive-article-date">
-  <time datetime="2015-07-22T08:12:24.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/">ANDROID ACTIONBAR 返回为NULL</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/" class="archive-article-date">
-  <time datetime="2015-07-22T08:04:52.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/">JAVA回调函数ANDROID中典型的回调地方</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/JAVA三大特性之多态/" class="archive-article-date">
-  <time datetime="2015-07-22T07:59:19.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/JAVA三大特性之多态/">JAVA三大特性之多态</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/《转》JAVA动态代理-JDK和CGLIB/" class="archive-article-date">
-  <time datetime="2015-07-22T07:27:01.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/《转》JAVA动态代理-JDK和CGLIB/">《转》JAVA动态代理(JDK和CGLIB)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 </section>
         
           <aside id="sidebar">

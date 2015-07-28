@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Hexo</title>
+  <title>解决GitHub Pages Warning邮件提醒 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="本文旨在解决每次写博都会收到 Github 的 warning 邮件问题，同时又提升了托管在 Github Pages 上的博客的访问速度。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决GitHub Pages Warning邮件提醒">
+<meta property="og:url" content="http://yoursite.com/2015/07/27/解决GitHub-Pages-Warning邮件提醒/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="本文旨在解决每次写博都会收到 Github 的 warning 邮件问题，同时又提升了托管在 Github Pages 上的博客的访问速度。">
+<meta property="og:updated_time" content="2015-07-27T07:50:36.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="解决GitHub Pages Warning邮件提醒">
+<meta name="twitter:description" content="本文旨在解决每次写博都会收到 Github 的 warning 邮件问题，同时又提升了托管在 Github Pages 上的博客的访问速度。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,210 +60,75 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/27/解决GitHub-Pages-Warning邮件提醒/" class="archive-article-date">
-  <time datetime="2015-07-27T02:42:15.000Z" itemprop="datePublished">Jul 27</time>
+        <section id="main"><article id="post-解决GitHub-Pages-Warning邮件提醒" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/27/解决GitHub-Pages-Warning邮件提醒/" class="article-date">
+  <time datetime="2015-07-27T02:42:15.000Z" itemprop="datePublished">2015-07-27</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GitHub/">GitHub</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/27/解决GitHub-Pages-Warning邮件提醒/">解决GitHub Pages Warning邮件提醒</a>
+    <h1 class="article-title" itemprop="name">
+      解决GitHub Pages Warning邮件提醒
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/" class="archive-article-date">
-  <time datetime="2015-07-23T02:01:12.000Z" itemprop="datePublished">Jul 23</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/">WINDOWS 平台下GIT服务器搭建</a>
-    </h1>
-  
+        <p>本文旨在解决每次写博都会收到 Github 的 warning 邮件问题，同时又提升了托管在 Github Pages 上的博客的访问速度。</p>
+<p>今天在 v2ex 上看到大学邮箱注册某比特币交易网站送价值 10 刀的比特币的事，于是登陆了许久不用的学校教育网邮箱，然后就发现原来每次生成博客都会收到 Github 的一封 warning 邮件，内容如下　　</p>
+<a id="more"></a>
+<p>The page build completed successfully, but returned the following warning:<br>GitHub Pages recently underwent some improvements (<a href="https://github.com/blog/1715-faster-more-awesome-github-pages" target="_blank" rel="external">https://github.com/blog/1715-faster-more-awesome-github-pages</a>) to make your site faster and more awesome, but we’ve noticed that mayecn.com isn’t properly configured to take advantage of these new features. While your site will continue to work just fine, updating your domain’s configuration offers some additional speed and performance benefits. Instructions on updating your site’s IP address can be found at <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages#step-2-configure-dns-records" target="_blank" rel="external">https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages#step-2-configure-dns-records</a>, and of course, you can always get in touch with a human at support@github.com. For the more technical minded folks who want to skip the help docs: your site’s DNS records are pointed to a deprecated IP address.</p>
+<p>For information on troubleshooting Jekyll see:</p>
+<p><a href="https://help.github.com/articles/using-jekyll-with-pages#troubleshooting" target="_blank" rel="external">https://help.github.com/articles/using-jekyll-with-pages#troubleshooting</a></p>
+<p>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</p>
+<p>其实全文中最重要的就只有这一句话：<br>your site’s DNS records are pointed to a deprecated IP address.</p>
+<p>Github 贴心的提醒我现在的 A 记录指向的是一个不赞成使用的 IP 地址，意思就是如果采用了 Github 新增加的 IP 地址为 A 记录的话博客的访问速度会加快一些。于是使用 dig 命令势在必行。但是 Windows 下如何使用 dig 呢？在这里发现了一个现成的解决方案：Win 下使用 dig<br>照做后，在 cmd 下就可以愉快地使用 dig 命令了。<br>执行：</p>
+<p><code>dig maye696.github.io +nostats +nocomments +nocmd</code>，注意<code>maye696.github.io</code>为你博客的地址。</p>
+<p>获得如下结果：</p>
+<pre><code><span class="rule"><span class="attribute">C</span>:<span class="value">\Users\w&gt;dig maye696.github.io +nostats +nocomments +nocmd
+</span></span>;<span class="tag">maye696</span><span class="class">.github</span><span class="class">.io</span>. <span class="tag">IN</span> <span class="tag">A</span>
+<span class="tag">maye696</span><span class="class">.github</span><span class="class">.io</span>. 1097 <span class="tag">IN</span> <span class="tag">CNAME</span> <span class="tag">github</span><span class="class">.map</span><span class="class">.fastly</span><span class="class">.net</span>.
+<span class="tag">github</span><span class="class">.map</span><span class="class">.fastly</span><span class="class">.net</span>. 30 <span class="tag">IN</span> <span class="tag">A</span> 103<span class="class">.245</span><span class="class">.222</span><span class="class">.133</span>
+</code></pre><p>很明显，你只需把自己的域名的 A 记录改为 103.245.222.133，就会使博客获得更快的访问速度了。同时，也不会每次写博都收到 Github 那“贴心”的邮件了。</p>
+<p>博客转载自:<a href="http://mayecn.com/blog/2014/05/17/githubpages-accelerating/" target="_blank" rel="external">http://mayecn.com/blog/2014/05/17/githubpages-accelerating/</a></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/图片三级缓存的原理/" class="archive-article-date">
-  <time datetime="2015-07-22T08:46:28.000Z" itemprop="datePublished">Jul 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/图片三级缓存的原理/">图片三级缓存的原理</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/布局共享/" class="archive-article-date">
-  <time datetime="2015-07-22T08:40:32.000Z" itemprop="datePublished">Jul 22</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/07/27/解决GitHub-Pages-Warning邮件提醒/" data-id="cicmrab8v0005fkjmymjutnv4" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/布局共享/">布局共享（列如所有ACTIVITY拥有相同的布局部分）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/" class="archive-article-date">
-  <time datetime="2015-07-22T08:36:29.000Z" itemprop="datePublished">Jul 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ANDROID-SHOWASACTION-NEVER是做什么用的/">ANDROID:SHOWASACTION=NEVER的作用</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/" class="archive-article-date">
-  <time datetime="2015-07-22T08:31:43.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ECLIPSE项目导入ANDROID-STUDIO错误总结和STUDIO使用心得/">ECLIPSE项目导入ANDROID STUDIO错误总结和STUDIO使用心得</a>
-    </h1>
   
+    <a href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">WINDOWS 平台下GIT服务器搭建</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/" class="archive-article-date">
-  <time datetime="2015-07-22T08:12:24.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/">ANDROID ACTIONBAR 返回为NULL</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/" class="archive-article-date">
-  <time datetime="2015-07-22T08:04:52.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/">JAVA回调函数ANDROID中典型的回调地方</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/JAVA三大特性之多态/" class="archive-article-date">
-  <time datetime="2015-07-22T07:59:19.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/JAVA三大特性之多态/">JAVA三大特性之多态</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/22/《转》JAVA动态代理-JDK和CGLIB/" class="archive-article-date">
-  <time datetime="2015-07-22T07:27:01.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/22/《转》JAVA动态代理-JDK和CGLIB/">《转》JAVA动态代理(JDK和CGLIB)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 </section>
         
           <aside id="sidebar">
