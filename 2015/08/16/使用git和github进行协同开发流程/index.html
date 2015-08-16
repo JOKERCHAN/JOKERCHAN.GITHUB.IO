@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Actionbar," />
+  <meta name="keywords" content="Git,协同开发,分支," />
 
 
 
@@ -37,20 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="AndroidBar返回为NULL。是因为values-v11和values-v14下面的style的主题的设置的原因。
-在SDK 11的设备上，会使用第二处，SDK 14会使用第三处。">
+<meta name="description" content="目录前言仓库（Repository）源仓库开发者仓库分支（Branch）永久性分支masterdevelop暂时性分支releasehotfix工作流（Wrkflow）Step 1:源仓库的构建Step 2:开发者fork源仓库Step 3:把自己的开发者仓库clone到本地Step 4:构建功能分支进行开发Step 5:向管理员提交pull requestStep 6:管理员测试、合并总结参考资">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ANDROID ACTIONBAR 返回为NULL">
-<meta property="og:url" content="http://yoursite.com/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/index.html">
+<meta property="og:title" content="使用git和github进行协同开发流程">
+<meta property="og:url" content="http://yoursite.com/2015/08/16/使用git和github进行协同开发流程/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
-<meta property="og:description" content="AndroidBar返回为NULL。是因为values-v11和values-v14下面的style的主题的设置的原因。
-在SDK 11的设备上，会使用第二处，SDK 14会使用第三处。">
-<meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/hexoblog/actionbar_value.jpg">
-<meta property="og:updated_time" content="2015-07-28T09:32:37.992Z">
+<meta property="og:description" content="目录前言仓库（Repository）源仓库开发者仓库分支（Branch）永久性分支masterdevelop暂时性分支releasehotfix工作流（Wrkflow）Step 1:源仓库的构建Step 2:开发者fork源仓库Step 3:把自己的开发者仓库clone到本地Step 4:构建功能分支进行开发Step 5:向管理员提交pull requestStep 6:管理员测试、合并总结参考资">
+<meta property="og:updated_time" content="2015-08-16T07:06:54.997Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ANDROID ACTIONBAR 返回为NULL">
-<meta name="twitter:description" content="AndroidBar返回为NULL。是因为values-v11和values-v14下面的style的主题的设置的原因。
-在SDK 11的设备上，会使用第二处，SDK 14会使用第三处。">
+<meta name="twitter:title" content="使用git和github进行协同开发流程">
+<meta name="twitter:description" content="目录前言仓库（Repository）源仓库开发者仓库分支（Branch）永久性分支masterdevelop暂时性分支releasehotfix工作流（Wrkflow）Step 1:源仓库的构建Step 2:开发者fork源仓库Step 3:把自己的开发者仓库clone到本地Step 4:构建功能分支进行开发Step 5:向管理员提交pull requestStep 6:管理员测试、合并总结参考资">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -60,7 +56,7 @@
   };
 </script>
 
-    <title> ANDROID ACTIONBAR 返回为NULL // JOKERCHAN's ESSaY </title>
+    <title> 使用git和github进行协同开发流程 // JOKERCHAN's ESSaY </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -191,7 +187,7 @@
           
           
             
-              ANDROID ACTIONBAR 返回为NULL
+              使用git和github进行协同开发流程
             
           
         </h1>
@@ -200,8 +196,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-22T16:12:24+08:00" content="2015-07-22">
-            2015-07-22
+          <time itemprop="dateCreated" datetime="2015-08-16T14:55:09+08:00" content="2015-08-16">
+            2015-08-16
           </time>
         </span>
 
@@ -209,7 +205,7 @@
           <span class="post-category" >
             &nbsp; | &nbsp; 分类于
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a></span>
 
               
               
@@ -222,8 +218,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/22/ANDROID-ACTIONBAR-返回为NULL/" itemprop="commentsCount"></span>
+              <a href="/2015/08/16/使用git和github进行协同开发流程/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/16/使用git和github进行协同开发流程/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -237,84 +233,7 @@
       
 
       
-        <span itemprop="articleBody"><p><code>AndroidBar</code>返回为<code>NULL</code>。是因为<code>values-v11</code>和<code>values-v14</code>下面的<code>style</code>的主题的设置的原因。</p>
-<p>在SDK 11的设备上，会使用第二处，SDK 14会使用第三处。</p>
-<a id="more"></a>
-<p><img src="http://7xkko2.com1.z0.glb.clouddn.com/hexoblog/actionbar_value.jpg"></p>
-<p>只需要将三个地方的主题分别设置就可以，结构如下：</p>
-<p><code>values</code>————</p>
-<pre><code><span class="tag">&lt;<span class="title">resources</span>&gt;</span>
-
-    <span class="comment">&lt;!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    --&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">name</span>=<span class="value">"AppBaseTheme"</span> <span class="attribute">parent</span>=<span class="value">"Theme.AppCompat.Light"</span>&gt;</span><span class="css">
-        &lt;!<span class="tag">--</span>
-            <span class="tag">Theme</span> <span class="tag">customizations</span> <span class="tag">available</span> <span class="tag">in</span> <span class="tag">newer</span> <span class="tag">API</span> <span class="tag">levels</span> <span class="tag">can</span> <span class="tag">go</span> <span class="tag">in</span>
-            <span class="tag">res</span>/<span class="tag">values-vXX</span>/<span class="tag">styles</span><span class="class">.xml</span>, <span class="tag">while</span> <span class="tag">customizations</span> <span class="tag">related</span> <span class="tag">to</span>
-            <span class="tag">backward-compatibility</span> <span class="tag">can</span> <span class="tag">go</span> <span class="tag">here</span>.
-        <span class="tag">--</span>&gt;
-    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-
-    <span class="comment">&lt;!-- Application theme. --&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">name</span>=<span class="value">"AppTheme"</span> <span class="attribute">parent</span>=<span class="value">"AppBaseTheme"</span>&gt;</span><span class="css">
-        &lt;!<span class="tag">--</span> <span class="tag">All</span> <span class="tag">customizations</span> <span class="tag">that</span> <span class="tag">are</span> <span class="tag">NOT</span> <span class="tag">specific</span> <span class="tag">to</span> <span class="tag">a</span> <span class="tag">particular</span> <span class="tag">API-level</span> <span class="tag">can</span> <span class="tag">go</span> <span class="tag">here</span>. <span class="tag">--</span>&gt;
-    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-
-<span class="tag">&lt;/<span class="title">resources</span>&gt;</span>
-</code></pre><p><code>values-v11</code>————</p>
-<pre><code>&lt;resources&gt;
-
-    &lt;!<span class="comment">--</span>
-        Base <span class="type">application</span> theme <span class="keyword">for</span> API <span class="number">11</span>+. This theme completely replaces
-        AppBaseTheme <span class="keyword">from</span> BOTH res/values/styles.xml <span class="keyword">and</span>
-        res/values-v11/styles.xml <span class="function_start"><span class="keyword">on</span></span> API <span class="number">14</span>+ devices.
-    <span class="comment">--&gt;</span>
-    &lt;style <span class="property">name</span>=<span class="string">"AppBaseTheme"</span> parent=<span class="string">"android:Theme.Holo.Light"</span>&gt;
-        &lt;!<span class="comment">-- API 14 theme customizations can go here. --&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:actionBarStyle"</span>&gt;@style/my_actionbar_style&lt;/<span class="property">item</span>&gt;
-    &lt;/style&gt;
-
-    &lt;style <span class="property">name</span>=<span class="string">"my_actionbar_style"</span> parent=<span class="string">"@android:style/Widget.Holo.Light.ActionBar"</span>&gt;
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:background"</span>&gt;<span class="comment">#ff8c00&lt;/item&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:titleTextStyle"</span>&gt;@style/AcBar_titleStyle&lt;/<span class="property">item</span>&gt;
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:displayOptions"</span>&gt;showTitle&lt;/<span class="property">item</span>&gt;
-    &lt;/style&gt;
-
-    &lt;style <span class="property">name</span>=<span class="string">"AcBar_titleStyle"</span>&gt;
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:textColor"</span>&gt;<span class="comment">#FFFFFF&lt;/item&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:textSize"</span>&gt;<span class="number">20</span>sp&lt;/<span class="property">item</span>&gt;
-    &lt;/style&gt;
-
-    &lt;style <span class="property">name</span>=<span class="string">"AppTheme"</span> parent=<span class="string">"AppBaseTheme"</span>&gt;&lt;/style&gt;
-&lt;/resources&gt;
-</code></pre><p><code>values-v14</code>————</p>
-<pre><code>&lt;resources xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;
-
-    &lt;!<span class="comment">--</span>
-        Base <span class="type">application</span> theme <span class="keyword">for</span> API <span class="number">14</span>+. This theme completely replaces
-        AppBaseTheme <span class="keyword">from</span> BOTH res/values/styles.xml <span class="keyword">and</span>
-        res/values-v11/styles.xml <span class="function_start"><span class="keyword">on</span></span> API <span class="number">14</span>+ devices.
-    <span class="comment">--&gt;</span>
-    &lt;style <span class="property">name</span>=<span class="string">"AppBaseTheme"</span> parent=<span class="string">"android:Theme.Holo.Light.DarkActionBar"</span>&gt;
-        &lt;!<span class="comment">-- API 14 theme customizations can go here. --&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:actionBarStyle"</span>&gt;@style/my_actionbar_style&lt;/<span class="property">item</span>&gt; 
-    &lt;/style&gt;
-
-    &lt;style <span class="property">name</span>=<span class="string">"my_actionbar_style"</span> parent=<span class="string">"@android:style/Widget.Holo.Light.ActionBar"</span>&gt;  
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:background"</span>&gt;<span class="comment">#ff8c00&lt;/item&gt;  </span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:titleTextStyle"</span>&gt;@style/AcBar_titleStyle&lt;/<span class="property">item</span>&gt;
-         &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:displayOptions"</span>&gt;showTitle&lt;/<span class="property">item</span>&gt;
-    &lt;/style&gt;
-    &lt;style <span class="property">name</span>=<span class="string">"AcBar_titleStyle"</span>&gt;    
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:textColor"</span>&gt;<span class="comment">#FFFFFF&lt;/item&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:textSize"</span>&gt;<span class="number">20</span>sp&lt;/<span class="property">item</span>&gt;  
-    &lt;/style&gt;
-    &lt;style <span class="property">name</span>=<span class="string">"AppTheme"</span> parent=<span class="string">"AppBaseTheme"</span>&gt;&lt;/style&gt;
-&lt;/resources&gt;
-</code></pre><p>主要注意<code>parent</code>部分的引用</p>
-</span>
+        <span itemprop="articleBody"><h1 id="目录">目录</h1><h1 id="前言">前言</h1><h1 id="仓库（Repository）">仓库（Repository）</h1><h2 id="源仓库">源仓库</h2><h2 id="开发者仓库">开发者仓库</h2><h1 id="分支（Branch）">分支（Branch）</h1><h2 id="永久性分支">永久性分支</h2><h3 id="master">master</h3><h3 id="develop">develop</h3><h2 id="暂时性分支">暂时性分支</h2><h3 id="release">release</h3><h3 id="hotfix">hotfix</h3><h1 id="工作流（Wrkflow）">工作流（Wrkflow）</h1><h2 id="Step_1:源仓库的构建">Step 1:源仓库的构建</h2><h2 id="Step_2:开发者fork源仓库">Step 2:开发者fork源仓库</h2><h2 id="Step_3:把自己的开发者仓库clone到本地">Step 3:把自己的开发者仓库clone到本地</h2><h2 id="Step_4:构建功能分支进行开发">Step 4:构建功能分支进行开发</h2><h2 id="Step_5:向管理员提交pull_request">Step 5:向管理员提交pull request</h2><h2 id="Step_6:管理员测试、合并">Step 6:管理员测试、合并</h2><h1 id="总结">总结</h1><h1 id="参考资料">参考资料</h1></span>
       
     </div>
 
@@ -322,7 +241,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Actionbar/" rel="tag">#Actionbar</a>
+            <a href="/tags/Git-协同开发-分支/" rel="tag">#Git,协同开发,分支</a>
           
         </div>
       
@@ -331,13 +250,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/22/Studio使用心得和常见错误/" rel="prev">Studio使用心得和常见错误</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/" rel="next">JAVA回调函数ANDROID中典型的回调地方</a>
+              <a href="/2015/07/30/其实都没有/" rel="next">其实都没有</a>
             
           </div>
         </div>
@@ -352,10 +269,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/07/22/ANDROID-ACTIONBAR-返回为NULL/"
-     data-title="ANDROID ACTIONBAR 返回为NULL"
+        <div class="ds-share flat" data-thread-key="2015/08/16/使用git和github进行协同开发流程/"
+     data-title="使用git和github进行协同开发流程"
      data-content=""
-     data-url="http://yoursite.com/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/">
+     data-url="http://yoursite.com/2015/08/16/使用git和github进行协同开发流程/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -382,8 +299,8 @@
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/07/22/ANDROID-ACTIONBAR-返回为NULL/"
-                       data-title="ANDROID ACTIONBAR 返回为NULL" data-url="http://yoursite.com/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/">
+                  <div class="ds-thread" data-thread-key="2015/08/16/使用git和github进行协同开发流程/"
+                       data-title="使用git和github进行协同开发流程" data-url="http://yoursite.com/2015/08/16/使用git和github进行协同开发流程/">
                   </div>
                 
               </div>
@@ -482,7 +399,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#仓库（Repository）"><span class="nav-number">3.</span> <span class="nav-text">仓库（Repository）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源仓库"><span class="nav-number">3.1.</span> <span class="nav-text">源仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发者仓库"><span class="nav-number">3.2.</span> <span class="nav-text">开发者仓库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支（Branch）"><span class="nav-number">4.</span> <span class="nav-text">分支（Branch）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永久性分支"><span class="nav-number">4.1.</span> <span class="nav-text">永久性分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#master"><span class="nav-number">4.1.1.</span> <span class="nav-text">master</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#develop"><span class="nav-number">4.1.2.</span> <span class="nav-text">develop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂时性分支"><span class="nav-number">4.2.</span> <span class="nav-text">暂时性分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#release"><span class="nav-number">4.2.1.</span> <span class="nav-text">release</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hotfix"><span class="nav-number">4.2.2.</span> <span class="nav-text">hotfix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工作流（Wrkflow）"><span class="nav-number">5.</span> <span class="nav-text">工作流（Wrkflow）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step_1:源仓库的构建"><span class="nav-number">5.1.</span> <span class="nav-text">Step 1:源仓库的构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step_2:开发者fork源仓库"><span class="nav-number">5.2.</span> <span class="nav-text">Step 2:开发者fork源仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step_3:把自己的开发者仓库clone到本地"><span class="nav-number">5.3.</span> <span class="nav-text">Step 3:把自己的开发者仓库clone到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step_4:构建功能分支进行开发"><span class="nav-number">5.4.</span> <span class="nav-text">Step 4:构建功能分支进行开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step_5:向管理员提交pull_request"><span class="nav-number">5.5.</span> <span class="nav-text">Step 5:向管理员提交pull request</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step_6:管理员测试、合并"><span class="nav-number">5.6.</span> <span class="nav-text">Step 6:管理员测试、合并</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
