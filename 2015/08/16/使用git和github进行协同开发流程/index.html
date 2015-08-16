@@ -58,7 +58,7 @@
 <meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/hexoblog/gitgit-demo-review.png">
 <meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/hexoblog/gitmerge.png">
 <meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/hexoblog/gitgit-model@2x.png">
-<meta property="og:updated_time" content="2015-08-16T08:03:30.029Z">
+<meta property="og:updated_time" content="2015-08-16T08:07:35.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用git和github进行协同开发流程">
 <meta name="twitter:description" content="前言很多项目开发都会采用git这一优秀的分布式版本管理工具进行项目版本管理，使用github开源平台作为代码仓库托管平台。由于git的使用非常灵活，在实践当中衍生了很多种不同的工作流程，不同的项目、不同的团队会有不同的协作方式。
@@ -377,11 +377,13 @@ step <span class="number">4</span><span class="symbol">:</span> 把做好的功�
 <blockquote>
 <p>git checkout develop<br><code>#</code> 进入他本地的develop分支</p>
 <p>git checkout -b livoras-develop<br><code>#</code> 从develop分支中分出一个叫livoras-develop的测试分支测试我的代码</p>
-<p>git pull <a href="https://github.com/livoras/git-demo.git" target="_blank" rel="external">https://github.com/livoras/git-demo.git</a> develop<br><code>#</code>把我的代码pull到测试分支中，进行测试</p>
-</blockquote>
+<p>git pull <a href="https://github.com/livoras/git-demo.git" target="_blank" rel="external">https://github.com/livoras/git-demo.git</a> develop</p>
+<pre><code><span class="escape">`#</span><span class="escape">`把</span>我的代码pull到测试分支中，进行测试
+</code></pre></blockquote>
 </blockquote>
 </li>
-<li>判断是否同意合并到源仓库的<code>develop</code>中，如果经过测试没问题，可以把我的代码合并到源仓库的<code>develop</code>中：<blockquote>
+<li><p>判断是否同意合并到源仓库的<code>develop</code>中，如果经过测试没问题，可以把我的代码合并到源仓库的<code>develop</code>中：</p>
+<blockquote>
 <blockquote>
 <p>git checkout develop<br>git merge —no-ff livoras-develop<br>git push origin develop</p>
 </blockquote>
