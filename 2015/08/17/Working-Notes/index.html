@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Fragment," />
+  <meta name="keywords" content="Working," />
 
 
 
@@ -37,19 +37,52 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="在项目中切换Fragment，一直都是用replace()方法来替换Fragment。但是这样做有一个问题，每次切换的时候Fragment都会重新实列化，重新加载一次数据，这样做会非常消耗性能用用户的流量。
-官方文档解释说：replace()这个方法只是在上一个Fragment不再需要时采用的简便方法。正确的切换方式是add()，切换时hide()，add()另一个Fragment；再次切换时，只">
+<meta name="description" content="当你的才华还撑不起你的野心时，那你就应该静下来学习；当你的能力驾驭不了你的目标时，那你就应该沉下心来历练。
+八月17号(周一)
+WORK
+再次熟悉git的重要操作
+保山天气界面首页天气七天天气变化曲线图
+
+
+BODYBUILDING
+背部+肱二头肌
+
+
+
+九月">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ANDROID FRAGMENT的切换（解决REPLACE的低效）">
-<meta property="og:url" content="http://yoursite.com/2015/07/22/ANDROID FRAGMENT高效切换/index.html">
+<meta property="og:title" content="Working Notes">
+<meta property="og:url" content="http://yoursite.com/2015/08/17/Working-Notes/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
-<meta property="og:description" content="在项目中切换Fragment，一直都是用replace()方法来替换Fragment。但是这样做有一个问题，每次切换的时候Fragment都会重新实列化，重新加载一次数据，这样做会非常消耗性能用用户的流量。
-官方文档解释说：replace()这个方法只是在上一个Fragment不再需要时采用的简便方法。正确的切换方式是add()，切换时hide()，add()另一个Fragment；再次切换时，只">
-<meta property="og:updated_time" content="2015-07-23T08:57:12.437Z">
+<meta property="og:description" content="当你的才华还撑不起你的野心时，那你就应该静下来学习；当你的能力驾驭不了你的目标时，那你就应该沉下心来历练。
+八月17号(周一)
+WORK
+再次熟悉git的重要操作
+保山天气界面首页天气七天天气变化曲线图
+
+
+BODYBUILDING
+背部+肱二头肌
+
+
+
+九月">
+<meta property="og:updated_time" content="2015-08-17T06:11:00.075Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ANDROID FRAGMENT的切换（解决REPLACE的低效）">
-<meta name="twitter:description" content="在项目中切换Fragment，一直都是用replace()方法来替换Fragment。但是这样做有一个问题，每次切换的时候Fragment都会重新实列化，重新加载一次数据，这样做会非常消耗性能用用户的流量。
-官方文档解释说：replace()这个方法只是在上一个Fragment不再需要时采用的简便方法。正确的切换方式是add()，切换时hide()，add()另一个Fragment；再次切换时，只">
+<meta name="twitter:title" content="Working Notes">
+<meta name="twitter:description" content="当你的才华还撑不起你的野心时，那你就应该静下来学习；当你的能力驾驭不了你的目标时，那你就应该沉下心来历练。
+八月17号(周一)
+WORK
+再次熟悉git的重要操作
+保山天气界面首页天气七天天气变化曲线图
+
+
+BODYBUILDING
+背部+肱二头肌
+
+
+
+九月">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -59,7 +92,7 @@
   };
 </script>
 
-    <title> ANDROID FRAGMENT的切换（解决REPLACE的低效） // JOKERCHAN's ESSaY </title>
+    <title> Working Notes // JOKERCHAN's ESSaY </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -190,7 +223,7 @@
           
           
             
-              ANDROID FRAGMENT的切换（解决REPLACE的低效）
+              Working Notes
             
           
         </h1>
@@ -199,8 +232,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-22T14:51:40+08:00" content="2015-07-22">
-            2015-07-22
+          <time itemprop="dateCreated" datetime="2015-08-17T14:04:27+08:00" content="2015-08-17">
+            2015-08-17
           </time>
         </span>
 
@@ -208,7 +241,7 @@
           <span class="post-category" >
             &nbsp; | &nbsp; 分类于
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Working/" itemprop="url" rel="index"><span itemprop="name">Working</span></a></span>
 
               
               
@@ -221,8 +254,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/22/ANDROID FRAGMENT高效切换/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/22/ANDROID FRAGMENT高效切换/" itemprop="commentsCount"></span>
+              <a href="/2015/08/17/Working-Notes/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/17/Working-Notes/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -236,63 +269,19 @@
       
 
       
-        <span itemprop="articleBody"><p>在项目中切换<code>Fragment</code>，一直都是用<code>replace()</code>方法来替换<code>Fragment</code>。但是这样做有一个问题，每次切换的时候<code>Fragment</code>都会重新实列化，重新加载一次数据，这样做会非常消耗性能用用户的流量。</p>
-<p>官方文档解释说：<code>replace()</code>这个方法只是在上一个<code>Fragment</code>不再需要时采用的简便方法。<br>正确的切换方式是<code>add()</code>，切换时<code>hide()</code>，<code>add()</code>另一个<code>Fragment</code>；再次切换时，只需<code>hide()</code>当前，<code>show()</code>另一个。<br>这样就能做到多个<code>Fragment</code>切换不重新实例化：</p>
-<a id="more"></a>
-<p>切换方法：</p>
-<pre><code><span class="comment">/**
- * fragment 切换
- * 
- * @param from
- * @param to
- */</span>
-public void switchContent<span class="params">(Fragment from, Fragment to, int position)</span> {
-    <span class="keyword">if</span> <span class="params">(mContent != to)</span> {
-        mContent = to;
-        FragmentTransaction transaction = fm.beginTransaction<span class="params">()</span>;
-        <span class="keyword">if</span> <span class="params">(!to.isAdded<span class="params">()</span>)</span> { <span class="comment">// 先判断是否被add过</span>
-            transaction.hide<span class="params">(from)</span>
-                    .add<span class="params">(R.id.content_frame, to, tags[position])</span>.commit<span class="params">()</span>; <span class="comment">// 隐藏当前的fragment，add下一个到Activity中</span>
-        } <span class="keyword">else</span> {
-            transaction.hide<span class="params">(from)</span>.show<span class="params">(to)</span>.commit<span class="params">()</span>; <span class="comment">// 隐藏当前的fragment，显示下一个</span>
-        }
-    }
-}
-</code></pre><p>这样做好后看似没问题。但是比较低端的手机内存不足的时候会造成<code>fragment</code>重叠的情况。</p>
-<p>实是由<code>Activity</code>被回收后重启所导致的<code>Fragment</code>重复创建和重叠的问题。</p>
-<p>在<code>Activity onCreate()</code>中添加<code>Fragment</code>的时候一定不要忘了检查一下<code>savedInstanceState</code></p>
-<p>多个<code>Fragment</code>重叠则可以这样处理：通过<code>FragmentManager</code>找到所有的<code>UI Fragment</code>，按需要<code>show()</code>某一个<code>Fragment</code>，<code>hide()</code>其他即可！</p>
-<p>为了能准确找出所需的<code>Fragment</code>，<br>所以在<code>add()</code>或者<code>replace() Fragment</code>的时候记得要带上<code>tag</code>参数，因为一个<code>ViewGroup</code> 容器可以依附<code>add()</code>.</p>
-<p>多个<code>Fragment</code>，它们的id自然是相同的。</p>
-<pre><code><span class="comment">/**
- * 状态检测 用于内存不足的时候保证fragment不会重叠
- * 
- * @param savedInstanceState
- */</span>
-private void stateCheck<span class="params">(Bundle savedInstanceState)</span> {
-    <span class="keyword">if</span> <span class="params">(savedInstanceState == null)</span> {
-        fm = getFragmentManager<span class="params">()</span>;
-        FragmentTransaction fts = fm.beginTransaction<span class="params">()</span>;
-        AnimationFragment af = new AnimationFragment<span class="params">()</span>;
-        mContent = af;
-        fts.add<span class="params">(R.id.content_frame, af)</span>;
-        fts.commit<span class="params">()</span>;
-    } <span class="keyword">else</span> {
-        AnimationFragment af = <span class="params">(AnimationFragment)</span> getFragmentManager<span class="params">()</span>
-                .findFragmentByTag<span class="params">(tags[<span class="number">0</span>])</span>;
-        PlainFragment pf = <span class="params">(PlainFragment)</span> getFragmentManager<span class="params">()</span>
-                .findFragmentByTag<span class="params">(tags[<span class="number">1</span>])</span>;
-        RecordFragment rf = <span class="params">(RecordFragment)</span> getFragmentManager<span class="params">()</span>
-                .findFragmentByTag<span class="params">(tags[<span class="number">2</span>])</span>;
-        InformationFragment inf = <span class="params">(InformationFragment)</span> getFragmentManager<span class="params">()</span>
-                .findFragmentByTag<span class="params">(tags[<span class="number">3</span>])</span>;
-        TestingFragment tf = <span class="params">(TestingFragment)</span> getFragmentManager<span class="params">()</span>
-                .findFragmentByTag<span class="params">(tags[<span class="number">4</span>])</span>;
-        getFragmentManager<span class="params">()</span>.beginTransaction<span class="params">()</span>.show<span class="params">(af)</span>.hide<span class="params">(pf)</span>.hide<span class="params">(rf)</span>
-                .hide<span class="params">(inf)</span>.hide<span class="params">(tf)</span>.commit<span class="params">()</span>;
-    }
-}
-</code></pre></span>
+        <span itemprop="articleBody"><p>当你的才华还撑不起你的野心时，那你就应该静下来学习；当你的能力驾驭不了你的目标时，那你就应该沉下心来历练。</p>
+<h1 id="八月">八月</h1><h2 id="17号(周一)">17号(周一)</h2><ul>
+<li>WORK<ul>
+<li>再次熟悉git的重要操作</li>
+<li>保山天气界面首页天气七天天气变化曲线图</li>
+</ul>
+</li>
+<li>BODYBUILDING<ul>
+<li>背部+肱二头肌</li>
+</ul>
+</li>
+</ul>
+<h1 id="九月">九月</h1></span>
       
     </div>
 
@@ -300,7 +289,7 @@ private void stateCheck<span class="params">(Bundle savedInstanceState)</span> {
       
         <div class="post-tags">
           
-            <a href="/tags/Fragment/" rel="tag">#Fragment</a>
+            <a href="/tags/Working/" rel="tag">#Working</a>
           
         </div>
       
@@ -309,11 +298,11 @@ private void stateCheck<span class="params">(Bundle savedInstanceState)</span> {
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/22/《转》JAVA动态代理-JDK和CGLIB/" rel="prev">《转》JAVA动态代理(JDK和CGLIB)</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/16/使用git和github进行协同开发流程/" rel="next">使用git和github进行协同开发流程</a>
             
           </div>
         </div>
@@ -328,10 +317,10 @@ private void stateCheck<span class="params">(Bundle savedInstanceState)</span> {
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/07/22/ANDROID FRAGMENT高效切换/"
-     data-title="ANDROID FRAGMENT的切换（解决REPLACE的低效）"
+        <div class="ds-share flat" data-thread-key="2015/08/17/Working-Notes/"
+     data-title="Working Notes"
      data-content=""
-     data-url="http://yoursite.com/2015/07/22/ANDROID FRAGMENT高效切换/">
+     data-url="http://yoursite.com/2015/08/17/Working-Notes/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -358,8 +347,8 @@ private void stateCheck<span class="params">(Bundle savedInstanceState)</span> {
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/07/22/ANDROID FRAGMENT高效切换/"
-                       data-title="ANDROID FRAGMENT的切换（解决REPLACE的低效）" data-url="http://yoursite.com/2015/07/22/ANDROID FRAGMENT高效切换/">
+                  <div class="ds-thread" data-thread-key="2015/08/17/Working-Notes/"
+                       data-title="Working Notes" data-url="http://yoursite.com/2015/08/17/Working-Notes/">
                   </div>
                 
               </div>
@@ -458,7 +447,7 @@ private void stateCheck<span class="params">(Bundle savedInstanceState)</span> {
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#八月"><span class="nav-number">1.</span> <span class="nav-text">八月</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#17号(周一)"><span class="nav-number">1.1.</span> <span class="nav-text">17号(周一)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九月"><span class="nav-number">2.</span> <span class="nav-text">九月</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
