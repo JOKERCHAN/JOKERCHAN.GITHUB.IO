@@ -39,16 +39,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="前言理解View的绘制过程,从计算，绘制，展示来分析">
+<meta name="description" content="前言学习Android有一段时间了，知道了怎么使用activity、layout等但是却不知道真正的实现原理和步骤，真是惭愧。从零开始理解View的绘制过程,从计算，布局，绘制，展示来分析。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="View的绘制过程">
 <meta property="og:url" content="http://yoursite.com/2015/11/26/View的绘制过程/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
-<meta property="og:description" content="前言理解View的绘制过程,从计算，绘制，展示来分析">
-<meta property="og:updated_time" content="2015-11-26T01:13:53.599Z">
+<meta property="og:description" content="前言学习Android有一段时间了，知道了怎么使用activity、layout等但是却不知道真正的实现原理和步骤，真是惭愧。从零开始理解View的绘制过程,从计算，布局，绘制，展示来分析。">
+<meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/drawview/drawactivity.png">
+<meta property="og:updated_time" content="2015-11-26T03:12:54.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="View的绘制过程">
-<meta name="twitter:description" content="前言理解View的绘制过程,从计算，绘制，展示来分析">
+<meta name="twitter:description" content="前言学习Android有一段时间了，知道了怎么使用activity、layout等但是却不知道真正的实现原理和步骤，真是惭愧。从零开始理解View的绘制过程,从计算，布局，绘制，展示来分析。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -246,8 +247,42 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>理解View的绘制过程,从计算，绘制，展示来分析</p>
+        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>学习Android有一段时间了，知道了怎么使用activity、layout等但是却不知道真正的实现原理和步骤，真是惭愧。<br>从零开始理解View的绘制过程,从计算，布局，绘制，展示来分析。</p>
 <a id="more"></a>
+<h1 id="Activity的绘制流程"><code>Activity</code>的绘制流程</h1><p>我们在手机上显示一个界面的时候会用到四大组建之一的<code>Activity</code>,我们在写好布局’layout_main’后。我们会通过在<code>onCreate()</code>中<br>调用<code>setContentView(layout_main)</code>来显示出来我们写好的布局。但是为什么调用后就会这样显示???。当时我是很迷茫的。</p>
+<p>下面源码来自(Android 5.1.1[API 22])</p>
+<p>首先来看看<code>Activity</code>源码中的·setContentView(int layoutResID)`方法</p>
+<p>源码中提供了三个重载方法</p>
+<pre><code><span class="comment">/**
+ * Set the activity content from a layout resource.  The resource will be
+ * inflated, adding all top-level views to the activity.
+ *
+ * <span class="doctag">@param</span> layoutResID Resource ID to be inflated.
+ *
+ * <span class="doctag">@see</span> #setContentView(android.view.View)
+ * <span class="doctag">@see</span> #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
+ */</span>
+
+<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(<span class="keyword">int</span> layoutResID)</span> </span>{
+    getWindow().setContentView(layoutResID);
+    initWindowDecorActionBar();
+}
+
+ <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(View view)</span> </span>{
+    getWindow().setContentView(view);
+    initWindowDecorActionBar();
+}
+
+
+ <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(View view, ViewGroup.LayoutParams params)</span> </span>{
+    getWindow().setContentView(view, params);
+    initWindowDecorActionBar();
+}
+</code></pre><p>从中可以知道都会先执行 <code>getWindow().setContentView(layoutResID)</code>,然后执行<br><code>initWindowDecorActionBar()</code>方法。其中会调用<code>getWindow()</code>的方法。<br><code>getWindow()</code>会返回一个<code>Window</code></p>
+<pre><code><span class="keyword">public</span> <span class="function">Window <span class="title">getWindow</span><span class="params">()</span> </span>{
+   <span class="keyword">return</span> mWindow;
+}
+</code></pre><p>这里的<code>Window</code>类为一个抽象类,跟踪代码发现mWindow会返回一个PhoneWindow。<br>mWindow = PolicyManager.makeNewWindow(this);<br>他们之间的关系可以如图表示：<br><img src="http://7xkko2.com1.z0.glb.clouddn.com/drawview/drawactivity.png"></p>
 </span>
       
     </div>
@@ -413,7 +448,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Activity的绘制流程"><span class="nav-number">2.</span> <span class="nav-text">Activity的绘制流程</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
