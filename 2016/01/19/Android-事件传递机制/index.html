@@ -45,8 +45,8 @@
 <meta property="og:url" content="http://yoursite.com/2016/01/19/Android-事件传递机制/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
 <meta property="og:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
-<meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent.png">
-<meta property="og:updated_time" content="2016-01-19T03:09:15.111Z">
+<meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent_1.png">
+<meta property="og:updated_time" content="2016-01-19T03:43:23.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 事件传递机制">
 <meta name="twitter:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
@@ -249,7 +249,7 @@
       
         <span itemprop="articleBody"><p>当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。</p>
 <a id="more"></a>
-<h3 id="准备">准备</h3><p>首先准备如图的布局。其中<code>GROUPA</code>为<code>GROUPB</code>、<code>VIEWC</code>的父类，<code>GROUPB</code>为<code>VIEWC</code>的父类<br><img src="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent.png"></p>
+<h3 id="准备">准备</h3><p>首先准备如图的布局。其中<code>GROUPA</code>为<code>GROUPB</code>、<code>VIEWC</code>的父类，<code>GROUPB</code>为<code>VIEWC</code>的父类<br><img src="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent_1.png"></p>
 <p>模拟角色：</p>
 <p>经理-&gt;最外层<code>ViewGroupA</code><br>组长-&gt;中间层<code>ViewGroupB</code><br>你-&gt;最底层的码农<code>ViewC</code></p>
 <p>模拟：<br>经理分派任务，下属处理这个任务的过程。<br>先来看看代码</p>
@@ -347,7 +347,87 @@
     }
 
 }
-</code></pre><h3 id="分析">分析</h3></span>
+</code></pre><h3 id="分析">分析</h3><h4 id="情景1：">情景1：</h4><p>不做任何修改直接点击<code>ViewC</code><br>Log信息如下<br>    I/joker: GroupA-DispatchTouchEvent<br>    I/joker: GroupA-onInterceptTouchEvent<br>    I/joker: GroupB-DispatchTouchEvent<br>    I/joker: GroupB-onInterceptTouchEvent<br>    I/joker: ViewC-DispatchTouchEvent<br>    I/joker: ViewC-onTouchEvent<br>    I/joker: GroupB-onTouchEvent<br>    I/joker: GroupA-onTouchEvent</p>
+<p>Log信息看出，正常情况，事件传递顺序：<br>经理 –&gt; 组长 –&gt; 你，先执行dispatchTouchEvent（分发），再执行onInterceptTouchEvent（拦截）</p>
+<p>事件处理顺序：<br>你 –&gt; 组长 –&gt; 经理，事件处理都是执行onTouchEvent（处理）。</p>
+<p>事件传递返回值：true，拦截，交给自己的onTouchEvent处理；false，不拦截，传给下属。</p>
+<p>事件处理返回值：true，自己搞定，不用上报上司；false，上报上司处理。</p>
+<p>初始返回都是false。</p>
+<p>事件传递，dispatchTouchEvent一般不太会改写，只关心onInterceptTouchEvent。</p>
+<h4 id="情景2：">情景2：</h4><p>经理觉得太简单自己处理<br>既<code>ViewGroupA</code>里<code>onInterceptTouchEvent</code>返回true，我们看下Log信息：</p>
+<pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onTouchEvent</span>
+</code></pre><p>经理把事情做完不会在交给下面的人处理。</p>
+<h4 id="情景3：">情景3：</h4><p>经理交给组长，组长觉得太简单自己处理</p>
+<p>既<code>ViewGroupB</code>里<code>onInterceptTouchEvent</code>返回true，我们看下Log信息：</p>
+<pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-onTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onTouchEvent</span>
+</code></pre><p>组长把事情做完不会再交给下面的人处理。</p>
+<h4 id="情景4">情景4</h4><p>组长觉得你做的太烂了，不敢给经理上报<br>即<code>ViewGroupB</code>里<code>onTouchEvent</code>返回true，我们看下Log信息：</p>
+<pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">ViewC-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">ViewC-onTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-onTouchEvent</span>
+</code></pre><p>事件处理经过你和组长，到组长那里就结束了。</p>
+<h4 id="情景5：">情景5：</h4><p>你迫于压力，辞职不干了，任务闲置<br>即<code>ViewC</code>里<code>onTouchEvent</code>返回true，我们看下Log信息：</p>
+<pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">ViewC-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">ViewC-onTouchEvent</span>
+</code></pre><p>由于你辞职了，任务就被闲置到你这里就结束了而不会上报给上级了。</p>
+<p>到此已经分析完整个过程不会在那样一头雾水。</p>
+<h3 id="再分析">再分析</h3><p>给三个view添加ontouch事件<br>    public class MainActivity extends AppCompatActivity {</p>
+<pre><code>    <span class="keyword">private</span> ViewGroupA a;
+    <span class="keyword">private</span> ViewGroupB b;
+    <span class="keyword">private</span> ViewC c;
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{
+        <span class="keyword">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        a = (ViewGroupA) findViewById(R.id.groupa);
+        b = (ViewGroupB) findViewById(R.id.groupb);
+        c = (ViewC) findViewById(R.id.viewc);
+        a.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
+            <span class="annotation">@Override</span>
+            <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
+                Log.i(<span class="string">"joker"</span>, <span class="string">"A被点击了"</span>);
+                <span class="keyword">return</span> <span class="keyword">false</span>;
+            }
+        });
+        b.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
+            <span class="annotation">@Override</span>
+            <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
+                Log.i(<span class="string">"joker"</span>, <span class="string">"B被点击了"</span>);
+                <span class="keyword">return</span> <span class="keyword">false</span>;
+            }
+        });
+        c.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
+            <span class="annotation">@Override</span>
+            <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
+                Log.i(<span class="string">"joker"</span>, <span class="string">"C被点击了"</span>);
+                <span class="keyword">return</span> <span class="keyword">false</span>;
+            }
+        });
+    }
+
+}
+</code></pre><p>在不修改的情况下默认会打印什么？<br>让我们看Log：</p>
+<pre><code><span class="attribute">I/joker</span>: <span class="string">C被点击了</span>
+<span class="attribute">I/joker</span>: <span class="string">B被点击了</span>
+<span class="attribute">I/joker</span>: <span class="string">A被点击了</span>
+</code></pre><p>由此证实了onTouch是从下到上。<br>我们只想让C的信息打印又怎么修改呢?<br>相信大家已经有了很清晰的思路了只需要<code>ViewC</code>的onTouch事件返回true;<br>那让C的信息不显示呢？<br>那就需要B进行拦截。只需要把<code>ViewGroupB</code>的onInterceptTouchEvent事件返回true;<br>到此已经明白了事件分发传递的机制。<br>    感谢《Android群英传》和小小龙博客</p>
+</span>
       
     </div>
 
@@ -564,7 +644,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#情景1："><span class="nav-number">2.1.</span> <span class="nav-text">情景1：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情景2："><span class="nav-number">2.2.</span> <span class="nav-text">情景2：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情景3："><span class="nav-number">2.3.</span> <span class="nav-text">情景3：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情景4"><span class="nav-number">2.4.</span> <span class="nav-text">情景4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情景5："><span class="nav-number">2.5.</span> <span class="nav-text">情景5：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再分析"><span class="nav-number">3.</span> <span class="nav-text">再分析</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
