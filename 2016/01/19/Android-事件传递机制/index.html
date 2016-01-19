@@ -45,8 +45,8 @@
 <meta property="og:url" content="http://yoursite.com/2016/01/19/Android-事件传递机制/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
 <meta property="og:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
-<meta property="og:image" content="http://yoursite.com/http7xkko2.com1.z0.glb.clouddn.comdrawview%2Fdispatchtouchevent.png">
-<meta property="og:updated_time" content="2016-01-19T03:07:35.839Z">
+<meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent.png">
+<meta property="og:updated_time" content="2016-01-19T03:09:15.111Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 事件传递机制">
 <meta name="twitter:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
@@ -249,7 +249,7 @@
       
         <span itemprop="articleBody"><p>当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。</p>
 <a id="more"></a>
-<h3 id="准备">准备</h3><p>首先准备如图的布局。其中<code>GROUPA</code>为<code>GROUPB</code>、<code>VIEWC</code>的父类，<code>GROUPB</code>为<code>VIEWC</code>的父类<br><img src="http7xkko2.com1.z0.glb.clouddn.comdrawview%2Fdispatchtouchevent.png"></p>
+<h3 id="准备">准备</h3><p>首先准备如图的布局。其中<code>GROUPA</code>为<code>GROUPB</code>、<code>VIEWC</code>的父类，<code>GROUPB</code>为<code>VIEWC</code>的父类<br><img src="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent.png"></p>
 <p>模拟角色：</p>
 <p>经理-&gt;最外层<code>ViewGroupA</code><br>组长-&gt;中间层<code>ViewGroupB</code><br>你-&gt;最底层的码农<code>ViewC</code></p>
 <p>模拟：<br>经理分派任务，下属处理这个任务的过程。<br>先来看看代码</p>
