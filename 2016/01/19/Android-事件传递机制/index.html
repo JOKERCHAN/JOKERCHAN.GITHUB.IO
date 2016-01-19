@@ -46,7 +46,7 @@
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
 <meta property="og:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
 <meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent_1.png">
-<meta property="og:updated_time" content="2016-01-19T03:43:23.423Z">
+<meta property="og:updated_time" content="2016-01-19T03:45:10.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 事件传递机制">
 <meta name="twitter:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
@@ -254,7 +254,7 @@
 <p>经理-&gt;最外层<code>ViewGroupA</code><br>组长-&gt;中间层<code>ViewGroupB</code><br>你-&gt;最底层的码农<code>ViewC</code></p>
 <p>模拟：<br>经理分派任务，下属处理这个任务的过程。<br>先来看看代码</p>
 <p>ViewGroup级别比较高，比View多一个onInterceptTouchEvent（拦截）。</p>
-<p><code>ViewGroupA</code><br>    public class ViewGroupA extends RelativeLayout{</p>
+<p><code>ViewGroupA</code><br>        public class ViewGroupA extends RelativeLayout{</p>
 <pre><code>    <span class="function"><span class="keyword">public</span> <span class="title">ViewGroupA</span><span class="params">(Context context)</span> </span>{
         <span class="keyword">super</span>(context);
     }
@@ -320,7 +320,7 @@
     }
 
 }
-</code></pre><p><code>ViewC</code><br>    public class ViewC extends View {</p>
+</code></pre><p><code>ViewC</code><br>        public class ViewC extends View {</p>
 <pre><code>    <span class="function"><span class="keyword">public</span> <span class="title">ViewC</span><span class="params">(Context context)</span> </span>{
         <span class="keyword">super</span>(context);
     }
@@ -386,7 +386,7 @@
 <span class="attribute">I/joker</span>: <span class="string">ViewC-onTouchEvent</span>
 </code></pre><p>由于你辞职了，任务就被闲置到你这里就结束了而不会上报给上级了。</p>
 <p>到此已经分析完整个过程不会在那样一头雾水。</p>
-<h3 id="再分析">再分析</h3><p>给三个view添加ontouch事件<br>    public class MainActivity extends AppCompatActivity {</p>
+<h3 id="再分析">再分析</h3><p>给三个view添加ontouch事件<br>        public class MainActivity extends AppCompatActivity {</p>
 <pre><code>    <span class="keyword">private</span> ViewGroupA a;
     <span class="keyword">private</span> ViewGroupB b;
     <span class="keyword">private</span> ViewC c;
