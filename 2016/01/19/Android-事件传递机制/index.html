@@ -46,7 +46,7 @@
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
 <meta property="og:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
 <meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent_1.png">
-<meta property="og:updated_time" content="2016-01-19T03:47:39.543Z">
+<meta property="og:updated_time" content="2016-01-19T03:48:28.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 事件传递机制">
 <meta name="twitter:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
@@ -254,37 +254,39 @@
 <p>经理-&gt;最外层<code>ViewGroupA</code><br>组长-&gt;中间层<code>ViewGroupB</code><br>你-&gt;最底层的码农<code>ViewC</code></p>
 <p>模拟：<br>经理分派任务，下属处理这个任务的过程。<br>先来看看代码</p>
 <p>ViewGroup级别比较高，比View多一个onInterceptTouchEvent（拦截）。</p>
-<p><code>ViewGroupA</code><br>        public class ViewGroupA extends RelativeLayout{</p>
-<pre><code>    <span class="function"><span class="keyword">public</span> <span class="title">ViewGroupA</span><span class="params">(Context context)</span> </span>{
-        <span class="keyword">super</span>(context);
-    }
+<p><code>ViewGroupA</code></p>
+<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewGroupA</span> <span class="keyword">extends</span> <span class="title">RelativeLayout</span></span>{
 
-    <span class="function"><span class="keyword">public</span> <span class="title">ViewGroupA</span><span class="params">(Context context, AttributeSet attrs)</span> </span>{
-        <span class="keyword">super</span>(context, attrs);
-    }
+        <span class="function"><span class="keyword">public</span> <span class="title">ViewGroupA</span><span class="params">(Context context)</span> </span>{
+            <span class="keyword">super</span>(context);
+        }
 
-    <span class="function"><span class="keyword">public</span> <span class="title">ViewGroupA</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>{
-        <span class="keyword">super</span>(context, attrs, defStyleAttr);
-    }
+        <span class="function"><span class="keyword">public</span> <span class="title">ViewGroupA</span><span class="params">(Context context, AttributeSet attrs)</span> </span>{
+            <span class="keyword">super</span>(context, attrs);
+        }
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
-        Log.i(<span class="string">"joker"</span>,<span class="string">"GroupA-DispatchTouchEvent"</span>);
-        <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">dispatchTouchEvent</span><span class="params">(ev)</span></span>;
-    }
+        <span class="function"><span class="keyword">public</span> <span class="title">ViewGroupA</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>{
+            <span class="keyword">super</span>(context, attrs, defStyleAttr);
+        }
+
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
+            Log.i(<span class="string">"joker"</span>,<span class="string">"GroupA-DispatchTouchEvent"</span>);
+            <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">dispatchTouchEvent</span><span class="params">(ev)</span></span>;
+        }
 
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>{
-        Log.i(<span class="string">"joker"</span>,<span class="string">"GroupA-onTouchEvent"</span>);
-        <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">onTouchEvent</span><span class="params">(event)</span></span>;
-    }
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>{
+            Log.i(<span class="string">"joker"</span>,<span class="string">"GroupA-onTouchEvent"</span>);
+            <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">onTouchEvent</span><span class="params">(event)</span></span>;
+        }
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onInterceptTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
-        Log.i(<span class="string">"joker"</span>,<span class="string">"GroupA-onInterceptTouchEvent"</span>);
-        <span class="keyword">return</span> <span class="keyword">true</span>;
-    }
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onInterceptTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
+            Log.i(<span class="string">"joker"</span>,<span class="string">"GroupA-onInterceptTouchEvent"</span>);
+            <span class="keyword">return</span> <span class="keyword">true</span>;
+        }
 }
 </code></pre><p><code>ViewGroupB</code></p>
 <pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewGroupB</span> <span class="keyword">extends</span> <span class="title">RelativeLayout</span> </span>{
@@ -320,35 +322,45 @@
     }
 
 }
-</code></pre><p><code>ViewC</code><br>        public class ViewC extends View {</p>
-<pre><code>    <span class="function"><span class="keyword">public</span> <span class="title">ViewC</span><span class="params">(Context context)</span> </span>{
-        <span class="keyword">super</span>(context);
-    }
+</code></pre><p><code>ViewC</code></p>
+<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewC</span> <span class="keyword">extends</span> <span class="title">View</span> </span>{
 
-    <span class="function"><span class="keyword">public</span> <span class="title">ViewC</span><span class="params">(Context context, AttributeSet attrs)</span> </span>{
-        <span class="keyword">super</span>(context, attrs);
-    }
+        <span class="function"><span class="keyword">public</span> <span class="title">ViewC</span><span class="params">(Context context)</span> </span>{
+            <span class="keyword">super</span>(context);
+        }
 
-    <span class="function"><span class="keyword">public</span> <span class="title">ViewC</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>{
-        <span class="keyword">super</span>(context, attrs, defStyleAttr);
-    }
+        <span class="function"><span class="keyword">public</span> <span class="title">ViewC</span><span class="params">(Context context, AttributeSet attrs)</span> </span>{
+            <span class="keyword">super</span>(context, attrs);
+        }
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
-        Log.i(<span class="string">"joker"</span>, <span class="string">"ViewC-DispatchTouchEvent"</span>);
-        <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">dispatchTouchEvent</span><span class="params">(ev)</span></span>;
-    }
+        <span class="function"><span class="keyword">public</span> <span class="title">ViewC</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>{
+            <span class="keyword">super</span>(context, attrs, defStyleAttr);
+        }
+
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
+            Log.i(<span class="string">"joker"</span>, <span class="string">"ViewC-DispatchTouchEvent"</span>);
+            <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">dispatchTouchEvent</span><span class="params">(ev)</span></span>;
+        }
 
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>{
-        Log.i(<span class="string">"joker"</span>, <span class="string">"ViewC-onTouchEvent"</span>);
-        <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">onTouchEvent</span><span class="params">(event)</span></span>;
-    }
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>{
+            Log.i(<span class="string">"joker"</span>, <span class="string">"ViewC-onTouchEvent"</span>);
+            <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">onTouchEvent</span><span class="params">(event)</span></span>;
+        }
 
 }
-</code></pre><h3 id="分析">分析</h3><h4 id="情景1：">情景1：</h4><p>不做任何修改直接点击<code>ViewC</code><br>Log信息如下<br>    I/joker: GroupA-DispatchTouchEvent<br>    I/joker: GroupA-onInterceptTouchEvent<br>    I/joker: GroupB-DispatchTouchEvent<br>    I/joker: GroupB-onInterceptTouchEvent<br>    I/joker: ViewC-DispatchTouchEvent<br>    I/joker: ViewC-onTouchEvent<br>    I/joker: GroupB-onTouchEvent<br>    I/joker: GroupA-onTouchEvent</p>
-<p>Log信息看出，正常情况，事件传递顺序：<br>经理 –&gt; 组长 –&gt; 你，先执行dispatchTouchEvent（分发），再执行onInterceptTouchEvent（拦截）</p>
+</code></pre><h3 id="分析">分析</h3><h4 id="情景1：">情景1：</h4><p>不做任何修改直接点击<code>ViewC</code><br>Log信息如下</p>
+<pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">ViewC-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">ViewC-onTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-onTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onTouchEvent</span>
+</code></pre><p>Log信息看出，正常情况，事件传递顺序：<br>经理 –&gt; 组长 –&gt; 你，先执行dispatchTouchEvent（分发），再执行onInterceptTouchEvent（拦截）</p>
 <p>事件处理顺序：<br>你 –&gt; 组长 –&gt; 经理，事件处理都是执行onTouchEvent（处理）。</p>
 <p>事件传递返回值：true，拦截，交给自己的onTouchEvent处理；false，不拦截，传给下属。</p>
 <p>事件处理返回值：true，自己搞定，不用上报上司；false，上报上司处理。</p>
