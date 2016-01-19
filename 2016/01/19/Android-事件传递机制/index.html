@@ -46,7 +46,7 @@
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
 <meta property="og:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
 <meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent_1.png">
-<meta property="og:updated_time" content="2016-01-19T03:45:10.775Z">
+<meta property="og:updated_time" content="2016-01-19T03:46:58.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 事件传递机制">
 <meta name="twitter:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
@@ -347,8 +347,16 @@
     }
 
 }
-</code></pre><h3 id="分析">分析</h3><h4 id="情景1：">情景1：</h4><p>不做任何修改直接点击<code>ViewC</code><br>Log信息如下<br>    I/joker: GroupA-DispatchTouchEvent<br>    I/joker: GroupA-onInterceptTouchEvent<br>    I/joker: GroupB-DispatchTouchEvent<br>    I/joker: GroupB-onInterceptTouchEvent<br>    I/joker: ViewC-DispatchTouchEvent<br>    I/joker: ViewC-onTouchEvent<br>    I/joker: GroupB-onTouchEvent<br>    I/joker: GroupA-onTouchEvent</p>
-<p>Log信息看出，正常情况，事件传递顺序：<br>经理 –&gt; 组长 –&gt; 你，先执行dispatchTouchEvent（分发），再执行onInterceptTouchEvent（拦截）</p>
+</code></pre><h3 id="分析">分析</h3><h4 id="情景1：">情景1：</h4><p>不做任何修改直接点击<code>ViewC</code><br>Log信息如下</p>
+<pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-onInterceptTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">ViewC-DispatchTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">ViewC-onTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupB-onTouchEvent</span>
+<span class="attribute">I/joker</span>: <span class="string">GroupA-onTouchEvent</span>
+</code></pre><p>Log信息看出，正常情况，事件传递顺序：<br>经理 –&gt; 组长 –&gt; 你，先执行dispatchTouchEvent（分发），再执行onInterceptTouchEvent（拦截）</p>
 <p>事件处理顺序：<br>你 –&gt; 组长 –&gt; 经理，事件处理都是执行onTouchEvent（处理）。</p>
 <p>事件传递返回值：true，拦截，交给自己的onTouchEvent处理；false，不拦截，传给下属。</p>
 <p>事件处理返回值：true，自己搞定，不用上报上司；false，上报上司处理。</p>
@@ -386,40 +394,40 @@
 <span class="attribute">I/joker</span>: <span class="string">ViewC-onTouchEvent</span>
 </code></pre><p>由于你辞职了，任务就被闲置到你这里就结束了而不会上报给上级了。</p>
 <p>到此已经分析完整个过程不会在那样一头雾水。</p>
-<h3 id="再分析">再分析</h3><p>给三个view添加ontouch事件<br>        public class MainActivity extends AppCompatActivity {</p>
-<pre><code>    <span class="keyword">private</span> ViewGroupA a;
-    <span class="keyword">private</span> ViewGroupB b;
-    <span class="keyword">private</span> ViewC c;
+<h3 id="再分析">再分析</h3><p>给三个view添加ontouch事件<br>    public class MainActivity extends AppCompatActivity {</p>
+<pre><code>        <span class="keyword">private</span> ViewGroupA a;
+        <span class="keyword">private</span> ViewGroupB b;
+        <span class="keyword">private</span> ViewC c;
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{
-        <span class="keyword">super</span>.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        a = (ViewGroupA) findViewById(R.id.groupa);
-        b = (ViewGroupB) findViewById(R.id.groupb);
-        c = (ViewC) findViewById(R.id.viewc);
-        a.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
-            <span class="annotation">@Override</span>
-            <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
-                Log.i(<span class="string">"joker"</span>, <span class="string">"A被点击了"</span>);
-                <span class="keyword">return</span> <span class="keyword">false</span>;
-            }
-        });
-        b.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
-            <span class="annotation">@Override</span>
-            <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
-                Log.i(<span class="string">"joker"</span>, <span class="string">"B被点击了"</span>);
-                <span class="keyword">return</span> <span class="keyword">false</span>;
-            }
-        });
-        c.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
-            <span class="annotation">@Override</span>
-            <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
-                Log.i(<span class="string">"joker"</span>, <span class="string">"C被点击了"</span>);
-                <span class="keyword">return</span> <span class="keyword">false</span>;
-            }
-        });
-    }
+        <span class="annotation">@Override</span>
+        <span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{
+            <span class="keyword">super</span>.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            a = (ViewGroupA) findViewById(R.id.groupa);
+            b = (ViewGroupB) findViewById(R.id.groupb);
+            c = (ViewC) findViewById(R.id.viewc);
+            a.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
+                <span class="annotation">@Override</span>
+                <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
+                    Log.i(<span class="string">"joker"</span>, <span class="string">"A被点击了"</span>);
+                    <span class="keyword">return</span> <span class="keyword">false</span>;
+                }
+            });
+            b.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
+                <span class="annotation">@Override</span>
+                <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
+                    Log.i(<span class="string">"joker"</span>, <span class="string">"B被点击了"</span>);
+                    <span class="keyword">return</span> <span class="keyword">false</span>;
+                }
+            });
+            c.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
+                <span class="annotation">@Override</span>
+                <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
+                    Log.i(<span class="string">"joker"</span>, <span class="string">"C被点击了"</span>);
+                    <span class="keyword">return</span> <span class="keyword">false</span>;
+                }
+            });
+        }
 
 }
 </code></pre><p>在不修改的情况下默认会打印什么？<br>让我们看Log：</p>
