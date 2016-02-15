@@ -41,13 +41,12 @@
 
 <meta name="description" content="放弃的时候，想想为何开始">
 <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:title" content="JOKERCHAN's ESSaY">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
 <meta property="og:description" content="放弃的时候，想想为何开始">
-<meta property="og:updated_time" content="2015-07-28T08:47:43.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="JOKERCHAN's ESSaY">
 <meta name="twitter:description" content="放弃的时候，想想为何开始">
 
 
@@ -58,13 +57,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    标签 | JOKERCHAN's ESSaY
-  
-</title>
+  <title> JOKERCHAN's ESSaY </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -92,7 +85,9 @@
 
 
 
-  <div class="container one-column ">
+  <div class="container one-column 
+   page-home 
+">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -189,20 +184,103 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <div id="posts" class="posts-expand">
-    
-    
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 19 个标签
-        </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/2016年计划/" style="font-size: 12px; color: #ccc">2016年计划</a> <a href="/tags/Actionbar/" style="font-size: 12px; color: #ccc">Actionbar</a> <a href="/tags/Android-Java/" style="font-size: 12px; color: #ccc">Android,Java</a> <a href="/tags/Code-Tools/" style="font-size: 12px; color: #ccc">Code Tools</a> <a href="/tags/Fragment/" style="font-size: 12px; color: #ccc">Fragment</a> <a href="/tags/Git-Server/" style="font-size: 12px; color: #ccc">Git Server</a> <a href="/tags/Git-协同开发-分支/" style="font-size: 12px; color: #ccc">Git,协同开发,分支</a> <a href="/tags/GitHub-Pages/" style="font-size: 12px; color: #ccc">GitHub Pages</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #ccc">Hexo</a> <a href="/tags/Image/" style="font-size: 12px; color: #ccc">Image</a> <a href="/tags/Java/" style="font-size: 12px; color: #ccc">Java</a> <a href="/tags/Relax/" style="font-size: 12px; color: #ccc">Relax</a> <a href="/tags/View-dispatchtouchevent/" style="font-size: 12px; color: #ccc">View,dispatchtouchevent</a> <a href="/tags/View-invalidate/" style="font-size: 12px; color: #ccc">View,invalidate()</a> <a href="/tags/Working/" style="font-size: 12px; color: #ccc">Working</a> <a href="/tags/代理/" style="font-size: 12px; color: #ccc">代理</a> <a href="/tags/动态代理/" style="font-size: 12px; color: #ccc">动态代理</a> <a href="/tags/背部-受伤/" style="font-size: 12px; color: #ccc">背部,受伤</a> <a href="/tags/胸肌/" style="font-size: 12px; color: #ccc">胸肌</a>
-        </div>
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/07/22/ANDROID FRAGMENT高效切换/" itemprop="url">
+                ANDROID FRAGMENT的切换（解决REPLACE的低效）
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-22T14:51:40+08:00" content="2015-07-22">
+            2015-07-22
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android/" itemprop="url" rel="index">
+                  <span itemprop="name">Android</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/22/ANDROID FRAGMENT高效切换/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/22/ANDROID FRAGMENT高效切换/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
       </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>在项目中切换<code>Fragment</code>，一直都是用<code>replace()</code>方法来替换<code>Fragment</code>。但是这样做有一个问题，每次切换的时候<code>Fragment</code>都会重新实列化，重新加载一次数据，这样做会非常消耗性能用用户的流量。</p>
+<p>官方文档解释说：<code>replace()</code>这个方法只是在上一个<code>Fragment</code>不再需要时采用的简便方法。<br>正确的切换方式是<code>add()</code>，切换时<code>hide()</code>，<code>add()</code>另一个<code>Fragment</code>；再次切换时，只需<code>hide()</code>当前，<code>show()</code>另一个。<br>这样就能做到多个<code>Fragment</code>切换不重新实例化：</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/22/ANDROID FRAGMENT高效切换/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-  </div>
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
 
  </div>
 
