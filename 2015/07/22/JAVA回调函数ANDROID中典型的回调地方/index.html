@@ -39,19 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="在计算机中回调函数是指通过函数参数传递到其他代码类的，某一块可执行代码的引用，这以设计允许了底层代码调用者在高层定义的子程序。
-在JAVA里面我们使用接口的方式来实现函数的回调。">
+<meta name="description" content="&amp;#x5728;&amp;#x8BA1;&amp;#x7B97;&amp;#x673A;&amp;#x4E2D;&amp;#x56DE;&amp;#x8C03;&amp;#x51FD;&amp;#x6570;&amp;#x662F;&amp;#x6307;&amp;#x901A;&amp;#x8FC7;&amp;#x51FD;&amp;#x6570;&amp;#x53C2;&amp;#x6570;&amp;#x4F20;&amp;#x9012;&amp;#x5230;&amp;#x5176;&amp;#x4ED6;&amp;#x4EE3;&amp;#x7801;&amp;#x7C7B;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA回调函数ANDROID中典型的回调地方">
 <meta property="og:url" content="http://yoursite.com/2015/07/22/JAVA回调函数ANDROID中典型的回调地方/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
-<meta property="og:description" content="在计算机中回调函数是指通过函数参数传递到其他代码类的，某一块可执行代码的引用，这以设计允许了底层代码调用者在高层定义的子程序。
-在JAVA里面我们使用接口的方式来实现函数的回调。">
+<meta property="og:description" content="&amp;#x5728;&amp;#x8BA1;&amp;#x7B97;&amp;#x673A;&amp;#x4E2D;&amp;#x56DE;&amp;#x8C03;&amp;#x51FD;&amp;#x6570;&amp;#x662F;&amp;#x6307;&amp;#x901A;&amp;#x8FC7;&amp;#x51FD;&amp;#x6570;&amp;#x53C2;&amp;#x6570;&amp;#x4F20;&amp;#x9012;&amp;#x5230;&amp;#x5176;&amp;#x4ED6;&amp;#x4EE3;&amp;#x7801;&amp;#x7C7B;">
 <meta property="og:updated_time" content="2015-07-23T08:37:57.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA回调函数ANDROID中典型的回调地方">
-<meta name="twitter:description" content="在计算机中回调函数是指通过函数参数传递到其他代码类的，某一块可执行代码的引用，这以设计允许了底层代码调用者在高层定义的子程序。
-在JAVA里面我们使用接口的方式来实现函数的回调。">
+<meta name="twitter:description" content="&amp;#x5728;&amp;#x8BA1;&amp;#x7B97;&amp;#x673A;&amp;#x4E2D;&amp;#x56DE;&amp;#x8C03;&amp;#x51FD;&amp;#x6570;&amp;#x662F;&amp;#x6307;&amp;#x901A;&amp;#x8FC7;&amp;#x51FD;&amp;#x6570;&amp;#x53C2;&amp;#x6570;&amp;#x4F20;&amp;#x9012;&amp;#x5230;&amp;#x5176;&amp;#x4ED6;&amp;#x4EE3;&amp;#x7801;&amp;#x7C7B;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -249,14 +246,14 @@
       
 
       
-        <span itemprop="articleBody"><p>在计算机中回调函数是指通过函数参数传递到其他代码类的，某一块可执行代码的引用，这以设计允许了底层代码调用者在高层定义的子程序。</p>
-<p>在<code>JAVA</code>里面我们使用接口的方式来实现函数的回调。</p>
+        <span itemprop="articleBody"><p>&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x662F;&#x6307;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x5230;&#x5176;&#x4ED6;&#x4EE3;&#x7801;&#x7C7B;&#x7684;&#xFF0C;&#x67D0;&#x4E00;&#x5757;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x4EE5;&#x8BBE;&#x8BA1;&#x5141;&#x8BB8;&#x4E86;&#x5E95;&#x5C42;&#x4EE3;&#x7801;&#x8C03;&#x7528;&#x8005;&#x5728;&#x9AD8;&#x5C42;&#x5B9A;&#x4E49;&#x7684;&#x5B50;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x5728;<code>JAVA</code>&#x91CC;&#x9762;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x63A5;&#x53E3;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x7684;&#x56DE;&#x8C03;&#x3002;</p>
 <a id="more"></a>
-<p>回调的通俗就是：程序员阿祥写了一段程序(<code>CallPerson</code>)其中有回调函数的接口(<code>PhoneCall</code>)，并且封装好了程序(<code>CallPerson</code>)。程序员阿呆写了程序(<code>MumCall</code>)要让</p>
-<p>阿祥写的程序(<code>CallPerson</code>)调用阿呆写的程序(<code>MumCall</code>)中的方法。于是阿祥的程序(<code>CallPerson</code>)通过程序中(<code>CallPerson</code>)的接口(<code>PhoneCall</code>)调用阿呆的程序(<code>MumCall</code>)的方法。</p>
-<p>列子如下：</p>
+<p>&#x56DE;&#x8C03;&#x7684;&#x901A;&#x4FD7;&#x5C31;&#x662F;&#xFF1A;&#x7A0B;&#x5E8F;&#x5458;&#x963F;&#x7965;&#x5199;&#x4E86;&#x4E00;&#x6BB5;&#x7A0B;&#x5E8F;(<code>CallPerson</code>)&#x5176;&#x4E2D;&#x6709;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x63A5;&#x53E3;(<code>PhoneCall</code>)&#xFF0C;&#x5E76;&#x4E14;&#x5C01;&#x88C5;&#x597D;&#x4E86;&#x7A0B;&#x5E8F;(<code>CallPerson</code>)&#x3002;&#x7A0B;&#x5E8F;&#x5458;&#x963F;&#x5446;&#x5199;&#x4E86;&#x7A0B;&#x5E8F;(<code>MumCall</code>)&#x8981;&#x8BA9;</p>
+<p>&#x963F;&#x7965;&#x5199;&#x7684;&#x7A0B;&#x5E8F;(<code>CallPerson</code>)&#x8C03;&#x7528;&#x963F;&#x5446;&#x5199;&#x7684;&#x7A0B;&#x5E8F;(<code>MumCall</code>)&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x4E8E;&#x662F;&#x963F;&#x7965;&#x7684;&#x7A0B;&#x5E8F;(<code>CallPerson</code>)&#x901A;&#x8FC7;&#x7A0B;&#x5E8F;&#x4E2D;(<code>CallPerson</code>)&#x7684;&#x63A5;&#x53E3;(<code>PhoneCall</code>)&#x8C03;&#x7528;&#x963F;&#x5446;&#x7684;&#x7A0B;&#x5E8F;(<code>MumCall</code>)&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5217;&#x5B50;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code><span class="comment">/**
- * 阿祥的程序CallPerson
+ * &#x963F;&#x7965;&#x7684;&#x7A0B;&#x5E8F;CallPerson
  * <span class="doctag">@author</span> joker.chan
  *
  */</span>
@@ -277,7 +274,7 @@
 
 
 <span class="comment">/**
- * 回调函数电话接口
+ * &#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7535;&#x8BDD;&#x63A5;&#x53E3;
  * <span class="doctag">@author</span> joker.chan
  *
  */</span>
@@ -288,7 +285,7 @@
 }
 
 <span class="comment">/**
- * 阿呆的程序MumCall
+ * &#x963F;&#x5446;&#x7684;&#x7A0B;&#x5E8F;MumCall
  * <span class="doctag">@author</span> joker.chan
  *
  */</span>
@@ -297,11 +294,11 @@
     <span class="annotation">@Override</span>
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">phonecall</span><span class="params">()</span> </span>{
         <span class="comment">// <span class="doctag">TODO</span> Auto-generated method stub</span>
-        System.out.println(<span class="string">"妈妈打电话叫你回家吃饭了!!!"</span>);
+        System.out.println(<span class="string">&quot;&#x5988;&#x5988;&#x6253;&#x7535;&#x8BDD;&#x53EB;&#x4F60;&#x56DE;&#x5BB6;&#x5403;&#x996D;&#x4E86;!!!&quot;</span>);
     }
 
 }
-</code></pre><p>调用方法：</p>
+</code></pre><p>&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
 <pre><code>public <span class="keyword">static</span> <span class="type">void</span> main(<span class="type">String</span>[] args) {
     // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
     <span class="type">MumCall</span> mc = new <span class="type">MumCall</span>();
@@ -309,22 +306,22 @@
     cp.phoneCall();
 
 }
-</code></pre><p>运行结果：</p>
-<p>妈妈打电话叫你回家吃饭了!!!</p>
-<p><code>Android</code>中回调函数的基本使用。</p>
-<p>1.按钮的监听</p>
+</code></pre><p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p>&#x5988;&#x5988;&#x6253;&#x7535;&#x8BDD;&#x53EB;&#x4F60;&#x56DE;&#x5BB6;&#x5403;&#x996D;&#x4E86;!!!</p>
+<p><code>Android</code>&#x4E2D;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x3002;</p>
+<p>1.&#x6309;&#x94AE;&#x7684;&#x76D1;&#x542C;</p>
 <pre><code>Button button = <span class="params">(Button)</span>this.findViewById<span class="params">(R.id.button)</span>;
 button.setOnClickListener<span class="params">(newButton.OnClickListener<span class="params">()</span> {
 
-    //回调函数
+    //&#x56DE;&#x8C03;&#x51FD;&#x6570;
     @override
     publicvoidonClick<span class="params">(View v)</span> {
-        buttonTextView.setText<span class="params">(<span class="string">"按钮被点击了"</span>)</span>;
+        buttonTextView.setText<span class="params">(<span class="string">&quot;&#x6309;&#x94AE;&#x88AB;&#x70B9;&#x51FB;&#x4E86;&quot;</span>)</span>;
     }
 })</span>;
-</code></pre><p>上面的代码给按钮加了一个事件监听器，这其实就是“回调”最常见的应用场景之一。我们自己不会显式地去调用<code>onClick</code></p>
-<p>方法。用户触发了该按钮的点击事件后，它会由Android系统来自动调用。</p>
-<p>2.生命周期函数</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7ED9;&#x6309;&#x94AE;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#xFF0C;&#x8FD9;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x201C;&#x56DE;&#x8C03;&#x201D;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E4B;&#x4E00;&#x3002;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x4E0D;&#x4F1A;&#x663E;&#x5F0F;&#x5730;&#x53BB;&#x8C03;&#x7528;<code>onClick</code></p>
+<p>&#x65B9;&#x6CD5;&#x3002;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x4E86;&#x8BE5;&#x6309;&#x94AE;&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x540E;&#xFF0C;&#x5B83;&#x4F1A;&#x7531;Android&#x7CFB;&#x7EDF;&#x6765;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x3002;</p>
+<p>2.&#x751F;&#x547D;&#x5468;&#x671F;&#x51FD;&#x6570;</p>
 <pre><code><span class="annotation">@Override</span>
 publicvoidonCreate(BundlesaveInstanceState) {
   <span class="keyword">super</span>.onCreate(saveInstanceState);
@@ -335,21 +332,21 @@ publicvoidonResume() {
   <span class="keyword">super</span>.onResume();
  <span class="comment">// You code...</span>
 }
-</code></pre><p><code>Activity</code>的整个生命周期基本上都说回调函数在发挥作用。</p>
-<p>优点：优点主要是将代码中变与不变的部分相分离,从而大大提高了程序的重用性和扩展性。</p>
-<p><code>Android</code>事件侦听器是视图<code>View</code>类的接口，包含一个单独的回调方法。这些方法将在视图中注册的侦听器被用户界面操作触发时由<code>Android</code>框架调用。</p>
-<p>回调方法被包含在<code>Android</code>事件侦听器接口中：</p>
-<p>例如,<code>Android</code> 的<code>view</code> 对象都含有一个命名为 <code>OnClickListener</code> 接口成员变量，用户的点击操作都会交给 <code>OnClickListener</code>的 <code>OnClick()</code>方法进行处理。</p>
-<p>开发者若需要对点击事件做处理，可以定义一个 <code>OnClickListener</code> 接口对象，赋给需要被点击的 view的接口成员变量<code>OnClickListener</code>，一般是用 <code>view</code>的<code>setOnClickListener()</code> 函数来完成这一操作。</p>
-<p>当有用户点击事件时，系统就会回调被点击<code>view</code>的<code>OnClickListener</code>接口成员的<code>OnClick()</code>方法。</p>
-<p>实例(对于<code>Android</code>界面上<code>Button</code>点击事件监听的模拟)：</p>
-<p>1.定义接口</p>
+</code></pre><p><code>Activity</code>&#x7684;&#x6574;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x8BF4;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5728;&#x53D1;&#x6325;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x4F18;&#x70B9;&#xFF1A;&#x4F18;&#x70B9;&#x4E3B;&#x8981;&#x662F;&#x5C06;&#x4EE3;&#x7801;&#x4E2D;&#x53D8;&#x4E0E;&#x4E0D;&#x53D8;&#x7684;&#x90E8;&#x5206;&#x76F8;&#x5206;&#x79BB;,&#x4ECE;&#x800C;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x4E86;&#x7A0B;&#x5E8F;&#x7684;&#x91CD;&#x7528;&#x6027;&#x548C;&#x6269;&#x5C55;&#x6027;&#x3002;</p>
+<p><code>Android</code>&#x4E8B;&#x4EF6;&#x4FA6;&#x542C;&#x5668;&#x662F;&#x89C6;&#x56FE;<code>View</code>&#x7C7B;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x5C06;&#x5728;&#x89C6;&#x56FE;&#x4E2D;&#x6CE8;&#x518C;&#x7684;&#x4FA6;&#x542C;&#x5668;&#x88AB;&#x7528;&#x6237;&#x754C;&#x9762;&#x64CD;&#x4F5C;&#x89E6;&#x53D1;&#x65F6;&#x7531;<code>Android</code>&#x6846;&#x67B6;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x88AB;&#x5305;&#x542B;&#x5728;<code>Android</code>&#x4E8B;&#x4EF6;&#x4FA6;&#x542C;&#x5668;&#x63A5;&#x53E3;&#x4E2D;&#xFF1A;</p>
+<p>&#x4F8B;&#x5982;,<code>Android</code> &#x7684;<code>view</code> &#x5BF9;&#x8C61;&#x90FD;&#x542B;&#x6709;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x4E3A; <code>OnClickListener</code> &#x63A5;&#x53E3;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x7528;&#x6237;&#x7684;&#x70B9;&#x51FB;&#x64CD;&#x4F5C;&#x90FD;&#x4F1A;&#x4EA4;&#x7ED9; <code>OnClickListener</code>&#x7684; <code>OnClick()</code>&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x5F00;&#x53D1;&#x8005;&#x82E5;&#x9700;&#x8981;&#x5BF9;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x505A;&#x5904;&#x7406;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; <code>OnClickListener</code> &#x63A5;&#x53E3;&#x5BF9;&#x8C61;&#xFF0C;&#x8D4B;&#x7ED9;&#x9700;&#x8981;&#x88AB;&#x70B9;&#x51FB;&#x7684; view&#x7684;&#x63A5;&#x53E3;&#x6210;&#x5458;&#x53D8;&#x91CF;<code>OnClickListener</code>&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x7528; <code>view</code>&#x7684;<code>setOnClickListener()</code> &#x51FD;&#x6570;&#x6765;&#x5B8C;&#x6210;&#x8FD9;&#x4E00;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x5F53;&#x6709;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C31;&#x4F1A;&#x56DE;&#x8C03;&#x88AB;&#x70B9;&#x51FB;<code>view</code>&#x7684;<code>OnClickListener</code>&#x63A5;&#x53E3;&#x6210;&#x5458;&#x7684;<code>OnClick()</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5B9E;&#x4F8B;(&#x5BF9;&#x4E8E;<code>Android</code>&#x754C;&#x9762;&#x4E0A;<code>Button</code>&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x7684;&#x6A21;&#x62DF;)&#xFF1A;</p>
+<p>1.&#x5B9A;&#x4E49;&#x63A5;&#x53E3;</p>
 <pre><code><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">OnClickListener</span> {
 
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OnClick</span>(<span class="params">Button b</span>)</span>;
 
 }
-</code></pre><p>2.定义<code>Button</code></p>
+</code></pre><p>2.&#x5B9A;&#x4E49;<code>Button</code></p>
 <pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Button</span> {
   OnClickListener listener;
 
@@ -360,7 +357,7 @@ publicvoidonResume() {
     <span class="keyword">this</span>.listener = listener;
   }
 }
-</code></pre><p>3.将接口对象<code>OnClickListener</code> 赋给 <code>Button</code>的接口成员</p>
+</code></pre><p>3.&#x5C06;&#x63A5;&#x53E3;&#x5BF9;&#x8C61;<code>OnClickListener</code> &#x8D4B;&#x7ED9; <code>Button</code>&#x7684;&#x63A5;&#x53E3;&#x6210;&#x5458;</p>
 <pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Activity</span> {
   <span class="function"><span class="keyword">public</span> <span class="title">Activity</span>(<span class="params"></span>) </span>{
 
@@ -370,7 +367,7 @@ publicvoidonResume() {
     button.setOnClickListener(<span class="keyword">new</span> OnClickListener(){
        @<span class="function">Override
        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OnClick</span>(<span class="params">Button b</span>) </span>{
-                 System.<span class="keyword">out</span>.println(<span class="string">"clicked"</span>);
+                 System.<span class="keyword">out</span>.println(<span class="string">&quot;clicked&quot;</span>);
        }   
     });
     button.click(); <span class="comment">//user click,System call button.click();</span>
@@ -483,21 +480,21 @@ publicvoidonResume() {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

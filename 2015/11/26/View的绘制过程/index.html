@@ -39,17 +39,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="前言学习Android有一段时间了，知道了怎么使用activity、layout等但是却不知道真正的实现原理和步骤，真是惭愧。从零开始理解View的绘制过程,从计算，布局，绘制，展示来分析。">
+<meta name="description" content="&amp;#x524D;&amp;#x8A00;&amp;#x5B66;&amp;#x4E60;Android&amp;#x6709;&amp;#x4E00;&amp;#x6BB5;&amp;#x65F6;&amp;#x95F4;&amp;#x4E86;&amp;#xFF0C;&amp;#x77E5;&amp;#x9053;&amp;#x4E86;&amp;#x600E;&amp;#x4E48;&amp;#x4F7F;&amp;#x7528;activity&amp;#x3001;layout&amp;#x7B49;&amp;#x4F46;&amp;#x662F;&amp;#x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="View的绘制过程">
 <meta property="og:url" content="http://yoursite.com/2015/11/26/View的绘制过程/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
-<meta property="og:description" content="前言学习Android有一段时间了，知道了怎么使用activity、layout等但是却不知道真正的实现原理和步骤，真是惭愧。从零开始理解View的绘制过程,从计算，布局，绘制，展示来分析。">
+<meta property="og:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x5B66;&amp;#x4E60;Android&amp;#x6709;&amp;#x4E00;&amp;#x6BB5;&amp;#x65F6;&amp;#x95F4;&amp;#x4E86;&amp;#xFF0C;&amp;#x77E5;&amp;#x9053;&amp;#x4E86;&amp;#x600E;&amp;#x4E48;&amp;#x4F7F;&amp;#x7528;activity&amp;#x3001;layout&amp;#x7B49;&amp;#x4F46;&amp;#x662F;&amp;#x">
 <meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/drawview/drawactivity.png">
 <meta property="og:updated_time" content="2015-11-26T03:21:17.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="View的绘制过程">
-<meta name="twitter:description" content="前言学习Android有一段时间了，知道了怎么使用activity、layout等但是却不知道真正的实现原理和步骤，真是惭愧。从零开始理解View的绘制过程,从计算，布局，绘制，展示来分析。">
+<meta name="twitter:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x5B66;&amp;#x4E60;Android&amp;#x6709;&amp;#x4E00;&amp;#x6BB5;&amp;#x65F6;&amp;#x95F4;&amp;#x4E86;&amp;#xFF0C;&amp;#x77E5;&amp;#x9053;&amp;#x4E86;&amp;#x600E;&amp;#x4E48;&amp;#x4F7F;&amp;#x7528;activity&amp;#x3001;layout&amp;#x7B49;&amp;#x4F46;&amp;#x662F;&amp;#x">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -247,12 +247,12 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>学习Android有一段时间了，知道了怎么使用activity、layout等但是却不知道真正的实现原理和步骤，真是惭愧。<br>从零开始理解View的绘制过程,从计算，布局，绘制，展示来分析。</p>
+        <span itemprop="articleBody"><h1 id="&#x524D;&#x8A00;">&#x524D;&#x8A00;</h1><p>&#x5B66;&#x4E60;Android&#x6709;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4E86;&#xFF0C;&#x77E5;&#x9053;&#x4E86;&#x600E;&#x4E48;&#x4F7F;&#x7528;activity&#x3001;layout&#x7B49;&#x4F46;&#x662F;&#x5374;&#x4E0D;&#x77E5;&#x9053;&#x771F;&#x6B63;&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x548C;&#x6B65;&#x9AA4;&#xFF0C;&#x771F;&#x662F;&#x60ED;&#x6127;&#x3002;<br>&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x7406;&#x89E3;View&#x7684;&#x7ED8;&#x5236;&#x8FC7;&#x7A0B;,&#x4ECE;&#x8BA1;&#x7B97;&#xFF0C;&#x5E03;&#x5C40;&#xFF0C;&#x7ED8;&#x5236;&#xFF0C;&#x5C55;&#x793A;&#x6765;&#x5206;&#x6790;&#x3002;</p>
 <a id="more"></a>
-<h1 id="Activity的绘制流程"><code>Activity</code>的绘制流程</h1><p>我们在手机上显示一个界面的时候会用到四大组建之一的<code>Activity</code>,我们在写好布局’layout_main’后。我们会通过在<code>onCreate()</code>中<br>调用<code>setContentView(layout_main)</code>来显示出来我们写好的布局。但是为什么调用后就会这样显示???。当时我是很迷茫的。</p>
-<p>下面源码来自(Android 5.1.1[API 22])</p>
-<h1 id="#">#</h1><p>首先来看看<code>Activity</code>源码中的·setContentView(int layoutResID)`方法</p>
-<p>源码中提供了三个重载方法</p>
+<h1 id="Activity&#x7684;&#x7ED8;&#x5236;&#x6D41;&#x7A0B;"><code>Activity</code>&#x7684;&#x7ED8;&#x5236;&#x6D41;&#x7A0B;</h1><p>&#x6211;&#x4EEC;&#x5728;&#x624B;&#x673A;&#x4E0A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x754C;&#x9762;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x7528;&#x5230;&#x56DB;&#x5927;&#x7EC4;&#x5EFA;&#x4E4B;&#x4E00;&#x7684;<code>Activity</code>,&#x6211;&#x4EEC;&#x5728;&#x5199;&#x597D;&#x5E03;&#x5C40;&#x2019;layout_main&#x2019;&#x540E;&#x3002;&#x6211;&#x4EEC;&#x4F1A;&#x901A;&#x8FC7;&#x5728;<code>onCreate()</code>&#x4E2D;<br>&#x8C03;&#x7528;<code>setContentView(layout_main)</code>&#x6765;&#x663E;&#x793A;&#x51FA;&#x6765;&#x6211;&#x4EEC;&#x5199;&#x597D;&#x7684;&#x5E03;&#x5C40;&#x3002;&#x4F46;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x8C03;&#x7528;&#x540E;&#x5C31;&#x4F1A;&#x8FD9;&#x6837;&#x663E;&#x793A;???&#x3002;&#x5F53;&#x65F6;&#x6211;&#x662F;&#x5F88;&#x8FF7;&#x832B;&#x7684;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6E90;&#x7801;&#x6765;&#x81EA;(Android 5.1.1[API 22])</p>
+<h1 id="#">#</h1><p>&#x9996;&#x5148;&#x6765;&#x770B;&#x770B;<code>Activity</code>&#x6E90;&#x7801;&#x4E2D;&#x7684;&#xB7;setContentView(int layoutResID)`&#x65B9;&#x6CD5;</p>
+<p>&#x6E90;&#x7801;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x4E2A;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5;</p>
 <pre><code><span class="comment">/**
  * Set the activity content from a layout resource.  The resource will be
  * inflated, adding all top-level views to the activity.
@@ -278,13 +278,13 @@
     getWindow().setContentView(view, params);
     initWindowDecorActionBar();
 }
-</code></pre><p>从中可以知道都会先执行 <code>getWindow().setContentView(layoutResID)</code>,然后执行<br><code>initWindowDecorActionBar()</code>方法。其中会调用<code>getWindow()</code>的方法。</p>
-<h1 id="#-1">#</h1><p><code>Activity</code>与<code>Window</code>的关系</p>
-<p><code>getWindow()</code>会返回一个<code>Window</code></p>
+</code></pre><p>&#x4ECE;&#x4E2D;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x90FD;&#x4F1A;&#x5148;&#x6267;&#x884C; <code>getWindow().setContentView(layoutResID)</code>,&#x7136;&#x540E;&#x6267;&#x884C;<br><code>initWindowDecorActionBar()</code>&#x65B9;&#x6CD5;&#x3002;&#x5176;&#x4E2D;&#x4F1A;&#x8C03;&#x7528;<code>getWindow()</code>&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<h1 id="#-1">#</h1><p><code>Activity</code>&#x4E0E;<code>Window</code>&#x7684;&#x5173;&#x7CFB;</p>
+<p><code>getWindow()</code>&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>Window</code></p>
 <pre><code><span class="keyword">public</span> <span class="function">Window <span class="title">getWindow</span><span class="params">()</span> </span>{
    <span class="keyword">return</span> mWindow;
 }
-</code></pre><p>这里的<code>Window</code>类为一个抽象类,跟踪代码发现mWindow会返回一个PhoneWindow。<br>mWindow = PolicyManager.makeNewWindow(this);<br>他们之间的关系可以如图表示：<br><img src="http://7xkko2.com1.z0.glb.clouddn.com/drawview/drawactivity.png"><br>上图解释：<br>Activity中有一个成员变量Window,他的实列化对象为PhoneWindow,PhoneWindow是抽象<br>Window的实现类,PhoneWindow里面有一个DecorView内部类,DecorView是FrameLayout的子类<br>，是所有应用窗口的根节点(根View).</p>
+</code></pre><p>&#x8FD9;&#x91CC;&#x7684;<code>Window</code>&#x7C7B;&#x4E3A;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;,&#x8DDF;&#x8E2A;&#x4EE3;&#x7801;&#x53D1;&#x73B0;mWindow&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;PhoneWindow&#x3002;<br>mWindow = PolicyManager.makeNewWindow(this);<br>&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x53EF;&#x4EE5;&#x5982;&#x56FE;&#x8868;&#x793A;&#xFF1A;<br><img src="http://7xkko2.com1.z0.glb.clouddn.com/drawview/drawactivity.png"><br>&#x4E0A;&#x56FE;&#x89E3;&#x91CA;&#xFF1A;<br>Activity&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x53D8;&#x91CF;Window,&#x4ED6;&#x7684;&#x5B9E;&#x5217;&#x5316;&#x5BF9;&#x8C61;&#x4E3A;PhoneWindow,PhoneWindow&#x662F;&#x62BD;&#x8C61;<br>Window&#x7684;&#x5B9E;&#x73B0;&#x7C7B;,PhoneWindow&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A;DecorView&#x5185;&#x90E8;&#x7C7B;,DecorView&#x662F;FrameLayout&#x7684;&#x5B50;&#x7C7B;<br>&#xFF0C;&#x662F;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7A97;&#x53E3;&#x7684;&#x6839;&#x8282;&#x70B9;(&#x6839;View).</p>
 </span>
       
     </div>
@@ -393,21 +393,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

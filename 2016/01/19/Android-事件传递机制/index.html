@@ -39,17 +39,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
+<meta name="description" content="&amp;#x5F53;&amp;#x591A;&amp;#x4E2A;view&amp;#x91CD;&amp;#x53E0;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x4E8B;&amp;#x4EF6;&amp;#x662F;&amp;#x600E;&amp;#x4E48;&amp;#x5904;&amp;#x7406;&amp;#x7684;&amp;#xFF0C;&amp;#x53C8;&amp;#x662F;&amp;#x600E;&amp;#x4E48;&amp;#x4F20;&amp;#x9012;&amp;#x7684;&amp;#xF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 事件传递机制">
 <meta property="og:url" content="http://yoursite.com/2016/01/19/Android-事件传递机制/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
-<meta property="og:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
+<meta property="og:description" content="&amp;#x5F53;&amp;#x591A;&amp;#x4E2A;view&amp;#x91CD;&amp;#x53E0;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x4E8B;&amp;#x4EF6;&amp;#x662F;&amp;#x600E;&amp;#x4E48;&amp;#x5904;&amp;#x7406;&amp;#x7684;&amp;#xFF0C;&amp;#x53C8;&amp;#x662F;&amp;#x600E;&amp;#x4E48;&amp;#x4F20;&amp;#x9012;&amp;#x7684;&amp;#xF">
 <meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent_1.png">
 <meta property="og:updated_time" content="2016-01-19T03:49:58.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 事件传递机制">
-<meta name="twitter:description" content="当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。">
+<meta name="twitter:description" content="&amp;#x5F53;&amp;#x591A;&amp;#x4E2A;view&amp;#x91CD;&amp;#x53E0;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x4E8B;&amp;#x4EF6;&amp;#x662F;&amp;#x600E;&amp;#x4E48;&amp;#x5904;&amp;#x7406;&amp;#x7684;&amp;#xFF0C;&amp;#x53C8;&amp;#x662F;&amp;#x600E;&amp;#x4E48;&amp;#x4F20;&amp;#x9012;&amp;#x7684;&amp;#xF">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -247,13 +247,13 @@
       
 
       
-        <span itemprop="articleBody"><p>当多个view重叠的时候事件是怎么处理的，又是怎么传递的，以前是一头雾水，今天通过列子进行了分析。</p>
+        <span itemprop="articleBody"><p>&#x5F53;&#x591A;&#x4E2A;view&#x91CD;&#x53E0;&#x7684;&#x65F6;&#x5019;&#x4E8B;&#x4EF6;&#x662F;&#x600E;&#x4E48;&#x5904;&#x7406;&#x7684;&#xFF0C;&#x53C8;&#x662F;&#x600E;&#x4E48;&#x4F20;&#x9012;&#x7684;&#xFF0C;&#x4EE5;&#x524D;&#x662F;&#x4E00;&#x5934;&#x96FE;&#x6C34;&#xFF0C;&#x4ECA;&#x5929;&#x901A;&#x8FC7;&#x5217;&#x5B50;&#x8FDB;&#x884C;&#x4E86;&#x5206;&#x6790;&#x3002;</p>
 <a id="more"></a>
-<h3 id="准备">准备</h3><p>首先准备如图的布局。其中<code>GROUPA</code>为<code>GROUPB</code>、<code>VIEWC</code>的父类，<code>GROUPB</code>为<code>VIEWC</code>的父类<br><img src="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent_1.png"></p>
-<p>模拟角色：</p>
-<p>经理-&gt;最外层<code>ViewGroupA</code><br>组长-&gt;中间层<code>ViewGroupB</code><br>你-&gt;最底层的码农<code>ViewC</code></p>
-<p>模拟：<br>经理分派任务，下属处理这个任务的过程。<br>先来看看代码</p>
-<p>ViewGroup级别比较高，比View多一个onInterceptTouchEvent（拦截）。</p>
+<h3 id="&#x51C6;&#x5907;">&#x51C6;&#x5907;</h3><p>&#x9996;&#x5148;&#x51C6;&#x5907;&#x5982;&#x56FE;&#x7684;&#x5E03;&#x5C40;&#x3002;&#x5176;&#x4E2D;<code>GROUPA</code>&#x4E3A;<code>GROUPB</code>&#x3001;<code>VIEWC</code>&#x7684;&#x7236;&#x7C7B;&#xFF0C;<code>GROUPB</code>&#x4E3A;<code>VIEWC</code>&#x7684;&#x7236;&#x7C7B;<br><img src="http://7xkko2.com1.z0.glb.clouddn.com/drawview%2Fdispatchtouchevent_1.png"></p>
+<p>&#x6A21;&#x62DF;&#x89D2;&#x8272;&#xFF1A;</p>
+<p>&#x7ECF;&#x7406;-&gt;&#x6700;&#x5916;&#x5C42;<code>ViewGroupA</code><br>&#x7EC4;&#x957F;-&gt;&#x4E2D;&#x95F4;&#x5C42;<code>ViewGroupB</code><br>&#x4F60;-&gt;&#x6700;&#x5E95;&#x5C42;&#x7684;&#x7801;&#x519C;<code>ViewC</code></p>
+<p>&#x6A21;&#x62DF;&#xFF1A;<br>&#x7ECF;&#x7406;&#x5206;&#x6D3E;&#x4EFB;&#x52A1;&#xFF0C;&#x4E0B;&#x5C5E;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x8FC7;&#x7A0B;&#x3002;<br>&#x5148;&#x6765;&#x770B;&#x770B;&#x4EE3;&#x7801;</p>
+<p>ViewGroup&#x7EA7;&#x522B;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x6BD4;View&#x591A;&#x4E00;&#x4E2A;onInterceptTouchEvent&#xFF08;&#x62E6;&#x622A;&#xFF09;&#x3002;</p>
 <p><code>ViewGroupA</code></p>
 <pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewGroupA</span> <span class="keyword">extends</span> <span class="title">RelativeLayout</span></span>{
 
@@ -271,20 +271,20 @@
 
         <span class="annotation">@Override</span>
         <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
-            Log.i(<span class="string">"joker"</span>,<span class="string">"GroupA-DispatchTouchEvent"</span>);
+            Log.i(<span class="string">&quot;joker&quot;</span>,<span class="string">&quot;GroupA-DispatchTouchEvent&quot;</span>);
             <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">dispatchTouchEvent</span><span class="params">(ev)</span></span>;
         }
 
 
         <span class="annotation">@Override</span>
         <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>{
-            Log.i(<span class="string">"joker"</span>,<span class="string">"GroupA-onTouchEvent"</span>);
+            Log.i(<span class="string">&quot;joker&quot;</span>,<span class="string">&quot;GroupA-onTouchEvent&quot;</span>);
             <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">onTouchEvent</span><span class="params">(event)</span></span>;
         }
 
         <span class="annotation">@Override</span>
         <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onInterceptTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
-            Log.i(<span class="string">"joker"</span>,<span class="string">"GroupA-onInterceptTouchEvent"</span>);
+            Log.i(<span class="string">&quot;joker&quot;</span>,<span class="string">&quot;GroupA-onInterceptTouchEvent&quot;</span>);
             <span class="keyword">return</span> <span class="keyword">true</span>;
         }
 }
@@ -304,20 +304,20 @@
 
     <span class="annotation">@Override</span>
     <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
-        Log.i(<span class="string">"joker"</span>, <span class="string">"GroupB-DispatchTouchEvent"</span>);
+        Log.i(<span class="string">&quot;joker&quot;</span>, <span class="string">&quot;GroupB-DispatchTouchEvent&quot;</span>);
         <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">dispatchTouchEvent</span><span class="params">(ev)</span></span>;
     }
 
 
     <span class="annotation">@Override</span>
     <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>{
-        Log.i(<span class="string">"joker"</span>, <span class="string">"GroupB-onTouchEvent"</span>);
+        Log.i(<span class="string">&quot;joker&quot;</span>, <span class="string">&quot;GroupB-onTouchEvent&quot;</span>);
         <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">onTouchEvent</span><span class="params">(event)</span></span>;
     }
 
     <span class="annotation">@Override</span>
     <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onInterceptTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
-        Log.i(<span class="string">"joker"</span>, <span class="string">"GroupB-onInterceptTouchEvent"</span>);
+        Log.i(<span class="string">&quot;joker&quot;</span>, <span class="string">&quot;GroupB-onInterceptTouchEvent&quot;</span>);
         <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">onInterceptTouchEvent</span><span class="params">(ev)</span></span>;
     }
 
@@ -339,19 +339,19 @@
 
         <span class="annotation">@Override</span>
         <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>{
-            Log.i(<span class="string">"joker"</span>, <span class="string">"ViewC-DispatchTouchEvent"</span>);
+            Log.i(<span class="string">&quot;joker&quot;</span>, <span class="string">&quot;ViewC-DispatchTouchEvent&quot;</span>);
             <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">dispatchTouchEvent</span><span class="params">(ev)</span></span>;
         }
 
 
         <span class="annotation">@Override</span>
         <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>{
-            Log.i(<span class="string">"joker"</span>, <span class="string">"ViewC-onTouchEvent"</span>);
+            Log.i(<span class="string">&quot;joker&quot;</span>, <span class="string">&quot;ViewC-onTouchEvent&quot;</span>);
             <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">onTouchEvent</span><span class="params">(event)</span></span>;
         }
 
 }
-</code></pre><h3 id="分析">分析</h3><h4 id="情景1：">情景1：</h4><p>不做任何修改直接点击<code>ViewC</code>Log信息如下</p>
+</code></pre><h3 id="&#x5206;&#x6790;">&#x5206;&#x6790;</h3><h4 id="&#x60C5;&#x666F;1&#xFF1A;">&#x60C5;&#x666F;1&#xFF1A;</h4><p>&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x4FEE;&#x6539;&#x76F4;&#x63A5;&#x70B9;&#x51FB;<code>ViewC</code>Log&#x4FE1;&#x606F;&#x5982;&#x4E0B;</p>
 <pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupB-DispatchTouchEvent</span>
@@ -360,27 +360,27 @@
 <span class="attribute">I/joker</span>: <span class="string">ViewC-onTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupB-onTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupA-onTouchEvent</span>
-</code></pre><p>Log信息看出，正常情况，事件传递顺序：<br>经理 –&gt; 组长 –&gt; 你，先执行dispatchTouchEvent（分发），再执行onInterceptTouchEvent（拦截）</p>
-<p>事件处理顺序：<br>你 –&gt; 组长 –&gt; 经理，事件处理都是执行onTouchEvent（处理）。</p>
-<p>事件传递返回值：true，拦截，交给自己的onTouchEvent处理；false，不拦截，传给下属。</p>
-<p>事件处理返回值：true，自己搞定，不用上报上司；false，上报上司处理。</p>
-<p>初始返回都是false。</p>
-<p>事件传递，dispatchTouchEvent一般不太会改写，只关心onInterceptTouchEvent。</p>
-<h4 id="情景2：">情景2：</h4><p>经理觉得太简单自己处理<br>既<code>ViewGroupA</code>里<code>onInterceptTouchEvent</code>返回true，我们看下Log信息：</p>
+</code></pre><p>Log&#x4FE1;&#x606F;&#x770B;&#x51FA;&#xFF0C;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#xFF0C;&#x4E8B;&#x4EF6;&#x4F20;&#x9012;&#x987A;&#x5E8F;&#xFF1A;<br>&#x7ECF;&#x7406; &#x2013;&gt; &#x7EC4;&#x957F; &#x2013;&gt; &#x4F60;&#xFF0C;&#x5148;&#x6267;&#x884C;dispatchTouchEvent&#xFF08;&#x5206;&#x53D1;&#xFF09;&#xFF0C;&#x518D;&#x6267;&#x884C;onInterceptTouchEvent&#xFF08;&#x62E6;&#x622A;&#xFF09;</p>
+<p>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x987A;&#x5E8F;&#xFF1A;<br>&#x4F60; &#x2013;&gt; &#x7EC4;&#x957F; &#x2013;&gt; &#x7ECF;&#x7406;&#xFF0C;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x90FD;&#x662F;&#x6267;&#x884C;onTouchEvent&#xFF08;&#x5904;&#x7406;&#xFF09;&#x3002;</p>
+<p>&#x4E8B;&#x4EF6;&#x4F20;&#x9012;&#x8FD4;&#x56DE;&#x503C;&#xFF1A;true&#xFF0C;&#x62E6;&#x622A;&#xFF0C;&#x4EA4;&#x7ED9;&#x81EA;&#x5DF1;&#x7684;onTouchEvent&#x5904;&#x7406;&#xFF1B;false&#xFF0C;&#x4E0D;&#x62E6;&#x622A;&#xFF0C;&#x4F20;&#x7ED9;&#x4E0B;&#x5C5E;&#x3002;</p>
+<p>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x8FD4;&#x56DE;&#x503C;&#xFF1A;true&#xFF0C;&#x81EA;&#x5DF1;&#x641E;&#x5B9A;&#xFF0C;&#x4E0D;&#x7528;&#x4E0A;&#x62A5;&#x4E0A;&#x53F8;&#xFF1B;false&#xFF0C;&#x4E0A;&#x62A5;&#x4E0A;&#x53F8;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x521D;&#x59CB;&#x8FD4;&#x56DE;&#x90FD;&#x662F;false&#x3002;</p>
+<p>&#x4E8B;&#x4EF6;&#x4F20;&#x9012;&#xFF0C;dispatchTouchEvent&#x4E00;&#x822C;&#x4E0D;&#x592A;&#x4F1A;&#x6539;&#x5199;&#xFF0C;&#x53EA;&#x5173;&#x5FC3;onInterceptTouchEvent&#x3002;</p>
+<h4 id="&#x60C5;&#x666F;2&#xFF1A;">&#x60C5;&#x666F;2&#xFF1A;</h4><p>&#x7ECF;&#x7406;&#x89C9;&#x5F97;&#x592A;&#x7B80;&#x5355;&#x81EA;&#x5DF1;&#x5904;&#x7406;<br>&#x65E2;<code>ViewGroupA</code>&#x91CC;<code>onInterceptTouchEvent</code>&#x8FD4;&#x56DE;true&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x4E0B;Log&#x4FE1;&#x606F;&#xFF1A;</p>
 <pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupA-onTouchEvent</span>
-</code></pre><p>经理把事情做完不会在交给下面的人处理。</p>
-<h4 id="情景3：">情景3：</h4><p>经理交给组长，组长觉得太简单自己处理</p>
-<p>既<code>ViewGroupB</code>里<code>onInterceptTouchEvent</code>返回true，我们看下Log信息：</p>
+</code></pre><p>&#x7ECF;&#x7406;&#x628A;&#x4E8B;&#x60C5;&#x505A;&#x5B8C;&#x4E0D;&#x4F1A;&#x5728;&#x4EA4;&#x7ED9;&#x4E0B;&#x9762;&#x7684;&#x4EBA;&#x5904;&#x7406;&#x3002;</p>
+<h4 id="&#x60C5;&#x666F;3&#xFF1A;">&#x60C5;&#x666F;3&#xFF1A;</h4><p>&#x7ECF;&#x7406;&#x4EA4;&#x7ED9;&#x7EC4;&#x957F;&#xFF0C;&#x7EC4;&#x957F;&#x89C9;&#x5F97;&#x592A;&#x7B80;&#x5355;&#x81EA;&#x5DF1;&#x5904;&#x7406;</p>
+<p>&#x65E2;<code>ViewGroupB</code>&#x91CC;<code>onInterceptTouchEvent</code>&#x8FD4;&#x56DE;true&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x4E0B;Log&#x4FE1;&#x606F;&#xFF1A;</p>
 <pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupB-DispatchTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupB-onInterceptTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupB-onTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupA-onTouchEvent</span>
-</code></pre><p>组长把事情做完不会再交给下面的人处理。</p>
-<h4 id="情景4">情景4</h4><p>组长觉得你做的太烂了，不敢给经理上报<br>即<code>ViewGroupB</code>里<code>onTouchEvent</code>返回true，我们看下Log信息：</p>
+</code></pre><p>&#x7EC4;&#x957F;&#x628A;&#x4E8B;&#x60C5;&#x505A;&#x5B8C;&#x4E0D;&#x4F1A;&#x518D;&#x4EA4;&#x7ED9;&#x4E0B;&#x9762;&#x7684;&#x4EBA;&#x5904;&#x7406;&#x3002;</p>
+<h4 id="&#x60C5;&#x666F;4">&#x60C5;&#x666F;4</h4><p>&#x7EC4;&#x957F;&#x89C9;&#x5F97;&#x4F60;&#x505A;&#x7684;&#x592A;&#x70C2;&#x4E86;&#xFF0C;&#x4E0D;&#x6562;&#x7ED9;&#x7ECF;&#x7406;&#x4E0A;&#x62A5;<br>&#x5373;<code>ViewGroupB</code>&#x91CC;<code>onTouchEvent</code>&#x8FD4;&#x56DE;true&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x4E0B;Log&#x4FE1;&#x606F;&#xFF1A;</p>
 <pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupB-DispatchTouchEvent</span>
@@ -388,17 +388,17 @@
 <span class="attribute">I/joker</span>: <span class="string">ViewC-DispatchTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">ViewC-onTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupB-onTouchEvent</span>
-</code></pre><p>事件处理经过你和组长，到组长那里就结束了。</p>
-<h4 id="情景5：">情景5：</h4><p>你迫于压力，辞职不干了，任务闲置<br>即<code>ViewC</code>里<code>onTouchEvent</code>返回true，我们看下Log信息：</p>
+</code></pre><p>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7ECF;&#x8FC7;&#x4F60;&#x548C;&#x7EC4;&#x957F;&#xFF0C;&#x5230;&#x7EC4;&#x957F;&#x90A3;&#x91CC;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x3002;</p>
+<h4 id="&#x60C5;&#x666F;5&#xFF1A;">&#x60C5;&#x666F;5&#xFF1A;</h4><p>&#x4F60;&#x8FEB;&#x4E8E;&#x538B;&#x529B;&#xFF0C;&#x8F9E;&#x804C;&#x4E0D;&#x5E72;&#x4E86;&#xFF0C;&#x4EFB;&#x52A1;&#x95F2;&#x7F6E;<br>&#x5373;<code>ViewC</code>&#x91CC;<code>onTouchEvent</code>&#x8FD4;&#x56DE;true&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x4E0B;Log&#x4FE1;&#x606F;&#xFF1A;</p>
 <pre><code><span class="attribute">I/joker</span>: <span class="string">GroupA-DispatchTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupA-onInterceptTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupB-DispatchTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">GroupB-onInterceptTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">ViewC-DispatchTouchEvent</span>
 <span class="attribute">I/joker</span>: <span class="string">ViewC-onTouchEvent</span>
-</code></pre><p>由于你辞职了，任务就被闲置到你这里就结束了而不会上报给上级了。</p>
-<p>到此已经分析完整个过程不会在那样一头雾水。</p>
-<h3 id="再分析">再分析</h3><p>给三个view添加ontouch事件</p>
+</code></pre><p>&#x7531;&#x4E8E;&#x4F60;&#x8F9E;&#x804C;&#x4E86;&#xFF0C;&#x4EFB;&#x52A1;&#x5C31;&#x88AB;&#x95F2;&#x7F6E;&#x5230;&#x4F60;&#x8FD9;&#x91CC;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x800C;&#x4E0D;&#x4F1A;&#x4E0A;&#x62A5;&#x7ED9;&#x4E0A;&#x7EA7;&#x4E86;&#x3002;</p>
+<p>&#x5230;&#x6B64;&#x5DF2;&#x7ECF;&#x5206;&#x6790;&#x5B8C;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E0D;&#x4F1A;&#x5728;&#x90A3;&#x6837;&#x4E00;&#x5934;&#x96FE;&#x6C34;&#x3002;</p>
+<h3 id="&#x518D;&#x5206;&#x6790;">&#x518D;&#x5206;&#x6790;</h3><p>&#x7ED9;&#x4E09;&#x4E2A;view&#x6DFB;&#x52A0;ontouch&#x4E8B;&#x4EF6;</p>
 <pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>{
 
         <span class="keyword">private</span> ViewGroupA a;
@@ -415,33 +415,33 @@
             a.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
                 <span class="annotation">@Override</span>
                 <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
-                    Log.i(<span class="string">"joker"</span>, <span class="string">"A被点击了"</span>);
+                    Log.i(<span class="string">&quot;joker&quot;</span>, <span class="string">&quot;A&#x88AB;&#x70B9;&#x51FB;&#x4E86;&quot;</span>);
                     <span class="keyword">return</span> <span class="keyword">false</span>;
                 }
             });
             b.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
                 <span class="annotation">@Override</span>
                 <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
-                    Log.i(<span class="string">"joker"</span>, <span class="string">"B被点击了"</span>);
+                    Log.i(<span class="string">&quot;joker&quot;</span>, <span class="string">&quot;B&#x88AB;&#x70B9;&#x51FB;&#x4E86;&quot;</span>);
                     <span class="keyword">return</span> <span class="keyword">false</span>;
                 }
             });
             c.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
                 <span class="annotation">@Override</span>
                 <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>{
-                    Log.i(<span class="string">"joker"</span>, <span class="string">"C被点击了"</span>);
+                    Log.i(<span class="string">&quot;joker&quot;</span>, <span class="string">&quot;C&#x88AB;&#x70B9;&#x51FB;&#x4E86;&quot;</span>);
                     <span class="keyword">return</span> <span class="keyword">false</span>;
                 }
             });
         }
 
 }
-</code></pre><p>在不修改的情况下默认会打印什么？<br>让我们看Log：</p>
-<pre><code><span class="attribute">I/joker</span>: <span class="string">C被点击了</span>
-<span class="attribute">I/joker</span>: <span class="string">B被点击了</span>
-<span class="attribute">I/joker</span>: <span class="string">A被点击了</span>
-</code></pre><p>由此证实了onTouch是从下到上。<br>我们只想让C的信息打印又怎么修改呢?<br>相信大家已经有了很清晰的思路了只需要<code>ViewC</code>的onTouch事件返回true;<br>那让C的信息不显示呢？<br>那就需要B进行拦截。只需要把<code>ViewGroupB</code>的onInterceptTouchEvent事件返回true;<br>到此已经明白了事件分发传递的机制。</p>
-<p><code>感谢《Android群英传》和小小龙博客</code></p>
+</code></pre><p>&#x5728;&#x4E0D;&#x4FEE;&#x6539;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x9ED8;&#x8BA4;&#x4F1A;&#x6253;&#x5370;&#x4EC0;&#x4E48;&#xFF1F;<br>&#x8BA9;&#x6211;&#x4EEC;&#x770B;Log&#xFF1A;</p>
+<pre><code><span class="attribute">I/joker</span>: <span class="string">C&#x88AB;&#x70B9;&#x51FB;&#x4E86;</span>
+<span class="attribute">I/joker</span>: <span class="string">B&#x88AB;&#x70B9;&#x51FB;&#x4E86;</span>
+<span class="attribute">I/joker</span>: <span class="string">A&#x88AB;&#x70B9;&#x51FB;&#x4E86;</span>
+</code></pre><p>&#x7531;&#x6B64;&#x8BC1;&#x5B9E;&#x4E86;onTouch&#x662F;&#x4ECE;&#x4E0B;&#x5230;&#x4E0A;&#x3002;<br>&#x6211;&#x4EEC;&#x53EA;&#x60F3;&#x8BA9;C&#x7684;&#x4FE1;&#x606F;&#x6253;&#x5370;&#x53C8;&#x600E;&#x4E48;&#x4FEE;&#x6539;&#x5462;?<br>&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x5F88;&#x6E05;&#x6670;&#x7684;&#x601D;&#x8DEF;&#x4E86;&#x53EA;&#x9700;&#x8981;<code>ViewC</code>&#x7684;onTouch&#x4E8B;&#x4EF6;&#x8FD4;&#x56DE;true;<br>&#x90A3;&#x8BA9;C&#x7684;&#x4FE1;&#x606F;&#x4E0D;&#x663E;&#x793A;&#x5462;&#xFF1F;<br>&#x90A3;&#x5C31;&#x9700;&#x8981;B&#x8FDB;&#x884C;&#x62E6;&#x622A;&#x3002;&#x53EA;&#x9700;&#x8981;&#x628A;<code>ViewGroupB</code>&#x7684;onInterceptTouchEvent&#x4E8B;&#x4EF6;&#x8FD4;&#x56DE;true;<br>&#x5230;&#x6B64;&#x5DF2;&#x7ECF;&#x660E;&#x767D;&#x4E86;&#x4E8B;&#x4EF6;&#x5206;&#x53D1;&#x4F20;&#x9012;&#x7684;&#x673A;&#x5236;&#x3002;</p>
+<p><code>&#x611F;&#x8C22;&#x300A;Android&#x7FA4;&#x82F1;&#x4F20;&#x300B;&#x548C;&#x5C0F;&#x5C0F;&#x9F99;&#x535A;&#x5BA2;</code></p>
 </span>
       
     </div>
@@ -550,21 +550,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

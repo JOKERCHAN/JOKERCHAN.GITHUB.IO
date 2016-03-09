@@ -246,31 +246,31 @@
       
 
       
-        <span itemprop="articleBody"><p>该文章转自：<a href="http://www.cnblogs.com/jqyp/archive/2010/08/20/1805041.html" target="_blank" rel="external">http://www.cnblogs.com/jqyp/archive/2010/08/20/1805041.html</a></p>
-<h1 id="JAVA的动态代理">JAVA的动态代理</h1><h2 id="代理模式">代理模式</h2><p>代理模式是常用的java设计模式，他的特征是代理类与委托类有同样的接口，代理类主要负责为委托类预处理消息、过滤消息、把消息转发给委托类，以及事后处理消息等。代理类与委托类之间通常会存在关联关系，一个代理类的对象与一个委托类的对象关联，代理类的对象本身并不真正实现服务，而是通过调用委托类的对象的相关方法，来提供特定的服务。 </p>
+        <span itemprop="articleBody"><p>&#x8BE5;&#x6587;&#x7AE0;&#x8F6C;&#x81EA;&#xFF1A;<a href="http://www.cnblogs.com/jqyp/archive/2010/08/20/1805041.html" target="_blank" rel="external">http://www.cnblogs.com/jqyp/archive/2010/08/20/1805041.html</a></p>
+<h1 id="JAVA&#x7684;&#x52A8;&#x6001;&#x4EE3;&#x7406;">JAVA&#x7684;&#x52A8;&#x6001;&#x4EE3;&#x7406;</h1><h2 id="&#x4EE3;&#x7406;&#x6A21;&#x5F0F;">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;</h2><p>&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x662F;&#x5E38;&#x7528;&#x7684;java&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x4ED6;&#x7684;&#x7279;&#x5F81;&#x662F;&#x4EE3;&#x7406;&#x7C7B;&#x4E0E;&#x59D4;&#x6258;&#x7C7B;&#x6709;&#x540C;&#x6837;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4EE3;&#x7406;&#x7C7B;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x4E3A;&#x59D4;&#x6258;&#x7C7B;&#x9884;&#x5904;&#x7406;&#x6D88;&#x606F;&#x3001;&#x8FC7;&#x6EE4;&#x6D88;&#x606F;&#x3001;&#x628A;&#x6D88;&#x606F;&#x8F6C;&#x53D1;&#x7ED9;&#x59D4;&#x6258;&#x7C7B;&#xFF0C;&#x4EE5;&#x53CA;&#x4E8B;&#x540E;&#x5904;&#x7406;&#x6D88;&#x606F;&#x7B49;&#x3002;&#x4EE3;&#x7406;&#x7C7B;&#x4E0E;&#x59D4;&#x6258;&#x7C7B;&#x4E4B;&#x95F4;&#x901A;&#x5E38;&#x4F1A;&#x5B58;&#x5728;&#x5173;&#x8054;&#x5173;&#x7CFB;&#xFF0C;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x4E0E;&#x4E00;&#x4E2A;&#x59D4;&#x6258;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#xFF0C;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x5E76;&#x4E0D;&#x771F;&#x6B63;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#xFF0C;&#x800C;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x59D4;&#x6258;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#xFF0C;&#x6765;&#x63D0;&#x4F9B;&#x7279;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x3002; </p>
 <a id="more"></a>
-<p>按照代理的创建时期，代理类可以分为两种。 </p>
-<h3 id="静态代理">静态代理</h3><p>由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。 </p>
-<h3 id="动态代理">动态代理</h3><p>在程序运行时，运用反射机制动态创建而成。 </p>
-<p>首先看一下静态代理：</p>
-<p>1、Count.java</p>
+<p>&#x6309;&#x7167;&#x4EE3;&#x7406;&#x7684;&#x521B;&#x5EFA;&#x65F6;&#x671F;&#xFF0C;&#x4EE3;&#x7406;&#x7C7B;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x3002; </p>
+<h3 id="&#x9759;&#x6001;&#x4EE3;&#x7406;">&#x9759;&#x6001;&#x4EE3;&#x7406;</h3><p>&#x7531;&#x7A0B;&#x5E8F;&#x5458;&#x521B;&#x5EFA;&#x6216;&#x7279;&#x5B9A;&#x5DE5;&#x5177;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x518D;&#x5BF9;&#x5176;&#x7F16;&#x8BD1;&#x3002;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x524D;&#xFF0C;&#x4EE3;&#x7406;&#x7C7B;&#x7684;.class&#x6587;&#x4EF6;&#x5C31;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E86;&#x3002; </p>
+<h3 id="&#x52A8;&#x6001;&#x4EE3;&#x7406;">&#x52A8;&#x6001;&#x4EE3;&#x7406;</h3><p>&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x8FD0;&#x7528;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x800C;&#x6210;&#x3002; </p>
+<p>&#x9996;&#x5148;&#x770B;&#x4E00;&#x4E0B;&#x9759;&#x6001;&#x4EE3;&#x7406;&#xFF1A;</p>
+<p>1&#x3001;Count.java</p>
 <pre><code><span class="comment">/** 
- * 定义一个账户接口 
+ * &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8D26;&#x6237;&#x63A5;&#x53E3; 
  *  
  * @author Administrator 
  *  
  */</span>  
 <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">Count</span> {  
-    <span class="comment">// 查看账户方法  </span>
+    <span class="comment">// &#x67E5;&#x770B;&#x8D26;&#x6237;&#x65B9;&#x6CD5;  </span>
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryCount</span>(<span class="params"></span>)</span>;  
 
-    <span class="comment">// 修改账户方法  </span>
+    <span class="comment">// &#x4FEE;&#x6539;&#x8D26;&#x6237;&#x65B9;&#x6CD5;  </span>
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateCount</span>(<span class="params"></span>)</span>;  
 
 }
-</code></pre><p>2、CountImpl.java</p>
+</code></pre><p>2&#x3001;CountImpl.java</p>
 <pre><code><span class="comment">/** 
- * 委托类(包含业务逻辑) 
+ * &#x59D4;&#x6258;&#x7C7B;(&#x5305;&#x542B;&#x4E1A;&#x52A1;&#x903B;&#x8F91;) 
  *  
  * <span class="doctag">@author</span> Administrator 
  *  
@@ -279,25 +279,25 @@
 
     <span class="annotation">@Override</span>  
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryCount</span><span class="params">()</span> </span>{  
-        System.out.println(<span class="string">"查看账户方法..."</span>);  
+        System.out.println(<span class="string">&quot;&#x67E5;&#x770B;&#x8D26;&#x6237;&#x65B9;&#x6CD5;...&quot;</span>);  
 
     }  
 
     <span class="annotation">@Override</span>  
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateCount</span><span class="params">()</span> </span>{  
-        System.out.println(<span class="string">"修改账户方法..."</span>);  
+        System.out.println(<span class="string">&quot;&#x4FEE;&#x6539;&#x8D26;&#x6237;&#x65B9;&#x6CD5;...&quot;</span>);  
 
     }  
 
 }  
 
-、CountProxy.java  
+&#x3001;CountProxy.java  
 <span class="keyword">package</span> net.battier.dao.impl;  
 
 <span class="keyword">import</span> net.battier.dao.Count;  
 
 <span class="comment">/** 
- * 这是一个代理类（增强CountImpl实现类） 
+ * &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#xFF08;&#x589E;&#x5F3A;CountImpl&#x5B9E;&#x73B0;&#x7C7B;&#xFF09; 
  *  
  * <span class="doctag">@author</span> Administrator 
  *  
@@ -306,7 +306,7 @@
     <span class="keyword">private</span> CountImpl countImpl;  
 
     <span class="comment">/** 
-     * 覆盖默认构造器 
+     * &#x8986;&#x76D6;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x5668; 
      *  
      * <span class="doctag">@param</span> countImpl 
      */</span>  
@@ -316,30 +316,30 @@
 
     <span class="annotation">@Override</span>  
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryCount</span><span class="params">()</span> </span>{  
-        System.out.println(<span class="string">"事务处理之前"</span>);  
-        <span class="comment">// 调用委托类的方法;  </span>
+        System.out.println(<span class="string">&quot;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E4B;&#x524D;&quot;</span>);  
+        <span class="comment">// &#x8C03;&#x7528;&#x59D4;&#x6258;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;;  </span>
         countImpl.queryCount();  
-        System.out.println(<span class="string">"事务处理之后"</span>);  
+        System.out.println(<span class="string">&quot;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E4B;&#x540E;&quot;</span>);  
     }  
 
     <span class="annotation">@Override</span>  
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateCount</span><span class="params">()</span> </span>{  
-        System.out.println(<span class="string">"事务处理之前"</span>);  
-        <span class="comment">// 调用委托类的方法;  </span>
+        System.out.println(<span class="string">&quot;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E4B;&#x524D;&quot;</span>);  
+        <span class="comment">// &#x8C03;&#x7528;&#x59D4;&#x6258;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;;  </span>
         countImpl.updateCount();  
-        System.out.println(<span class="string">"事务处理之后"</span>);  
+        System.out.println(<span class="string">&quot;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E4B;&#x540E;&quot;</span>);  
 
     }  
 
 }
-</code></pre><p>3、TestCount.java</p>
+</code></pre><p>3&#x3001;TestCount.java</p>
 <pre><code><span class="keyword">package</span> net.battier.test;  
 
 <span class="keyword">import</span> net.battier.dao.impl.CountImpl;  
 <span class="keyword">import</span> net.battier.dao.impl.CountProxy;  
 
 <span class="comment">/** 
- *测试Count类 
+ *&#x6D4B;&#x8BD5;Count&#x7C7B; 
  *  
  * <span class="doctag">@author</span> Administrator 
  *  
@@ -353,24 +353,24 @@
 
     }  
 }
-</code></pre><p>观察代码可以发现每一个代理类只能为一个接口服务，这样一来程序开发中必然会产生过多的代理，而且，所有的代理操作除了调用的方法不一样之外，其他的操作都一样，则此时肯定是重复代码。解决这一问题最好的做法是可以通过一个代理类完成全部的代理功能，那么此时就必须使用动态代理完成。 </p>
-<p>再来看一下动态代理：<br><code>JDK</code>动态代理中包含一个类和一个接口：<br><code>InvocationHandler</code>接口：<br><code>public interface InvocationHandler { 
+</code></pre><p>&#x89C2;&#x5BDF;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x6BCF;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#x53EA;&#x80FD;&#x4E3A;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x4E2D;&#x5FC5;&#x7136;&#x4F1A;&#x4EA7;&#x751F;&#x8FC7;&#x591A;&#x7684;&#x4EE3;&#x7406;&#xFF0C;&#x800C;&#x4E14;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7406;&#x64CD;&#x4F5C;&#x9664;&#x4E86;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x4E00;&#x6837;&#x4E4B;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x4E00;&#x6837;&#xFF0C;&#x5219;&#x6B64;&#x65F6;&#x80AF;&#x5B9A;&#x662F;&#x91CD;&#x590D;&#x4EE3;&#x7801;&#x3002;&#x89E3;&#x51B3;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#x6700;&#x597D;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#x5B8C;&#x6210;&#x5168;&#x90E8;&#x7684;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x90A3;&#x4E48;&#x6B64;&#x65F6;&#x5C31;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x5B8C;&#x6210;&#x3002; </p>
+<p>&#x518D;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#xFF1A;<br><code>JDK</code>&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x7C7B;&#x548C;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF1A;<br><code>InvocationHandler</code>&#x63A5;&#x53E3;&#xFF1A;<br><code>public interface InvocationHandler { 
 public Object invoke(Object proxy,Method method,Object[] args) throws Throwable; 
-}</code><br>参数说明：<br><code>Object proxy</code>：指被代理的对象。<br><code>Method method</code>：要调用的方法<br><code>Object[] args</code>：方法调用时所需要的参数 </p>
-<p>可以将<code>InvocationHandler</code>接口的子类想象成一个代理的最终操作类，替换掉<code>ProxySubject</code>。 </p>
-<p><code>Proxy</code>类：<br><code>Proxy</code>类是专门完成代理的操作类，可以通过此类为一个或多个接口动态地生成实现类，此类提供了如下的操作方法：<br><code>public static Object newProxyInstance
+}</code><br>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<br><code>Object proxy</code>&#xFF1A;&#x6307;&#x88AB;&#x4EE3;&#x7406;&#x7684;&#x5BF9;&#x8C61;&#x3002;<br><code>Method method</code>&#xFF1A;&#x8981;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;<br><code>Object[] args</code>&#xFF1A;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x65F6;&#x6240;&#x9700;&#x8981;&#x7684;&#x53C2;&#x6570; </p>
+<p>&#x53EF;&#x4EE5;&#x5C06;<code>InvocationHandler</code>&#x63A5;&#x53E3;&#x7684;&#x5B50;&#x7C7B;&#x60F3;&#x8C61;&#x6210;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7684;&#x6700;&#x7EC8;&#x64CD;&#x4F5C;&#x7C7B;&#xFF0C;&#x66FF;&#x6362;&#x6389;<code>ProxySubject</code>&#x3002; </p>
+<p><code>Proxy</code>&#x7C7B;&#xFF1A;<br><code>Proxy</code>&#x7C7B;&#x662F;&#x4E13;&#x95E8;&#x5B8C;&#x6210;&#x4EE3;&#x7406;&#x7684;&#x64CD;&#x4F5C;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6B64;&#x7C7B;&#x4E3A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x63A5;&#x53E3;&#x52A8;&#x6001;&#x5730;&#x751F;&#x6210;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x6B64;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x5982;&#x4E0B;&#x7684;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#xFF1A;<br><code>public static Object newProxyInstance
 (ClassLoader loader, Class&lt;?&gt;[] interfaces, InvocationHandler h) throws IllegalArgumentException</code></p>
-<p>参数说明：<br><code>ClassLoader loader</code>：类加载器<br><code>Class&lt;?&gt;[] interfaces</code>：得到全部的接口<br><code>InvocationHandler h</code>：得到<code>InvocationHandler</code>接口的子类实例 </p>
-<p>Ps:类加载器<br>在<code>Proxy</code>类中的<code>newProxyInstance()</code>方法中需要一个<code>ClassLoader</code>类的实例，<code>ClassLoader</code>实际上对应的是类加载器<br>在<code>Java</code>中主要有一下三种类加载器;<br><code>Booststrap ClassLoader</code>：此加载器采用<code>C++</code>编写，一般开发中是看不到的；<br><code>Extendsion ClassLoader</code>：用来进行扩展类的加载，一般对应的是<code>jre\lib\ext</code>目录中的类;<br><code>AppClassLoader</code>：(默认)加载<code>classpath</code>指定的类，是最常使用的是一种加载器。 </p>
-<p>动态代理<br>与静态代理类对照的是动态代理类，动态代理类的字节码在程序运行时由<code>Java</code>反射机制动态生成，无需程序员手工编写它的源代码。动态代理类不仅简化了编程工作，而且提高了软件系统的可扩展性，因为<code>Java</code>反射机制可以生成任意类型的动态代理类。<code>java.lang.reflect</code> 包中的<code>Proxy</code>类和<code>InvocationHandler</code>接口提供了生成动态代理类的能力。 </p>
-<p>动态代理示例: </p>
-<p>1、BookFacade.java </p>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<br><code>ClassLoader loader</code>&#xFF1A;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;<br><code>Class&lt;?&gt;[] interfaces</code>&#xFF1A;&#x5F97;&#x5230;&#x5168;&#x90E8;&#x7684;&#x63A5;&#x53E3;<br><code>InvocationHandler h</code>&#xFF1A;&#x5F97;&#x5230;<code>InvocationHandler</code>&#x63A5;&#x53E3;&#x7684;&#x5B50;&#x7C7B;&#x5B9E;&#x4F8B; </p>
+<p>Ps:&#x7C7B;&#x52A0;&#x8F7D;&#x5668;<br>&#x5728;<code>Proxy</code>&#x7C7B;&#x4E2D;&#x7684;<code>newProxyInstance()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x9700;&#x8981;&#x4E00;&#x4E2A;<code>ClassLoader</code>&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;<code>ClassLoader</code>&#x5B9E;&#x9645;&#x4E0A;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;<br>&#x5728;<code>Java</code>&#x4E2D;&#x4E3B;&#x8981;&#x6709;&#x4E00;&#x4E0B;&#x4E09;&#x79CD;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;;<br><code>Booststrap ClassLoader</code>&#xFF1A;&#x6B64;&#x52A0;&#x8F7D;&#x5668;&#x91C7;&#x7528;<code>C++</code>&#x7F16;&#x5199;&#xFF0C;&#x4E00;&#x822C;&#x5F00;&#x53D1;&#x4E2D;&#x662F;&#x770B;&#x4E0D;&#x5230;&#x7684;&#xFF1B;<br><code>Extendsion ClassLoader</code>&#xFF1A;&#x7528;&#x6765;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#xFF0C;&#x4E00;&#x822C;&#x5BF9;&#x5E94;&#x7684;&#x662F;<code>jre\lib\ext</code>&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x7C7B;;<br><code>AppClassLoader</code>&#xFF1A;(&#x9ED8;&#x8BA4;)&#x52A0;&#x8F7D;<code>classpath</code>&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#xFF0C;&#x662F;&#x6700;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E00;&#x79CD;&#x52A0;&#x8F7D;&#x5668;&#x3002; </p>
+<p>&#x52A8;&#x6001;&#x4EE3;&#x7406;<br>&#x4E0E;&#x9759;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#x5BF9;&#x7167;&#x7684;&#x662F;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#xFF0C;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x5B57;&#x8282;&#x7801;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x7531;<code>Java</code>&#x53CD;&#x5C04;&#x673A;&#x5236;&#x52A8;&#x6001;&#x751F;&#x6210;&#xFF0C;&#x65E0;&#x9700;&#x7A0B;&#x5E8F;&#x5458;&#x624B;&#x5DE5;&#x7F16;&#x5199;&#x5B83;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#x4E0D;&#x4EC5;&#x7B80;&#x5316;&#x4E86;&#x7F16;&#x7A0B;&#x5DE5;&#x4F5C;&#xFF0C;&#x800C;&#x4E14;&#x63D0;&#x9AD8;&#x4E86;&#x8F6F;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x53EF;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x56E0;&#x4E3A;<code>Java</code>&#x53CD;&#x5C04;&#x673A;&#x5236;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#x3002;<code>java.lang.reflect</code> &#x5305;&#x4E2D;&#x7684;<code>Proxy</code>&#x7C7B;&#x548C;<code>InvocationHandler</code>&#x63A5;&#x53E3;&#x63D0;&#x4F9B;&#x4E86;&#x751F;&#x6210;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x80FD;&#x529B;&#x3002; </p>
+<p>&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x793A;&#x4F8B;: </p>
+<p>1&#x3001;BookFacade.java </p>
 <pre><code><span class="keyword">package</span> net.battier.dao;  
 
 <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BookFacade</span> </span>{  
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addBook</span><span class="params">()</span></span>;  
 } 
-</code></pre><p>2、BookFacadeImpl.java </p>
+</code></pre><p>2&#x3001;BookFacadeImpl.java </p>
 <pre><code><span class="keyword">package</span> net.battier.dao.impl;  
 
 <span class="keyword">import</span> net.battier.dao.BookFacade;  
@@ -379,11 +379,11 @@ public Object invoke(Object proxy,Method method,Object[] args) throws Throwable;
 
     <span class="annotation">@Override</span>  
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addBook</span><span class="params">()</span> </span>{  
-        System.out.println(<span class="string">"增加图书方法。。。"</span>);  
+        System.out.println(<span class="string">&quot;&#x589E;&#x52A0;&#x56FE;&#x4E66;&#x65B9;&#x6CD5;&#x3002;&#x3002;&#x3002;&quot;</span>);  
     }  
 
 }  
-</code></pre><p>、BookFacadeProxy.java  </p>
+</code></pre><p>&#x3001;BookFacadeProxy.java  </p>
 <pre><code>package net.battier.proxy;  
 
 <span class="keyword">import</span> java.lang.reflect.<span class="type">InvocationHandler</span>;  
@@ -391,7 +391,7 @@ public Object invoke(Object proxy,Method method,Object[] args) throws Throwable;
 <span class="keyword">import</span> java.lang.reflect.<span class="type">Proxy</span>;  
 
 /** 
- * <span class="type">JDK</span>动态代理代理类 
+ * <span class="type">JDK</span>&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x4EE3;&#x7406;&#x7C7B; 
  *  
  * @author student 
  *  
@@ -399,33 +399,33 @@ public Object invoke(Object proxy,Method method,Object[] args) throws Throwable;
 public class <span class="type">BookFacadeProxy</span> implements <span class="type">InvocationHandler</span> {  
     private <span class="type">Object</span> target;  
     /** 
-     * 绑定委托对象并返回一个代理类 
+     * &#x7ED1;&#x5B9A;&#x59D4;&#x6258;&#x5BF9;&#x8C61;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B; 
      * @param target 
      * @<span class="keyword">return</span> 
      */  
     public <span class="type">Object</span> <span class="keyword">bind</span>(<span class="type">Object</span> target) {  
         this.target = target;  
-        //取得代理对象  
+        //&#x53D6;&#x5F97;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;  
         <span class="keyword">return</span> <span class="type">Proxy</span>.newProxyInstance(target.getClass().getClassLoader(),  
-                target.getClass().getInterfaces(), this);   //要绑定接口(这是一个缺陷，cglib弥补了这一缺陷)  
+                target.getClass().getInterfaces(), this);   //&#x8981;&#x7ED1;&#x5B9A;&#x63A5;&#x53E3;(&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7F3A;&#x9677;&#xFF0C;cglib&#x5F25;&#x8865;&#x4E86;&#x8FD9;&#x4E00;&#x7F3A;&#x9677;)  
     }  
 
     @<span class="type">Override</span>  
     /** 
-     * 调用方法 
+     * &#x8C03;&#x7528;&#x65B9;&#x6CD5; 
      */  
     public <span class="type">Object</span> invoke(<span class="type">Object</span> proxy, <span class="type">Method</span> <span class="keyword">method</span>, <span class="type">Object</span>[] args)  
             throws <span class="type">Throwable</span> {  
         <span class="type">Object</span> <span class="literal">result</span>=null;  
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"事物开始"</span>);  
-        //执行方法  
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x4E8B;&#x7269;&#x5F00;&#x59CB;&quot;</span>);  
+        //&#x6267;&#x884C;&#x65B9;&#x6CD5;  
         <span class="literal">result</span>=<span class="keyword">method</span>.invoke(target, args);  
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"事物结束"</span>);  
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x4E8B;&#x7269;&#x7ED3;&#x675F;&quot;</span>);  
         <span class="keyword">return</span> <span class="literal">result</span>;  
     }  
 
 }
-</code></pre><p>3、TestProxy.java </p>
+</code></pre><p>3&#x3001;TestProxy.java </p>
 <pre><code><span class="label">package</span> net.<span class="keyword">battier.test; </span> 
 
 <span class="label">import</span> net.<span class="keyword">battier.dao.BookFacade; </span> 
@@ -441,26 +441,26 @@ public class <span class="type">BookFacadeProxy</span> implements <span class="t
     }  
 
 }
-</code></pre><p>但是，JDK的动态代理依靠接口实现，如果有些类并没有实现接口，则不能使用JDK代理，这就要使用cglib动态代理了。 </p>
-<h2 id="Cglib动态代理">Cglib动态代理</h2><p>JDK的动态代理机制只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理，cglib是针对类来实现代理的，他的原理是对指定的目标类生成一个子类，并覆盖其中方法实现增强，但因为采用的是继承，所以不能对final修饰的类进行代理。<br>示例<br>1、BookFacadeCglib.java </p>
+</code></pre><p>&#x4F46;&#x662F;&#xFF0C;JDK&#x7684;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x4F9D;&#x9760;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E9B;&#x7C7B;&#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;JDK&#x4EE3;&#x7406;&#xFF0C;&#x8FD9;&#x5C31;&#x8981;&#x4F7F;&#x7528;cglib&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x4E86;&#x3002; </p>
+<h2 id="Cglib&#x52A8;&#x6001;&#x4EE3;&#x7406;">Cglib&#x52A8;&#x6001;&#x4EE3;&#x7406;</h2><p>JDK&#x7684;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x673A;&#x5236;&#x53EA;&#x80FD;&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x4E86;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x5C31;&#x4E0D;&#x80FD;&#x5B9E;&#x73B0;JDK&#x7684;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#xFF0C;cglib&#x662F;&#x9488;&#x5BF9;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x7684;&#xFF0C;&#x4ED6;&#x7684;&#x539F;&#x7406;&#x662F;&#x5BF9;&#x6307;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#x7C7B;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x5E76;&#x8986;&#x76D6;&#x5176;&#x4E2D;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x589E;&#x5F3A;&#xFF0C;&#x4F46;&#x56E0;&#x4E3A;&#x91C7;&#x7528;&#x7684;&#x662F;&#x7EE7;&#x627F;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x5BF9;final&#x4FEE;&#x9970;&#x7684;&#x7C7B;&#x8FDB;&#x884C;&#x4EE3;&#x7406;&#x3002;<br>&#x793A;&#x4F8B;<br>1&#x3001;BookFacadeCglib.java </p>
 <pre><code><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">BookFacade</span> {  
   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addBook</span>(<span class="params"></span>)</span>;  
 } 
-</code></pre><p>2、BookCadeImpl1.java </p>
+</code></pre><p>2&#x3001;BookCadeImpl1.java </p>
 <pre><code>package net.battier.dao.impl;  
 
 <span class="comment">/** 
- * 这个是没有实现接口的实现类 
+ * &#x8FD9;&#x4E2A;&#x662F;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x7C7B; 
  *  
  * @author student 
  *  
  */</span>  
 <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">BookFacadeImpl1</span> {  
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addBook</span>(<span class="params"></span>) </span>{  
-        System.<span class="keyword">out</span>.println(<span class="string">"增加图书的普通方法..."</span>);  
+        System.<span class="keyword">out</span>.println(<span class="string">&quot;&#x589E;&#x52A0;&#x56FE;&#x4E66;&#x7684;&#x666E;&#x901A;&#x65B9;&#x6CD5;...&quot;</span>);  
     }  
 }
-</code></pre><p>3、BookFacadeProxy.java </p>
+</code></pre><p>3&#x3001;BookFacadeProxy.java </p>
 <pre><code><span class="keyword">package</span> net.battier.proxy;  
 
 <span class="keyword">import</span> java.lang.reflect.Method;  
@@ -470,7 +470,7 @@ public class <span class="type">BookFacadeProxy</span> implements <span class="t
 <span class="keyword">import</span> net.sf.cglib.proxy.MethodProxy;  
 
 <span class="comment">/** 
- * 使用cglib动态代理 
+ * &#x4F7F;&#x7528;cglib&#x52A8;&#x6001;&#x4EE3;&#x7406; 
  *  
  * <span class="doctag">@author</span> student 
  *  
@@ -479,7 +479,7 @@ public class <span class="type">BookFacadeProxy</span> implements <span class="t
     <span class="keyword">private</span> Object <span class="keyword">target</span>;  
 
     <span class="comment">/** 
-     * 创建代理对象 
+     * &#x521B;&#x5EFA;&#x4EE3;&#x7406;&#x5BF9;&#x8C61; 
      *  
      * <span class="doctag">@param</span> target 
      * <span class="doctag">@return</span> 
@@ -488,26 +488,26 @@ public class <span class="type">BookFacadeProxy</span> implements <span class="t
         <span class="keyword">this</span>.<span class="keyword">target</span> = <span class="keyword">target</span>;  
         Enhancer enhancer = <span class="keyword">new</span> Enhancer();  
         enhancer.setSuperclass(<span class="keyword">this</span>.<span class="keyword">target</span>.getClass());  
-        <span class="comment">// 回调方法  </span>
+        <span class="comment">// &#x56DE;&#x8C03;&#x65B9;&#x6CD5;  </span>
         enhancer.setCallback(<span class="keyword">this</span>);  
-        <span class="comment">// 创建代理对象  </span>
+        <span class="comment">// &#x521B;&#x5EFA;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;  </span>
         <span class="function"><span class="keyword">return</span> enhancer.<span class="title">create</span><span class="params">()</span></span>;  
     }  
 
     <span class="annotation">@Override</span>  
-    <span class="comment">// 回调方法  </span>
+    <span class="comment">// &#x56DE;&#x8C03;&#x65B9;&#x6CD5;  </span>
     <span class="keyword">public</span> <span class="function">Object <span class="title">intercept</span><span class="params">(Object obj, Method method, Object[] args,  
             MethodProxy proxy)</span> <span class="keyword">throws</span> Throwable </span>{  
-        System.out.println(<span class="string">"事物开始"</span>);  
+        System.out.println(<span class="string">&quot;&#x4E8B;&#x7269;&#x5F00;&#x59CB;&quot;</span>);  
         proxy.invokeSuper(obj, args);  
-        System.out.println(<span class="string">"事物结束"</span>);  
+        System.out.println(<span class="string">&quot;&#x4E8B;&#x7269;&#x7ED3;&#x675F;&quot;</span>);  
         <span class="keyword">return</span> <span class="keyword">null</span>;  
 
 
     }  
 
 }
-</code></pre><p>4、TestCglib.java </p>
+</code></pre><p>4&#x3001;TestCglib.java </p>
 <pre><code><span class="keyword">package</span> net.battier.test;  
 
 <span class="keyword">import</span> net.battier.dao.impl.BookFacadeImpl1;  
@@ -521,7 +521,7 @@ public class <span class="type">BookFacadeProxy</span> implements <span class="t
         bookCglib.addBook();  
     }  
 }
-</code></pre><p>以上为转载内容，下面是自己写的Test</p>
+</code></pre><p>&#x4EE5;&#x4E0A;&#x4E3A;&#x8F6C;&#x8F7D;&#x5185;&#x5BB9;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x81EA;&#x5DF1;&#x5199;&#x7684;Test</p>
 <pre><code>package com.xt.test;
 
 <span class="keyword">import</span> java.lang.reflect.<span class="type">InvocationHandler</span>;
@@ -539,13 +539,13 @@ class <span class="type">Dog</span> implements <span class="type">Anim</span> {
     @<span class="type">Override</span>
     public <span class="type">void</span> sound() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"汪汪汪！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x6C6A;&#x6C6A;&#x6C6A;&#xFF01;&quot;</span>);
     }
 
     @<span class="type">Override</span>
     public <span class="type">void</span> name() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"一条小狗！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x4E00;&#x6761;&#x5C0F;&#x72D7;&#xFF01;&quot;</span>);
     }
 
 }
@@ -555,13 +555,13 @@ class <span class="type">Cat</span> implements <span class="type">Anim</span> {
     @<span class="type">Override</span>
     public <span class="type">void</span> sound() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"喵喵喵！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x55B5;&#x55B5;&#x55B5;&#xFF01;&quot;</span>);
     }
 
     @<span class="type">Override</span>
     public <span class="type">void</span> name() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"一只小猫！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x4E00;&#x53EA;&#x5C0F;&#x732B;&#xFF01;&quot;</span>);
     }
 
 }
@@ -579,19 +579,19 @@ class <span class="type">Bmw</span> implements <span class="type">Car</span> {
     @<span class="type">Override</span>
     public <span class="type">void</span> name() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"一辆宝马！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x4E00;&#x8F86;&#x5B9D;&#x9A6C;&#xFF01;&quot;</span>);
     }
 
     @<span class="type">Override</span>
     public <span class="type">void</span> color() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"黑色！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x9ED1;&#x8272;&#xFF01;&quot;</span>);
     }
 
     @<span class="type">Override</span>
     public <span class="type">void</span> run() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"车子开动！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x8F66;&#x5B50;&#x5F00;&#x52A8;&#xFF01;&quot;</span>);
     }
 
 }
@@ -601,25 +601,25 @@ class <span class="type">Wm</span> implements <span class="type">Car</span> {
     @<span class="type">Override</span>
     public <span class="type">void</span> name() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"一辆大众！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x4E00;&#x8F86;&#x5927;&#x4F17;&#xFF01;&quot;</span>);
     }
 
     @<span class="type">Override</span>
     public <span class="type">void</span> color() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"银色！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x94F6;&#x8272;&#xFF01;&quot;</span>);
     }
 
     @<span class="type">Override</span>
     public <span class="type">void</span> run() {
         // <span class="type">TODO</span> <span class="type">Auto</span>-generated <span class="keyword">method</span> stub
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"车子开动！"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x8F66;&#x5B50;&#x5F00;&#x52A8;&#xFF01;&quot;</span>);
     }
 
 }
 
 /**
- * <span class="type">JDK</span>动态代理代理类
+ * <span class="type">JDK</span>&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x4EE3;&#x7406;&#x7C7B;
  * 
  * @author student
  * 
@@ -628,36 +628,36 @@ class <span class="type">DynamicProxy</span> implements <span class="type">Invoc
     private <span class="type">Object</span> target;
 
     /**
-     * 绑定委托对象并返回一个代理类
+     * &#x7ED1;&#x5B9A;&#x59D4;&#x6258;&#x5BF9;&#x8C61;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;
      * 
      * @param target
      * @<span class="keyword">return</span>
      */
     public <span class="type">Object</span> <span class="keyword">bind</span>(<span class="type">Object</span> target) {
         this.target = target;
-        // 取得代理对象
+        // &#x53D6;&#x5F97;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;
         <span class="type">Object</span> o = <span class="type">Proxy</span>.newProxyInstance(target.getClass().getClassLoader(),
-                target.getClass().getInterfaces(), this); // 要绑定接口(这是一个缺陷，cglib弥补了这一缺陷)
+                target.getClass().getInterfaces(), this); // &#x8981;&#x7ED1;&#x5B9A;&#x63A5;&#x53E3;(&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7F3A;&#x9677;&#xFF0C;cglib&#x5F25;&#x8865;&#x4E86;&#x8FD9;&#x4E00;&#x7F3A;&#x9677;)
         <span class="keyword">return</span> o;
     }
 
     @<span class="type">Override</span>
     /** 
-     * 调用方法 
+     * &#x8C03;&#x7528;&#x65B9;&#x6CD5; 
      */
     public <span class="type">Object</span> invoke(<span class="type">Object</span> proxy, <span class="type">Method</span> <span class="keyword">method</span>, <span class="type">Object</span>[] args)
             throws <span class="type">Throwable</span> {
         <span class="type">Object</span> <span class="literal">result</span> = null;
-        <span class="keyword">if</span> (target instanceof <span class="type">Anim</span> &amp;&amp; <span class="keyword">method</span>.getName().equals(<span class="string">"sound"</span>))
-            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"准备叫："</span>);
-        <span class="keyword">if</span> (target instanceof <span class="type">Car</span> &amp;&amp; <span class="keyword">method</span>.getName().equals(<span class="string">"run"</span>))
-            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"车子点火!"</span>);
-        // 执行方法
+        <span class="keyword">if</span> (target instanceof <span class="type">Anim</span> &amp;&amp; <span class="keyword">method</span>.getName().equals(<span class="string">&quot;sound&quot;</span>))
+            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x51C6;&#x5907;&#x53EB;&#xFF1A;&quot;</span>);
+        <span class="keyword">if</span> (target instanceof <span class="type">Car</span> &amp;&amp; <span class="keyword">method</span>.getName().equals(<span class="string">&quot;run&quot;</span>))
+            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x8F66;&#x5B50;&#x70B9;&#x706B;!&quot;</span>);
+        // &#x6267;&#x884C;&#x65B9;&#x6CD5;
         <span class="literal">result</span> = <span class="keyword">method</span>.invoke(target, args);
-        <span class="keyword">if</span> (target instanceof <span class="type">Anim</span> &amp;&amp; <span class="keyword">method</span>.getName().equals(<span class="string">"sound"</span>))
-            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"叫响了"</span>);
-        <span class="keyword">if</span> (target instanceof <span class="type">Car</span> &amp;&amp; <span class="keyword">method</span>.getName().equals(<span class="string">"run"</span>))
-            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"车子停了!"</span>);
+        <span class="keyword">if</span> (target instanceof <span class="type">Anim</span> &amp;&amp; <span class="keyword">method</span>.getName().equals(<span class="string">&quot;sound&quot;</span>))
+            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x53EB;&#x54CD;&#x4E86;&quot;</span>);
+        <span class="keyword">if</span> (target instanceof <span class="type">Car</span> &amp;&amp; <span class="keyword">method</span>.getName().equals(<span class="string">&quot;run&quot;</span>))
+            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;&#x8F66;&#x5B50;&#x505C;&#x4E86;!&quot;</span>);
         <span class="keyword">return</span> <span class="literal">result</span>;
     }
 
@@ -669,43 +669,43 @@ public class <span class="type">DynamicProxyTest</span> {
         <span class="type">Anim</span> dog = (<span class="type">Anim</span>) proxy.<span class="keyword">bind</span>(new <span class="type">Dog</span>());
         dog.name();
         dog.sound();
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"---------------------"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;---------------------&quot;</span>);
         <span class="type">Anim</span> cat = (<span class="type">Anim</span>) proxy.<span class="keyword">bind</span>(new <span class="type">Cat</span>());
         cat.name();
         cat.sound();
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"---------动态的精髓来了，无需再构建代理，不同接口使用相同代理即可------------"</span>);
-        // 动态的精髓来了，无需再构建代理，不同接口使用相同代理即可
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;---------&#x52A8;&#x6001;&#x7684;&#x7CBE;&#x9AD3;&#x6765;&#x4E86;&#xFF0C;&#x65E0;&#x9700;&#x518D;&#x6784;&#x5EFA;&#x4EE3;&#x7406;&#xFF0C;&#x4E0D;&#x540C;&#x63A5;&#x53E3;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x4EE3;&#x7406;&#x5373;&#x53EF;------------&quot;</span>);
+        // &#x52A8;&#x6001;&#x7684;&#x7CBE;&#x9AD3;&#x6765;&#x4E86;&#xFF0C;&#x65E0;&#x9700;&#x518D;&#x6784;&#x5EFA;&#x4EE3;&#x7406;&#xFF0C;&#x4E0D;&#x540C;&#x63A5;&#x53E3;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x4EE3;&#x7406;&#x5373;&#x53EF;
         <span class="type">Car</span> bmw = (<span class="type">Car</span>) proxy.<span class="keyword">bind</span>(new <span class="type">Bmw</span>());
         bmw.name();
         bmw.color();
         bmw.run();
-        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"---------------------"</span>);
+        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">&quot;---------------------&quot;</span>);
         <span class="type">Car</span> wm = (<span class="type">Car</span>) proxy.<span class="keyword">bind</span>(new <span class="type">Wm</span>());
         wm.name();
         wm.color();
     }
 }
 
-输出结果：
+&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;
 
-一条小狗！
-准备叫：
-汪汪汪！
-叫响了
+&#x4E00;&#x6761;&#x5C0F;&#x72D7;&#xFF01;
+&#x51C6;&#x5907;&#x53EB;&#xFF1A;
+&#x6C6A;&#x6C6A;&#x6C6A;&#xFF01;
+&#x53EB;&#x54CD;&#x4E86;
 ---------------------
-一只小猫！
-准备叫：
-喵喵喵！
-叫响了
----------动态的精髓来了，无需再构建代理，不同接口使用相同代理即可------------
-一辆宝马！
-黑色！
-车子点火!
-车子开动！
-车子停了!
+&#x4E00;&#x53EA;&#x5C0F;&#x732B;&#xFF01;
+&#x51C6;&#x5907;&#x53EB;&#xFF1A;
+&#x55B5;&#x55B5;&#x55B5;&#xFF01;
+&#x53EB;&#x54CD;&#x4E86;
+---------&#x52A8;&#x6001;&#x7684;&#x7CBE;&#x9AD3;&#x6765;&#x4E86;&#xFF0C;&#x65E0;&#x9700;&#x518D;&#x6784;&#x5EFA;&#x4EE3;&#x7406;&#xFF0C;&#x4E0D;&#x540C;&#x63A5;&#x53E3;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x4EE3;&#x7406;&#x5373;&#x53EF;------------
+&#x4E00;&#x8F86;&#x5B9D;&#x9A6C;&#xFF01;
+&#x9ED1;&#x8272;&#xFF01;
+&#x8F66;&#x5B50;&#x70B9;&#x706B;!
+&#x8F66;&#x5B50;&#x5F00;&#x52A8;&#xFF01;
+&#x8F66;&#x5B50;&#x505C;&#x4E86;!
 ---------------------
-一辆大众！
-银色！
+&#x4E00;&#x8F86;&#x5927;&#x4F17;&#xFF01;
+&#x94F6;&#x8272;&#xFF01;
 </code></pre></span>
       
     </div>
@@ -814,21 +814,21 @@ public class <span class="type">DynamicProxyTest</span> {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

@@ -246,23 +246,23 @@
       
 
       
-        <span itemprop="articleBody"><p>本文旨在解决每次写博都会收到 Github 的 warning 邮件问题，同时又提升了托管在 Github Pages 上的博客的访问速度。</p>
-<p>今天在 v2ex 上看到大学邮箱注册某比特币交易网站送价值 10 刀的比特币的事，于是登陆了许久不用的学校教育网邮箱，然后就发现原来每次生成博客都会收到 Github 的一封 warning 邮件，内容如下　　</p>
+        <span itemprop="articleBody"><p>&#x672C;&#x6587;&#x65E8;&#x5728;&#x89E3;&#x51B3;&#x6BCF;&#x6B21;&#x5199;&#x535A;&#x90FD;&#x4F1A;&#x6536;&#x5230; Github &#x7684; warning &#x90AE;&#x4EF6;&#x95EE;&#x9898;&#xFF0C;&#x540C;&#x65F6;&#x53C8;&#x63D0;&#x5347;&#x4E86;&#x6258;&#x7BA1;&#x5728; Github Pages &#x4E0A;&#x7684;&#x535A;&#x5BA2;&#x7684;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x3002;</p>
+<p>&#x4ECA;&#x5929;&#x5728; v2ex &#x4E0A;&#x770B;&#x5230;&#x5927;&#x5B66;&#x90AE;&#x7BB1;&#x6CE8;&#x518C;&#x67D0;&#x6BD4;&#x7279;&#x5E01;&#x4EA4;&#x6613;&#x7F51;&#x7AD9;&#x9001;&#x4EF7;&#x503C; 10 &#x5200;&#x7684;&#x6BD4;&#x7279;&#x5E01;&#x7684;&#x4E8B;&#xFF0C;&#x4E8E;&#x662F;&#x767B;&#x9646;&#x4E86;&#x8BB8;&#x4E45;&#x4E0D;&#x7528;&#x7684;&#x5B66;&#x6821;&#x6559;&#x80B2;&#x7F51;&#x90AE;&#x7BB1;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53D1;&#x73B0;&#x539F;&#x6765;&#x6BCF;&#x6B21;&#x751F;&#x6210;&#x535A;&#x5BA2;&#x90FD;&#x4F1A;&#x6536;&#x5230; Github &#x7684;&#x4E00;&#x5C01; warning &#x90AE;&#x4EF6;&#xFF0C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#x3000;&#x3000;</p>
 <a id="more"></a>
-<p>The page build completed successfully, but returned the following warning:<br>GitHub Pages recently underwent some improvements (<a href="https://github.com/blog/1715-faster-more-awesome-github-pages" target="_blank" rel="external">https://github.com/blog/1715-faster-more-awesome-github-pages</a>) to make your site faster and more awesome, but we’ve noticed that mayecn.com isn’t properly configured to take advantage of these new features. While your site will continue to work just fine, updating your domain’s configuration offers some additional speed and performance benefits. Instructions on updating your site’s IP address can be found at <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages#step-2-configure-dns-records" target="_blank" rel="external">https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages#step-2-configure-dns-records</a>, and of course, you can always get in touch with a human at support@github.com. For the more technical minded folks who want to skip the help docs: your site’s DNS records are pointed to a deprecated IP address.</p>
+<p>The page build completed successfully, but returned the following warning:<br>GitHub Pages recently underwent some improvements (<a href="https://github.com/blog/1715-faster-more-awesome-github-pages" target="_blank" rel="external">https://github.com/blog/1715-faster-more-awesome-github-pages</a>) to make your site faster and more awesome, but we&#x2019;ve noticed that mayecn.com isn&#x2019;t properly configured to take advantage of these new features. While your site will continue to work just fine, updating your domain&#x2019;s configuration offers some additional speed and performance benefits. Instructions on updating your site&#x2019;s IP address can be found at <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages#step-2-configure-dns-records" target="_blank" rel="external">https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages#step-2-configure-dns-records</a>, and of course, you can always get in touch with a human at support@github.com. For the more technical minded folks who want to skip the help docs: your site&#x2019;s DNS records are pointed to a deprecated IP address.</p>
 <p>For information on troubleshooting Jekyll see:</p>
 <p><a href="https://help.github.com/articles/using-jekyll-with-pages#troubleshooting" target="_blank" rel="external">https://help.github.com/articles/using-jekyll-with-pages#troubleshooting</a></p>
 <p>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</p>
-<p>其实全文中最重要的就只有这一句话：<br>your site’s DNS records are pointed to a deprecated IP address.</p>
-<p>Github 贴心的提醒我现在的 A 记录指向的是一个不赞成使用的 IP 地址，意思就是如果采用了 Github 新增加的 IP 地址为 A 记录的话博客的访问速度会加快一些。于是使用 dig 命令势在必行。但是 Windows 下如何使用 dig 呢？在这里发现了一个现成的解决方案：Win 下使用 dig<br>照做后，在 cmd 下就可以愉快地使用 dig 命令了。<br>执行：</p>
-<p><code>dig maye696.github.io +nostats +nocomments +nocmd</code>，注意<code>maye696.github.io</code>为你博客的地址。</p>
-<p>获得如下结果：</p>
+<p>&#x5176;&#x5B9E;&#x5168;&#x6587;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5C31;&#x53EA;&#x6709;&#x8FD9;&#x4E00;&#x53E5;&#x8BDD;&#xFF1A;<br>your site&#x2019;s DNS records are pointed to a deprecated IP address.</p>
+<p>Github &#x8D34;&#x5FC3;&#x7684;&#x63D0;&#x9192;&#x6211;&#x73B0;&#x5728;&#x7684; A &#x8BB0;&#x5F55;&#x6307;&#x5411;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x8D5E;&#x6210;&#x4F7F;&#x7528;&#x7684; IP &#x5730;&#x5740;&#xFF0C;&#x610F;&#x601D;&#x5C31;&#x662F;&#x5982;&#x679C;&#x91C7;&#x7528;&#x4E86; Github &#x65B0;&#x589E;&#x52A0;&#x7684; IP &#x5730;&#x5740;&#x4E3A; A &#x8BB0;&#x5F55;&#x7684;&#x8BDD;&#x535A;&#x5BA2;&#x7684;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x4F1A;&#x52A0;&#x5FEB;&#x4E00;&#x4E9B;&#x3002;&#x4E8E;&#x662F;&#x4F7F;&#x7528; dig &#x547D;&#x4EE4;&#x52BF;&#x5728;&#x5FC5;&#x884C;&#x3002;&#x4F46;&#x662F; Windows &#x4E0B;&#x5982;&#x4F55;&#x4F7F;&#x7528; dig &#x5462;&#xFF1F;&#x5728;&#x8FD9;&#x91CC;&#x53D1;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x73B0;&#x6210;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;Win &#x4E0B;&#x4F7F;&#x7528; dig<br>&#x7167;&#x505A;&#x540E;&#xFF0C;&#x5728; cmd &#x4E0B;&#x5C31;&#x53EF;&#x4EE5;&#x6109;&#x5FEB;&#x5730;&#x4F7F;&#x7528; dig &#x547D;&#x4EE4;&#x4E86;&#x3002;<br>&#x6267;&#x884C;&#xFF1A;</p>
+<p><code>dig maye696.github.io +nostats +nocomments +nocmd</code>&#xFF0C;&#x6CE8;&#x610F;<code>maye696.github.io</code>&#x4E3A;&#x4F60;&#x535A;&#x5BA2;&#x7684;&#x5730;&#x5740;&#x3002;</p>
+<p>&#x83B7;&#x5F97;&#x5982;&#x4E0B;&#x7ED3;&#x679C;&#xFF1A;</p>
 <pre><code><span class="rule"><span class="attribute">C</span>:<span class="value">\Users\w&gt;dig maye696.github.io +nostats +nocomments +nocmd
 </span></span>;<span class="tag">maye696</span><span class="class">.github</span><span class="class">.io</span>. <span class="tag">IN</span> <span class="tag">A</span>
 <span class="tag">maye696</span><span class="class">.github</span><span class="class">.io</span>. 1097 <span class="tag">IN</span> <span class="tag">CNAME</span> <span class="tag">github</span><span class="class">.map</span><span class="class">.fastly</span><span class="class">.net</span>.
 <span class="tag">github</span><span class="class">.map</span><span class="class">.fastly</span><span class="class">.net</span>. 30 <span class="tag">IN</span> <span class="tag">A</span> 103<span class="class">.245</span><span class="class">.222</span><span class="class">.133</span>
-</code></pre><p>很明显，你只需把自己的域名的 A 记录改为 103.245.222.133，就会使博客获得更快的访问速度了。同时，也不会每次写博都收到 Github 那“贴心”的邮件了。</p>
-<p>博客转载自:<a href="http://mayecn.com/blog/2014/05/17/githubpages-accelerating/" target="_blank" rel="external">http://mayecn.com/blog/2014/05/17/githubpages-accelerating/</a></p>
+</code></pre><p>&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#x7684; A &#x8BB0;&#x5F55;&#x6539;&#x4E3A; 103.245.222.133&#xFF0C;&#x5C31;&#x4F1A;&#x4F7F;&#x535A;&#x5BA2;&#x83B7;&#x5F97;&#x66F4;&#x5FEB;&#x7684;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x4E86;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x6BCF;&#x6B21;&#x5199;&#x535A;&#x90FD;&#x6536;&#x5230; Github &#x90A3;&#x201C;&#x8D34;&#x5FC3;&#x201D;&#x7684;&#x90AE;&#x4EF6;&#x4E86;&#x3002;</p>
+<p>&#x535A;&#x5BA2;&#x8F6C;&#x8F7D;&#x81EA;:<a href="http://mayecn.com/blog/2014/05/17/githubpages-accelerating/" target="_blank" rel="external">http://mayecn.com/blog/2014/05/17/githubpages-accelerating/</a></p>
 </span>
       
     </div>
@@ -371,21 +371,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

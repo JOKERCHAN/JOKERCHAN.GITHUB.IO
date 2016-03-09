@@ -39,20 +39,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="AndroidBar返回为NULL。是因为values-v11和values-v14下面的style的主题的设置的原因。
-在SDK 11的设备上，会使用第二处，SDK 14会使用第三处。">
+<meta name="description" content="AndroidBar&amp;#x8FD4;&amp;#x56DE;&amp;#x4E3A;NULL&amp;#x3002;&amp;#x662F;&amp;#x56E0;&amp;#x4E3A;values-v11&amp;#x548C;values-v14&amp;#x4E0B;&amp;#x9762;&amp;#x7684;style&amp;#x7684;&amp;#x4E3B;&amp;#x9898;&amp;#x7684;&amp;#x8BBE;&amp;#x7F6E;&amp;#x7684;&amp;#x539F;&amp;#x56E0;&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ANDROID ACTIONBAR 返回为NULL">
 <meta property="og:url" content="http://yoursite.com/2015/07/22/ANDROID-ACTIONBAR-返回为NULL/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
-<meta property="og:description" content="AndroidBar返回为NULL。是因为values-v11和values-v14下面的style的主题的设置的原因。
-在SDK 11的设备上，会使用第二处，SDK 14会使用第三处。">
+<meta property="og:description" content="AndroidBar&amp;#x8FD4;&amp;#x56DE;&amp;#x4E3A;NULL&amp;#x3002;&amp;#x662F;&amp;#x56E0;&amp;#x4E3A;values-v11&amp;#x548C;values-v14&amp;#x4E0B;&amp;#x9762;&amp;#x7684;style&amp;#x7684;&amp;#x4E3B;&amp;#x9898;&amp;#x7684;&amp;#x8BBE;&amp;#x7F6E;&amp;#x7684;&amp;#x539F;&amp;#x56E0;&amp;">
 <meta property="og:image" content="http://7xkko2.com1.z0.glb.clouddn.com/hexoblog/actionbar_value.jpg">
 <meta property="og:updated_time" content="2015-07-28T09:32:37.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ANDROID ACTIONBAR 返回为NULL">
-<meta name="twitter:description" content="AndroidBar返回为NULL。是因为values-v11和values-v14下面的style的主题的设置的原因。
-在SDK 11的设备上，会使用第二处，SDK 14会使用第三处。">
+<meta name="twitter:description" content="AndroidBar&amp;#x8FD4;&amp;#x56DE;&amp;#x4E3A;NULL&amp;#x3002;&amp;#x662F;&amp;#x56E0;&amp;#x4E3A;values-v11&amp;#x548C;values-v14&amp;#x4E0B;&amp;#x9762;&amp;#x7684;style&amp;#x7684;&amp;#x4E3B;&amp;#x9898;&amp;#x7684;&amp;#x8BBE;&amp;#x7F6E;&amp;#x7684;&amp;#x539F;&amp;#x56E0;&amp;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -250,19 +247,19 @@
       
 
       
-        <span itemprop="articleBody"><p><code>AndroidBar</code>返回为<code>NULL</code>。是因为<code>values-v11</code>和<code>values-v14</code>下面的<code>style</code>的主题的设置的原因。</p>
-<p>在SDK 11的设备上，会使用第二处，SDK 14会使用第三处。</p>
+        <span itemprop="articleBody"><p><code>AndroidBar</code>&#x8FD4;&#x56DE;&#x4E3A;<code>NULL</code>&#x3002;&#x662F;&#x56E0;&#x4E3A;<code>values-v11</code>&#x548C;<code>values-v14</code>&#x4E0B;&#x9762;&#x7684;<code>style</code>&#x7684;&#x4E3B;&#x9898;&#x7684;&#x8BBE;&#x7F6E;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<p>&#x5728;SDK 11&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;&#x7B2C;&#x4E8C;&#x5904;&#xFF0C;SDK 14&#x4F1A;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x5904;&#x3002;</p>
 <a id="more"></a>
 <p><img src="http://7xkko2.com1.z0.glb.clouddn.com/hexoblog/actionbar_value.jpg"></p>
-<p>只需要将三个地方的主题分别设置就可以，结构如下：</p>
-<p><code>values</code>————</p>
+<p>&#x53EA;&#x9700;&#x8981;&#x5C06;&#x4E09;&#x4E2A;&#x5730;&#x65B9;&#x7684;&#x4E3B;&#x9898;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><code>values</code>&#x2014;&#x2014;&#x2014;&#x2014;</p>
 <pre><code><span class="tag">&lt;<span class="title">resources</span>&gt;</span>
 
     <span class="comment">&lt;!--
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     --&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">name</span>=<span class="value">"AppBaseTheme"</span> <span class="attribute">parent</span>=<span class="value">"Theme.AppCompat.Light"</span>&gt;</span><span class="css">
+    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">name</span>=<span class="value">&quot;AppBaseTheme&quot;</span> <span class="attribute">parent</span>=<span class="value">&quot;Theme.AppCompat.Light&quot;</span>&gt;</span><span class="css">
         &lt;!<span class="tag">--</span>
             <span class="tag">Theme</span> <span class="tag">customizations</span> <span class="tag">available</span> <span class="tag">in</span> <span class="tag">newer</span> <span class="tag">API</span> <span class="tag">levels</span> <span class="tag">can</span> <span class="tag">go</span> <span class="tag">in</span>
             <span class="tag">res</span>/<span class="tag">values-vXX</span>/<span class="tag">styles</span><span class="class">.xml</span>, <span class="tag">while</span> <span class="tag">customizations</span> <span class="tag">related</span> <span class="tag">to</span>
@@ -271,12 +268,12 @@
     </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
 
     <span class="comment">&lt;!-- Application theme. --&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">name</span>=<span class="value">"AppTheme"</span> <span class="attribute">parent</span>=<span class="value">"AppBaseTheme"</span>&gt;</span><span class="css">
+    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">name</span>=<span class="value">&quot;AppTheme&quot;</span> <span class="attribute">parent</span>=<span class="value">&quot;AppBaseTheme&quot;</span>&gt;</span><span class="css">
         &lt;!<span class="tag">--</span> <span class="tag">All</span> <span class="tag">customizations</span> <span class="tag">that</span> <span class="tag">are</span> <span class="tag">NOT</span> <span class="tag">specific</span> <span class="tag">to</span> <span class="tag">a</span> <span class="tag">particular</span> <span class="tag">API-level</span> <span class="tag">can</span> <span class="tag">go</span> <span class="tag">here</span>. <span class="tag">--</span>&gt;
     </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
 
 <span class="tag">&lt;/<span class="title">resources</span>&gt;</span>
-</code></pre><p><code>values-v11</code>————</p>
+</code></pre><p><code>values-v11</code>&#x2014;&#x2014;&#x2014;&#x2014;</p>
 <pre><code>&lt;resources&gt;
 
     &lt;!<span class="comment">--</span>
@@ -284,49 +281,49 @@
         AppBaseTheme <span class="keyword">from</span> BOTH res/values/styles.xml <span class="keyword">and</span>
         res/values-v11/styles.xml <span class="function_start"><span class="keyword">on</span></span> API <span class="number">14</span>+ devices.
     <span class="comment">--&gt;</span>
-    &lt;style <span class="property">name</span>=<span class="string">"AppBaseTheme"</span> parent=<span class="string">"android:Theme.Holo.Light"</span>&gt;
+    &lt;style <span class="property">name</span>=<span class="string">&quot;AppBaseTheme&quot;</span> parent=<span class="string">&quot;android:Theme.Holo.Light&quot;</span>&gt;
         &lt;!<span class="comment">-- API 14 theme customizations can go here. --&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:actionBarStyle"</span>&gt;@style/my_actionbar_style&lt;/<span class="property">item</span>&gt;
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:actionBarStyle&quot;</span>&gt;@style/my_actionbar_style&lt;/<span class="property">item</span>&gt;
     &lt;/style&gt;
 
-    &lt;style <span class="property">name</span>=<span class="string">"my_actionbar_style"</span> parent=<span class="string">"@android:style/Widget.Holo.Light.ActionBar"</span>&gt;
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:background"</span>&gt;<span class="comment">#ff8c00&lt;/item&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:titleTextStyle"</span>&gt;@style/AcBar_titleStyle&lt;/<span class="property">item</span>&gt;
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:displayOptions"</span>&gt;showTitle&lt;/<span class="property">item</span>&gt;
+    &lt;style <span class="property">name</span>=<span class="string">&quot;my_actionbar_style&quot;</span> parent=<span class="string">&quot;@android:style/Widget.Holo.Light.ActionBar&quot;</span>&gt;
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:background&quot;</span>&gt;<span class="comment">#ff8c00&lt;/item&gt;</span>
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:titleTextStyle&quot;</span>&gt;@style/AcBar_titleStyle&lt;/<span class="property">item</span>&gt;
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:displayOptions&quot;</span>&gt;showTitle&lt;/<span class="property">item</span>&gt;
     &lt;/style&gt;
 
-    &lt;style <span class="property">name</span>=<span class="string">"AcBar_titleStyle"</span>&gt;
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:textColor"</span>&gt;<span class="comment">#FFFFFF&lt;/item&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:textSize"</span>&gt;<span class="number">20</span>sp&lt;/<span class="property">item</span>&gt;
+    &lt;style <span class="property">name</span>=<span class="string">&quot;AcBar_titleStyle&quot;</span>&gt;
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:textColor&quot;</span>&gt;<span class="comment">#FFFFFF&lt;/item&gt;</span>
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:textSize&quot;</span>&gt;<span class="number">20</span>sp&lt;/<span class="property">item</span>&gt;
     &lt;/style&gt;
 
-    &lt;style <span class="property">name</span>=<span class="string">"AppTheme"</span> parent=<span class="string">"AppBaseTheme"</span>&gt;&lt;/style&gt;
+    &lt;style <span class="property">name</span>=<span class="string">&quot;AppTheme&quot;</span> parent=<span class="string">&quot;AppBaseTheme&quot;</span>&gt;&lt;/style&gt;
 &lt;/resources&gt;
-</code></pre><p><code>values-v14</code>————</p>
-<pre><code>&lt;resources xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;
+</code></pre><p><code>values-v14</code>&#x2014;&#x2014;&#x2014;&#x2014;</p>
+<pre><code>&lt;resources xmlns:android=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;
 
     &lt;!<span class="comment">--</span>
         Base <span class="type">application</span> theme <span class="keyword">for</span> API <span class="number">14</span>+. This theme completely replaces
         AppBaseTheme <span class="keyword">from</span> BOTH res/values/styles.xml <span class="keyword">and</span>
         res/values-v11/styles.xml <span class="function_start"><span class="keyword">on</span></span> API <span class="number">14</span>+ devices.
     <span class="comment">--&gt;</span>
-    &lt;style <span class="property">name</span>=<span class="string">"AppBaseTheme"</span> parent=<span class="string">"android:Theme.Holo.Light.DarkActionBar"</span>&gt;
+    &lt;style <span class="property">name</span>=<span class="string">&quot;AppBaseTheme&quot;</span> parent=<span class="string">&quot;android:Theme.Holo.Light.DarkActionBar&quot;</span>&gt;
         &lt;!<span class="comment">-- API 14 theme customizations can go here. --&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:actionBarStyle"</span>&gt;@style/my_actionbar_style&lt;/<span class="property">item</span>&gt; 
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:actionBarStyle&quot;</span>&gt;@style/my_actionbar_style&lt;/<span class="property">item</span>&gt; 
     &lt;/style&gt;
 
-    &lt;style <span class="property">name</span>=<span class="string">"my_actionbar_style"</span> parent=<span class="string">"@android:style/Widget.Holo.Light.ActionBar"</span>&gt;  
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:background"</span>&gt;<span class="comment">#ff8c00&lt;/item&gt;  </span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:titleTextStyle"</span>&gt;@style/AcBar_titleStyle&lt;/<span class="property">item</span>&gt;
-         &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:displayOptions"</span>&gt;showTitle&lt;/<span class="property">item</span>&gt;
+    &lt;style <span class="property">name</span>=<span class="string">&quot;my_actionbar_style&quot;</span> parent=<span class="string">&quot;@android:style/Widget.Holo.Light.ActionBar&quot;</span>&gt;  
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:background&quot;</span>&gt;<span class="comment">#ff8c00&lt;/item&gt;  </span>
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:titleTextStyle&quot;</span>&gt;@style/AcBar_titleStyle&lt;/<span class="property">item</span>&gt;
+         &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:displayOptions&quot;</span>&gt;showTitle&lt;/<span class="property">item</span>&gt;
     &lt;/style&gt;
-    &lt;style <span class="property">name</span>=<span class="string">"AcBar_titleStyle"</span>&gt;    
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:textColor"</span>&gt;<span class="comment">#FFFFFF&lt;/item&gt;</span>
-        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:textSize"</span>&gt;<span class="number">20</span>sp&lt;/<span class="property">item</span>&gt;  
+    &lt;style <span class="property">name</span>=<span class="string">&quot;AcBar_titleStyle&quot;</span>&gt;    
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:textColor&quot;</span>&gt;<span class="comment">#FFFFFF&lt;/item&gt;</span>
+        &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">&quot;android:textSize&quot;</span>&gt;<span class="number">20</span>sp&lt;/<span class="property">item</span>&gt;  
     &lt;/style&gt;
-    &lt;style <span class="property">name</span>=<span class="string">"AppTheme"</span> parent=<span class="string">"AppBaseTheme"</span>&gt;&lt;/style&gt;
+    &lt;style <span class="property">name</span>=<span class="string">&quot;AppTheme&quot;</span> parent=<span class="string">&quot;AppBaseTheme&quot;</span>&gt;&lt;/style&gt;
 &lt;/resources&gt;
-</code></pre><p>主要注意<code>parent</code>部分的引用</p>
+</code></pre><p>&#x4E3B;&#x8981;&#x6CE8;&#x610F;<code>parent</code>&#x90E8;&#x5206;&#x7684;&#x5F15;&#x7528;</p>
 </span>
       
     </div>
@@ -435,21 +432,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
