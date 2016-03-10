@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,16 +23,22 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
-    <meta name="description" content="放弃的时候，想想为何开始" />
 
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Image," />
@@ -36,7 +47,14 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.1" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=0.5.0" />
+
+
+
+
 
 
 <meta name="description" content="内存、硬盘、网络。Android高效加载大图、多图解决方案、有效避免程序OOM使用的核心技术就是LruCache。">
@@ -51,10 +69,18 @@
 <meta name="twitter:description" content="内存、硬盘、网络。Android高效加载大图、多图解决方案、有效避免程序OOM使用的核心技术就是LruCache。">
 
 
+
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: 'post'
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -63,16 +89,9 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
+
+
 
   <script type="text/javascript">
     var _hmt = _hmt || [];
@@ -86,20 +105,30 @@
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
       <span class="site-title">JOKERCHAN's ESSaY</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">放弃的时候，想想为何开始</p>
+</div>
 
 <div class="site-nav-toggle">
   <button>
@@ -113,12 +142,14 @@
   
 
   
-    <ul id="menu" class="menu menu-left">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br />
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
             首页
           </a>
         </li>
@@ -126,29 +157,35 @@
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br />
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            <i class="menu-item-icon icon-next-categories"></i> <br />
-            分类
           </a>
         </li>
       
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br />
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
             标签
           </a>
         </li>
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
@@ -156,11 +193,9 @@
   
     <div class="site-search">
       
-  
   <form class="site-search-form">
-    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-  </form>
-
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
 
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
@@ -182,71 +217,97 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              图片三级缓存的原理
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-22T16:46:28+08:00" content="2015-07-22">
-            2015-07-22
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Android/" itemprop="url" rel="index">
-                  <span itemprop="name">Android</span>
-                </a>
-              </span>
-
-              
-              
-
             
+              
+                图片三级缓存的原理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-07-22T16:46:28+08:00" content="2015-07-22">
+              2015-07-22
+            </time>
           </span>
-        
 
-        
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/07/22/图片三级缓存的原理/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/22/图片三级缓存的原理/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/22/图片三级缓存的原理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/22/图片三级缓存的原理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><h2 id="&#x4E09;&#x7EA7;&#x7F13;&#x5B58;&#x7684;&#x6982;&#x5FF5;">&#x4E09;&#x7EA7;&#x7F13;&#x5B58;&#x7684;&#x6982;&#x5FF5;</h2><p>&#x5185;&#x5B58; &gt; &#x786C;&#x76D8; &gt; &#x7F51;&#x7EDC;</p>
+        <h2 id="&#x4E09;&#x7EA7;&#x7F13;&#x5B58;&#x7684;&#x6982;&#x5FF5;">&#x4E09;&#x7EA7;&#x7F13;&#x5B58;&#x7684;&#x6982;&#x5FF5;</h2><p>&#x5185;&#x5B58; &gt; &#x786C;&#x76D8; &gt; &#x7F51;&#x7EDC;</p>
 <p>&#x7531;&#x5185;&#x5B58;&#x3001;&#x786C;&#x76D8;&#x3001;&#x7F51;&#x7EDC;&#x7F13;&#x5B58;&#x5F62;&#x6210;&#x3002;</p>
 <h3 id="&#x5173;&#x4E8E;&#x4E09;&#x7EA7;&#x7F13;&#x5B58;&#x7528;&#x5230;&#x7684;&#x6280;&#x672F;">&#x5173;&#x4E8E;&#x4E09;&#x7EA7;&#x7F13;&#x5B58;&#x7528;&#x5230;&#x7684;&#x6280;&#x672F;</h3><p><code>Android</code>&#x9AD8;&#x6548;&#x52A0;&#x8F7D;&#x5927;&#x56FE;&#x3001;&#x591A;&#x56FE;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3001;&#x6709;&#x6548;&#x907F;&#x514D;&#x7A0B;&#x5E8F;OOM&#x4F7F;&#x7528;&#x7684;&#x6838;&#x5FC3;&#x6280;&#x672F;&#x5C31;&#x662F;<code>LruCache</code>&#x3002;</p>
 <a id="more"></a>
@@ -255,7 +316,13 @@
 <h2 id="&#x7528;&#x6CD5;&#x548C;&#x6D41;&#x7A0B;">&#x7528;&#x6CD5;&#x548C;&#x6D41;&#x7A0B;</h2><p>&#x5F53;&#x6BCF;&#x6B21;&#x52A0;&#x8F7D;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x4F18;&#x5148;&#x53BB;&#x5185;&#x5B58;&#x52A0;&#x8F7D;&#x56FE;&#x7247;&#x3001;&#x5F53;&#x5185;&#x5B58;&#x4E2D;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5219;&#x53BB;&#x786C;&#x76D8;&#x7F13;&#x5B58;&#x8BFB;&#x53D6;&#x3001;&#x5982;&#x679C;&#x786C;&#x76D8;&#x7F13;&#x5B58;&#x8BFB;&#x53D6;&#x4E0D;&#x5230;&#x6570;&#x636E;&#x5C31;&#x53BB;&#x7F51;&#x7EDC;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x3002;&#x4E0D;</p>
 <p>&#x7BA1;&#x662F;&#x4ECE;&#x786C;&#x76D8;&#x7F13;&#x5B58;&#x8FD8;&#x662F;&#x4ECE;&#x7F51;&#x7EDC;&#x83B7;&#x53D6;&#xFF0C;&#x8BFB;&#x53D6;&#x5230;&#x4E86;&#x6570;&#x636E;&#x4E4B;&#x540E;&#x90FD;&#x5E94;&#x8BE5;&#x6DFB;&#x52A0;&#x5230;&#x5185;&#x5B58;&#x7F13;&#x5B58;&#x5F53;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#x6211;&#x4EEC;&#x4E0B;&#x6B21;&#x518D;&#x53BB;&#x8BFB;&#x53D6;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x80FD;&#x8FC5;&#x901F;&#x4ECE;&#x5185;&#x5B58;&#x5F53;&#x4E2D;&#x8BFB;&#x53D6;&#x5230;</p>
 <p>&#xFF0C;&#x800C;&#x5982;&#x679C;&#x8BE5;&#x56FE;&#x7247;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x88AB;&#x79FB;&#x9664;&#x4E86;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x5C31;&#x91CD;&#x590D;&#x518D;&#x6267;&#x884C;&#x4E00;&#x904D;&#x4E0A;&#x8FF0;&#x6D41;&#x7A0B;&#x3002;</p>
-</span>
+
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -270,15 +337,19 @@
 
       
         <div class="post-nav">
-          <div class="post-nav-prev post-nav-item">
+          <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/" rel="prev">WINDOWS 平台下GIT服务器搭建</a>
+              <a href="/2015/07/22/布局共享/" rel="next" title="布局共享（列如所有ACTIVITY拥有相同的布局部分）">
+                <i class="fa fa-chevron-left"></i> 布局共享（列如所有ACTIVITY拥有相同的布局部分）
+              </a>
             
           </div>
 
-          <div class="post-nav-next post-nav-item">
+          <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/22/布局共享/" rel="next">布局共享（列如所有ACTIVITY拥有相同的布局部分）</a>
+              <a href="/2015/07/23/WINDOWS-平台下GIT服务器搭建/" rel="prev" title="WINDOWS 平台下GIT服务器搭建">
+                WINDOWS 平台下GIT服务器搭建 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -315,22 +386,24 @@
     </div>
   </div>
 
- </div>
 
-        
-
-        
-          <div class="comments" id="comments">
-            
-              <div class="ds-thread" data-thread-key="2015/07/22/图片三级缓存的原理/"
-                   data-title="图片三级缓存的原理" data-url="http://yoursite.com/2015/07/22/图片三级缓存的原理/">
-              </div>
-            
           </div>
-        
-      </div>
+          
 
-      
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/07/22/图片三级缓存的原理/"
+           data-title="图片三级缓存的原理" data-url="http://yoursite.com/2015/07/22/图片三级缓存的原理/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -344,6 +417,8 @@
     <div class="sidebar-inner">
 
       
+
+      
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
@@ -354,12 +429,14 @@
         </ul>
       
 
-      <section class="site-overview">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/avatar.jpg" alt="JOKERCHAN" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="JOKERCHAN" />
           <p class="site-author-name" itemprop="name">JOKERCHAN</p>
+          <p class="site-description motion-element" itemprop="description">放弃的时候，想想为何开始</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">放弃的时候，想想为何开始</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -367,20 +444,24 @@
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
-
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">18</span>
-              <span class="site-state-item-name">标签</span>
-              </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -390,11 +471,19 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/" target="_blank">GitHub</a>
+                <a href="https://github.com/" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/1905914414/" target="_blank">Weibo</a>
+                <a href="http://weibo.com/1905914414/" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
               </span>
             
           
@@ -408,59 +497,59 @@
             <p class="site-author-name"></p>
             
               <span class="links-of-author-item">
-              <a href="http://ymmmsick.com/" target="_blank">YmmmSick</a>
+                <a href="http://ymmmsick.com/" target="_blank">YmmmSick</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://wuxiaolong.me/" target="_blank">吴小龙</a>
+                <a href="http://wuxiaolong.me/" target="_blank">吴小龙</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://drakeet.me/" target="_blank">Drakeet</a>
+                <a href="http://drakeet.me/" target="_blank">Drakeet</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://blog.csdn.net/eclipsexys/article" target="_blank">徐宜生</a>
+                <a href="http://blog.csdn.net/eclipsexys/article" target="_blank">徐宜生</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://blog.csdn.net/guolin_blog" target="_blank">郭霖</a>
+                <a href="http://blog.csdn.net/guolin_blog" target="_blank">郭霖</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://blog.csdn.net/bboyfeiyu" target="_blank">Mr.Simple</a>
+                <a href="http://blog.csdn.net/bboyfeiyu" target="_blank">Mr.Simple</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://blog.csdn.net/singwhatiwanna" target="_blank">任玉刚</a>
+                <a href="http://blog.csdn.net/singwhatiwanna" target="_blank">任玉刚</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://blog.csdn.net/lmj623565791" target="_blank">鸿洋</a>
+                <a href="http://blog.csdn.net/lmj623565791" target="_blank">鸿洋</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://hukai.me/" target="_blank">胡凯</a>
+                <a href="http://hukai.me/" target="_blank">胡凯</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://blog.daimajia.com/" target="_blank">代码家</a>
+                <a href="http://blog.daimajia.com/" target="_blank">代码家</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://blog.csdn.net/zhaokaiqiang1992" target="_blank">赵凯强</a>
+                <a href="http://blog.csdn.net/zhaokaiqiang1992" target="_blank">赵凯强</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://www.jcodecraeer.com/" target="_blank">泡在网上的日子</a>
+                <a href="http://www.jcodecraeer.com/" target="_blank">泡在网上的日子</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://yifeiyuan.me/" target="_blank">程序亦非猿</a>
+                <a href="http://yifeiyuan.me/" target="_blank">程序亦非猿</a>
               </span>
             
               <span class="links-of-author-item">
-              <a href="http://www.easydone.cn/" target="_blank">Ailurus</a>
+                <a href="http://www.easydone.cn/" target="_blank">Ailurus</a>
               </span>
             
           
@@ -469,15 +558,21 @@
       </section>
 
       
-        <section class="post-toc-wrap sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
           <div class="post-toc">
+            
+              
             
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三级缓存的概念"><span class="nav-number">1.</span> <span class="nav-text">三级缓存的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于三级缓存用到的技术"><span class="nav-number">1.1.</span> <span class="nav-text">关于三级缓存用到的技术</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法和流程"><span class="nav-number">2.</span> <span class="nav-text">用法和流程</span></a></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
         </section>
       
 
@@ -485,15 +580,18 @@
   </aside>
 
 
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  &copy; &nbsp;  2015 - 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">JOKERCHAN</span>
 </div>
@@ -510,62 +608,58 @@
 </div>
 
 
- </div>
+
+      </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  
-  
-  
-    
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"jokerchan"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-    
-     
-
-    
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
-  
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
-
-
-
-
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
 
 <script type="text/javascript" id="sidebar.toc.highlight">
   $(document).ready(function () {
@@ -645,7 +739,7 @@
 
     function tocOverflowIndicator (indicator, action) {
       var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
+      var opacity = action === 'show' ? 1 : 0;
       $indicator.velocity ?
         $indicator.velocity('stop').velocity({
           opacity: opacity
@@ -699,7 +793,7 @@
 
     $('.post-toc a').on('click', function (e) {
       e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
       var offset = $(targetSelector).offset().top;
       hasVelocity ?
         html.velocity('stop').velocity('scroll', {
@@ -712,42 +806,60 @@
     });
 
     // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
       }
-    }
+    };
   });
 </script>
 
 
 
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
   <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-    });
+    var duoshuoQuery = {short_name:"jokerchan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
   </script>
 
   
+    
+  
+
+
+
+
 
   
   
+  
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+
+
 </body>
 </html>
