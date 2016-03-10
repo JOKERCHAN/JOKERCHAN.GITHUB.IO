@@ -63,7 +63,11 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/10/Android动画解析/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
 <meta property="og:description" content="&amp;#x968F;&amp;#x7740;&amp;#x667A;&amp;#x80FD;&amp;#x624B;&amp;#x673A;&amp;#x7684;&amp;#x666E;&amp;#x53CA;,&amp;#x5404;&amp;#x79CD;&amp;#x5E94;&amp;#x7528;&amp;#x5C42;&amp;#x51FA;&amp;#x4E0D;&amp;#x7A77;&amp;#x3002;&amp;#x5E94;&amp;#x7528;&amp;#x4E5F;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x70AB">
-<meta property="og:updated_time" content="2016-03-10T06:52:42.719Z">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/1.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/2.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/3.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/4.png">
+<meta property="og:updated_time" content="2016-03-10T09:15:19.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android动画解析">
 <meta name="twitter:description" content="&amp;#x968F;&amp;#x7740;&amp;#x667A;&amp;#x80FD;&amp;#x624B;&amp;#x673A;&amp;#x7684;&amp;#x666E;&amp;#x53CA;,&amp;#x5404;&amp;#x79CD;&amp;#x5E94;&amp;#x7528;&amp;#x5C42;&amp;#x51FA;&amp;#x4E0D;&amp;#x7A77;&amp;#x3002;&amp;#x5E94;&amp;#x7528;&amp;#x4E5F;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x70AB">
@@ -312,8 +316,228 @@
 <h3 id="Android&#x52A8;&#x753B;&#x7684;&#x5206;&#x7C7B;">Android&#x52A8;&#x753B;&#x7684;&#x5206;&#x7C7B;</h3><p>1.&#x8865;&#x95F4;&#x52A8;&#x753B;(TweenAnimation)</p>
 <p>2.&#x5E27;&#x52A8;&#x753B;(FrameAnimation)</p>
 <p>3.&#x5C5E;&#x6027;&#x52A8;&#x753B;(PropertyAnimation)</p>
-<p>&#x6700;&#x521D;&#x7684;Android&#x53EA;&#x6709;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x548C;&#x4FA6;&#x52A8;&#x753B;,&#x968F;&#x7740;&#x7248;&#x672C;&#x7684;&#x66F4;&#x65B0;Android&#x5B98;&#x65B9;&#x53D1;&#x73B0;&#x8FD9;&#x4E24;&#x79CD;&#x52A8;&#x753B;&#x5E76;&#x4E0D;&#x80FD;&#x5B8C;&#x5168;&#x6EE1;&#x8DB3;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x9700;&#x6C42;&#x3002;&#x4E8E;&#x662F;&#x5728;Android 3.0&#x7248;&#x672C;&#x5F00;&#x59CB;,&#x7CFB;&#x7EDF;&#x7ED9;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x5168;&#x65B0;&#x7684;&#x52A8;&#x753B;&#x6A21;&#x5F0F;,&#x5C5E;&#x6027;&#x52A8;&#x753B;(property animation)&#xFF0C;&#x5B83;&#x7684;&#x529F;&#x80FD;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#xFF0C;&#x5F25;&#x8865;&#x4E86;&#x4E4B;&#x524D;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x7684;&#x4E00;&#x4E9B;&#x7F3A;&#x9677;,&#x51E0;&#x4E4E;&#x662F;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x66FF;&#x4EE3;&#x6389;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x4E86;&#x3002;</p>
+<p>&#x6700;&#x521D;&#x7684;Android&#x53EA;&#x6709;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x548C;&#x4FA6;&#x52A8;&#x753B;,&#x968F;&#x7740;&#x7248;&#x672C;&#x7684;&#x66F4;&#x65B0;Android&#x5B98;&#x65B9;&#x53D1;&#x73B0;&#x8FD9;&#x4E24;&#x79CD;&#x52A8;&#x753B;&#x5E76;&#x4E0D;&#x80FD;&#x5B8C;&#x5168;&#x6EE1;&#x8DB3;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x9700;&#x6C42;&#x3002;&#x4E8E;&#x662F;&#x5728;Android 3.0&#x7248;&#x672C;&#x5F00;&#x59CB;,&#x7CFB;&#x7EDF;&#x7ED9;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x5168;&#x65B0;&#x7684;&#x52A8;&#x753B;&#x6A21;&#x5F0F;,&#x5C5E;&#x6027;&#x52A8;&#x753B;(property animation),&#x5B83;&#x7684;&#x529F;&#x80FD;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#xFF0C;&#x5F25;&#x8865;&#x4E86;&#x4E4B;&#x524D;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x7684;&#x4E00;&#x4E9B;&#x7F3A;&#x9677;,&#x51E0;&#x4E4E;&#x662F;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x66FF;&#x4EE3;&#x6389;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x4E86;&#x3002;</p>
+<h3 id="Android&#x4E09;&#x79CD;&#x52A8;&#x753B;&#x7684;&#x5206;&#x5F00;&#x5B66;&#x4E60;">Android&#x4E09;&#x79CD;&#x52A8;&#x753B;&#x7684;&#x5206;&#x5F00;&#x5B66;&#x4E60;</h3><h4 id="&#x8865;&#x95F4;&#x52A8;&#x753B;(TweenAnimation)">&#x8865;&#x95F4;&#x52A8;&#x753B;(TweenAnimation)</h4><p>&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E2D;&#x662F;&#x8FD9;&#x6837;&#x8BF4;&#x7684;:Tween&#x52A8;&#x753B;&#x662F;&#x64CD;&#x4F5C;&#x67D0;&#x4E2A;&#x63A7;&#x4EF6;&#x8BA9;&#x5176;&#x5C55;&#x73B0;&#x51FA;&#x65CB;&#x8F6C;&#x3001;&#x6E10;&#x53D8;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x7F29;&#x653E;&#x7684;&#x8FD9;&#x4E48;&#x4E00;&#x79CD;&#x8F6C;&#x6362;&#x8FC7;&#x7A0B;&#x3002;&#x6211;&#x4EEC;&#x6210;&#x4E3A;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4EE5;XML&#x5F62;&#x5F0F;&#x5B9A;&#x4E49;&#x52A8;&#x753B;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x7F16;&#x7801;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4EE5;XML&#x5F62;&#x5F0F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#xFF0C;&#x6211;&#x4EEC;&#x6309;&#x7167;&#x52A8;&#x753B;&#x7684;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;&#x5B8C;&#x6210;XML,&#x5E76;&#x653E;&#x7F6E;&#x4E8E;/res/anim&#x76EE;&#x5F55;&#x4E0B;&#x3002;&#x6587;&#x4EF6;&#x540D;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8D44;&#x6E90;ID&#x88AB;&#x5F15;&#x7528;;&#x5982;&#x679C;&#x7531;&#x7F16;&#x7801;&#x5B9E;&#x73B0;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;Animation&#x5BF9;&#x8C61;&#x3002;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;XML&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x66F4;&#x5177;&#x53EF;&#x8BFB;&#x6027;&#x3001;&#x53EF;&#x91CD;&#x7528;&#x6027;&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#x5305;&#x62EC;alpha(&#x900F;&#x660E;&#x5EA6;)&#x3001;scale(&#x7F29;&#x653E;)&#x3001;translate(&#x79FB;&#x52A8;)&#x3001;rotate(&#x7FFB;&#x8F6C;)<br>&#x5BF9;&#x5E94;java code:</p>
+<p>alpha-&gt;AlphaAnimation<br>scale-&gt;ScaleAnimation<br>translate-&gt;TranslateAnimation<br>rotate-&gt;RotateAnimation</p>
+<p> <code>Animation</code>&#x5C5E;&#x6027;&#x8BE6;&#x89E3;<br><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/1.png" alt=""><br>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;:&#x65E0;&#x8BBA;&#x6211;&#x4EEC;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x7684;&#x54EA;&#x4E00;&#x79CD;&#x90FD;&#x5DF2;&#x7ECF;&#x5177;&#x5907;&#x4E86;&#x8FD9;&#x79CD;&#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x90FD;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x52A8;&#x753B;&#x7684;&#x81EA;&#x5DF1;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x7528;&#x6CD5;</p>
+<p>1.&#x9996;&#x5148;alpha&#x52A8;&#x753B;</p>
+<pre><code><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">alpha</span>
+        <span class="attribute">android:fromAlpha</span>=<span class="value">&quot;1.0&quot;</span>
+        <span class="attribute">android:toAlpha</span>=<span class="value">&quot;0.1&quot;</span>
+        <span class="attribute">android:duration</span>=<span class="value">&quot;5000&quot;</span>
+        /&gt;</span>
+    <span class="comment">&lt;!-- &#x900F;&#x660E;&#x5EA6;&#x63A7;&#x5236;&#x52A8;&#x753B;&#x6548;&#x679C; alpha
+        &#x6D6E;&#x70B9;&#x578B;&#x503C;:
+            fromAlpha &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x8D77;&#x59CB;&#x65F6;&#x900F;&#x660E;&#x5EA6;
+            toAlpha   &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;&#x900F;&#x660E;&#x5EA6;
+            &#x8BF4;&#x660E;:
+                0.0&#x8868;&#x793A;&#x5B8C;&#x5168;&#x900F;&#x660E;
+                1.0&#x8868;&#x793A;&#x5B8C;&#x5168;&#x4E0D;&#x900F;&#x660E;
+            &#x4EE5;&#x4E0A;&#x503C;&#x53D6;0.0-1.0&#x4E4B;&#x95F4;&#x7684;float&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x5B57;
+        &#x957F;&#x6574;&#x578B;&#x503C;:
+            duration  &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x6301;&#x7EED;&#x65F6;&#x95F4;
+            &#x8BF4;&#x660E;:
+                &#x65F6;&#x95F4;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;
+    --&gt;</span>
+<span class="tag">&lt;/<span class="title">set</span>&gt;</span>
+</code></pre><p>2.scale&#x52A8;&#x753B;</p>
+<pre><code><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">scale</span>
+        <span class="attribute">android:duration</span>=<span class="value">&quot;700&quot;</span>
+        <span class="attribute">android:fillAfter</span>=<span class="value">&quot;false&quot;</span>
+        <span class="attribute">android:fromXScale</span>=<span class="value">&quot;0.0&quot;</span>
+        <span class="attribute">android:fromYScale</span>=<span class="value">&quot;0.0&quot;</span>
+        <span class="attribute">android:interpolator</span>=<span class="value">&quot;@android:anim/accelerate_decelerate_interpolator&quot;</span>
+        <span class="attribute">android:pivotX</span>=<span class="value">&quot;50%&quot;</span>
+        <span class="attribute">android:pivotY</span>=<span class="value">&quot;100%&quot;</span>
+        <span class="attribute">android:toXScale</span>=<span class="value">&quot;1.4&quot;</span>
+        <span class="attribute">android:toYScale</span>=<span class="value">&quot;1.4&quot;</span> /&gt;</span>
+    <span class="comment">&lt;!-- &#x5C3A;&#x5BF8;&#x4F38;&#x7F29;&#x52A8;&#x753B;&#x6548;&#x679C; scale
+               &#x5C5E;&#x6027;&#xFF1A;interpolator &#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x7684;&#x63D2;&#x5165;&#x5668;
+                &#x5728;&#x6211;&#x8BD5;&#x9A8C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;android.res.anim&#x4E2D;&#x7684;&#x8D44;&#x6E90;&#x65F6;&#x5019;&#x53D1;&#x73B0;
+                &#x6709;&#x4E09;&#x79CD;&#x52A8;&#x753B;&#x63D2;&#x5165;&#x5668;:
+                    accelerate_decelerate_interpolator  &#x52A0;&#x901F;-&#x51CF;&#x901F; &#x52A8;&#x753B;&#x63D2;&#x5165;&#x5668;
+                    accelerate_interpolator         &#x52A0;&#x901F;-&#x52A8;&#x753B;&#x63D2;&#x5165;&#x5668;
+                    decelerate_interpolator         &#x51CF;&#x901F;- &#x52A8;&#x753B;&#x63D2;&#x5165;&#x5668;
+                &#x5176;&#x4ED6;&#x7684;&#x5C5E;&#x4E8E;&#x7279;&#x5B9A;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;
+              &#x6D6E;&#x70B9;&#x578B;&#x503C;&#xFF1A;
 
+                    fromXScale &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x8D77;&#x59CB;&#x65F6; X&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4F38;&#x7F29;&#x5C3A;&#x5BF8;
+                    toXScale   &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6; X&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4F38;&#x7F29;&#x5C3A;&#x5BF8;
+
+                    fromYScale &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x8D77;&#x59CB;&#x65F6;Y&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4F38;&#x7F29;&#x5C3A;&#x5BF8;
+                    toYScale   &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;Y&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4F38;&#x7F29;&#x5C3A;&#x5BF8;
+
+                    &#x8BF4;&#x660E;:
+                         &#x4EE5;&#x4E0A;&#x56DB;&#x79CD;&#x5C5E;&#x6027;&#x503C;
+
+                            0.0&#x8868;&#x793A;&#x6536;&#x7F29;&#x5230;&#x6CA1;&#x6709;
+                            1.0&#x8868;&#x793A;&#x6B63;&#x5E38;&#x65E0;&#x4F38;&#x7F29;
+                            &#x503C;&#x5C0F;&#x4E8E;1.0&#x8868;&#x793A;&#x6536;&#x7F29;
+                            &#x503C;&#x5927;&#x4E8E;1.0&#x8868;&#x793A;&#x653E;&#x5927;
+
+                    pivotX     &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x76F8;&#x5BF9;&#x4E8E;&#x7269;&#x4EF6;&#x7684;X&#x5750;&#x6807;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;
+                    pivotY     &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x76F8;&#x5BF9;&#x4E8E;&#x7269;&#x4EF6;&#x7684;Y&#x5750;&#x6807;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;
+
+                    &#x8BF4;&#x660E;:
+                            &#x4EE5;&#x4E0A;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#x503C; &#x4ECE;0%-100%&#x4E2D;&#x53D6;&#x503C;
+                            50%&#x4E3A;&#x7269;&#x4EF6;&#x7684;X&#x6216;Y&#x65B9;&#x5411;&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4E2D;&#x70B9;&#x4F4D;&#x7F6E;
+
+                &#x957F;&#x6574;&#x578B;&#x503C;&#xFF1A;
+                    duration  &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x6301;&#x7EED;&#x65F6;&#x95F4;
+                    &#x8BF4;&#x660E;:   &#x65F6;&#x95F4;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;
+
+                &#x5E03;&#x5C14;&#x578B;&#x503C;:
+                    fillAfter &#x5C5E;&#x6027; &#x5F53;&#x8BBE;&#x7F6E;&#x4E3A;true &#xFF0C;&#x8BE5;&#x52A8;&#x753B;&#x8F6C;&#x5316;&#x5728;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x540E;&#x88AB;&#x5E94;&#x7528;
+        --&gt;</span>
+<span class="tag">&lt;/<span class="title">set</span>&gt;</span>
+</code></pre><p>3.translate&#x52A8;&#x753B;</p>
+<pre><code><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">translate</span>
+        <span class="attribute">android:duration</span>=<span class="value">&quot;2000&quot;</span>
+        <span class="attribute">android:fromXDelta</span>=<span class="value">&quot;30&quot;</span>
+        <span class="attribute">android:fromYDelta</span>=<span class="value">&quot;30&quot;</span>
+        <span class="attribute">android:toXDelta</span>=<span class="value">&quot;-80&quot;</span>
+        <span class="attribute">android:toYDelta</span>=<span class="value">&quot;300&quot;</span> /&gt;</span>
+
+    <span class="comment">&lt;!-- translate &#x4F4D;&#x7F6E;&#x8F6C;&#x79FB;&#x52A8;&#x753B;&#x6548;&#x679C;
+            &#x6574;&#x578B;&#x503C;:
+                fromXDelta &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x8D77;&#x59CB;&#x65F6; X&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;
+                toXDelta   &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6; X&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;
+                fromYDelta &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x8D77;&#x59CB;&#x65F6; Y&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;
+                toYDelta   &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6; Y&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;
+                &#x6CE8;&#x610F;:
+                         &#x6CA1;&#x6709;&#x6307;&#x5B9A;fromXType toXType fromYType toYType &#x65F6;&#x5019;&#xFF0C;
+                         &#x9ED8;&#x8BA4;&#x662F;&#x4EE5;&#x81EA;&#x5DF1;&#x4E3A;&#x76F8;&#x5BF9;&#x53C2;&#x7167;&#x7269;
+            &#x957F;&#x6574;&#x578B;&#x503C;&#xFF1A;
+                duration  &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x6301;&#x7EED;&#x65F6;&#x95F4;
+                &#x8BF4;&#x660E;:   &#x65F6;&#x95F4;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;
+    --&gt;</span>
+<span class="tag">&lt;/<span class="title">set</span>&gt;</span>
+</code></pre><p>4.rotate&#x52A8;&#x753B;</p>
+<pre><code><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">rotate</span>
+        <span class="attribute">android:duration</span>=<span class="value">&quot;3000&quot;</span>
+        <span class="attribute">android:fromDegrees</span>=<span class="value">&quot;0&quot;</span>
+        <span class="attribute">android:interpolator</span>=<span class="value">&quot;@android:anim/accelerate_decelerate_interpolator&quot;</span>
+        <span class="attribute">android:pivotX</span>=<span class="value">&quot;50%&quot;</span>
+        <span class="attribute">android:pivotY</span>=<span class="value">&quot;50%&quot;</span>
+        <span class="attribute">android:toDegrees</span>=<span class="value">&quot;+350&quot;</span> /&gt;</span>
+    <span class="comment">&lt;!-- rotate &#x65CB;&#x8F6C;&#x52A8;&#x753B;&#x6548;&#x679C;
+           &#x5C5E;&#x6027;&#xFF1A;interpolator &#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x7684;&#x63D2;&#x5165;&#x5668;
+                 &#x5728;&#x6211;&#x8BD5;&#x9A8C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;android.res.anim&#x4E2D;&#x7684;&#x8D44;&#x6E90;&#x65F6;&#x5019;&#x53D1;&#x73B0;
+                 &#x6709;&#x4E09;&#x79CD;&#x52A8;&#x753B;&#x63D2;&#x5165;&#x5668;:
+                    accelerate_decelerate_interpolator    &#x52A0;&#x901F;-&#x51CF;&#x901F; &#x52A8;&#x753B;&#x63D2;&#x5165;&#x5668;
+                    accelerate_interpolator                &#x52A0;&#x901F;-&#x52A8;&#x753B;&#x63D2;&#x5165;&#x5668;
+                    decelerate_interpolator                &#x51CF;&#x901F;- &#x52A8;&#x753B;&#x63D2;&#x5165;&#x5668;
+                 &#x5176;&#x4ED6;&#x7684;&#x5C5E;&#x4E8E;&#x7279;&#x5B9A;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;
+
+           &#x6D6E;&#x70B9;&#x6570;&#x578B;&#x503C;:
+                fromDegrees &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x8D77;&#x59CB;&#x65F6;&#x7269;&#x4EF6;&#x7684;&#x89D2;&#x5EA6;
+                toDegrees   &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;&#x7269;&#x4EF6;&#x65CB;&#x8F6C;&#x7684;&#x89D2;&#x5EA6; &#x53EF;&#x4EE5;&#x5927;&#x4E8E;360&#x5EA6;
+
+
+                &#x8BF4;&#x660E;:
+                         &#x5F53;&#x89D2;&#x5EA6;&#x4E3A;&#x8D1F;&#x6570;&#x2014;&#x2014;&#x8868;&#x793A;&#x9006;&#x65F6;&#x9488;&#x65CB;&#x8F6C;
+                         &#x5F53;&#x89D2;&#x5EA6;&#x4E3A;&#x6B63;&#x6570;&#x2014;&#x2014;&#x8868;&#x793A;&#x987A;&#x65F6;&#x9488;&#x65CB;&#x8F6C;
+                         (&#x8D1F;&#x6570;from&#x2014;&#x2014;to&#x6B63;&#x6570;:&#x987A;&#x65F6;&#x9488;&#x65CB;&#x8F6C;)
+                         (&#x8D1F;&#x6570;from&#x2014;&#x2014;to&#x8D1F;&#x6570;:&#x9006;&#x65F6;&#x9488;&#x65CB;&#x8F6C;)
+                         (&#x6B63;&#x6570;from&#x2014;&#x2014;to&#x6B63;&#x6570;:&#x987A;&#x65F6;&#x9488;&#x65CB;&#x8F6C;)
+                         (&#x6B63;&#x6570;from&#x2014;&#x2014;to&#x8D1F;&#x6570;:&#x9006;&#x65F6;&#x9488;&#x65CB;&#x8F6C;)
+
+                pivotX     &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x76F8;&#x5BF9;&#x4E8E;&#x7269;&#x4EF6;&#x7684;X&#x5750;&#x6807;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;
+                pivotY     &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x76F8;&#x5BF9;&#x4E8E;&#x7269;&#x4EF6;&#x7684;Y&#x5750;&#x6807;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;
+
+                &#x8BF4;&#x660E;:        &#x4EE5;&#x4E0A;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#x503C; &#x4ECE;0%-100%&#x4E2D;&#x53D6;&#x503C;
+                             50%&#x4E3A;&#x7269;&#x4EF6;&#x7684;X&#x6216;Y&#x65B9;&#x5411;&#x5750;&#x6807;&#x4E0A;&#x7684;&#x4E2D;&#x70B9;&#x4F4D;&#x7F6E;
+
+            &#x957F;&#x6574;&#x578B;&#x503C;&#xFF1A;
+                duration  &#x5C5E;&#x6027;&#x4E3A;&#x52A8;&#x753B;&#x6301;&#x7EED;&#x65F6;&#x95F4;
+                &#x8BF4;&#x660E;:       &#x65F6;&#x95F4;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;
+    --&gt;</span>
+<span class="tag">&lt;/<span class="title">set</span>&gt;</span>
+</code></pre><p>&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x901A;&#x8FC7;<code>AnimationUtils</code>&#x8C03;&#x7528;&#x3002;<br><code>Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha);
+show.startAnimation(animation);</code></p>
+<p><code>AnimationSet</code>&#x7EE7;&#x627F;&#x81EA;<code>Animation</code>&#x662F;&#x4E0A;&#x9762;&#x56DB;&#x79CD;&#x7684;&#x7EC4;&#x5408;&#x5BB9;&#x5668;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;&#x6CA1;&#x6709;&#x81EA;&#x5DF1;&#x7279;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x4ED6;&#x7684;&#x5C5E;&#x6027;&#x7EE7;&#x627F;&#x81EA;<code>Animation</code>&#x6240;&#x4EE5;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x5BF9;<code>set</code>&#x6807;&#x7B7E;&#x4F7F;&#x7528;<code>Animation</code>&#x7684;&#x5C5E;&#x6027;&#x65F6;&#x4F1A;&#x5BF9;&#x8BE5;&#x6807;&#x7B7E;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x5B50;&#x63A7;&#x4EF6;&#x90FD;&#x4EA7;&#x751F;&#x5F71;&#x54CD;&#x3002;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x4F7F;&#x7528;:</p>
+<pre><code>Animation animation1 = AnimationUtils.loadAnimation<span class="params">(getApplicationContext<span class="params">()</span>, R.anim.rotate)</span>;
+Animation animation2 = AnimationUtils.loadAnimation<span class="params">(getApplicationContext<span class="params">()</span>, R.anim.alpha)</span>;
+Animation animation3 = AnimationUtils.loadAnimation<span class="params">(getApplicationContext<span class="params">()</span>, R.anim.translate)</span>;
+Animation animation4 = AnimationUtils.loadAnimation<span class="params">(getApplicationContext<span class="params">()</span>, R.anim.scale)</span>;
+AnimationSet animationSet = new AnimationSet<span class="params">(<span class="literal">true</span>)</span>;
+animationSet.addAnimation<span class="params">(animation1)</span>;
+animationSet.addAnimation<span class="params">(animation2)</span>;
+animationSet.addAnimation<span class="params">(animation3)</span>;
+animationSet.addAnimation<span class="params">(animation4)</span>;
+show.startAnimation<span class="params">(animationSet)</span>;
+</code></pre><p>&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x7EC4;&#x5408;&#x7684;&#x65B9;&#x5F0F;&#x5728;<code>xml</code>&#x4E2D;&#x5C06;4&#x4E2A;&#x52A8;&#x753B;&#x5199;&#x5728;&#x540C;&#x4E00;&#x4E2A;set&#x6807;&#x7B7E;&#x4E0B;&#x9762;&#x3002;&#x50CF;&#x8FD9;&#x6837;:</p>
+<pre><code><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
+
+    <span class="tag">&lt;<span class="title">scale</span>
+
+        /&gt;</span>
+    <span class="tag">&lt;<span class="title">alpha</span>
+
+        /&gt;</span>
+    <span class="tag">&lt;<span class="title">rotate</span>
+
+        /&gt;</span>
+    <span class="tag">&lt;<span class="title">translate</span>
+
+        /&gt;</span>
+<span class="tag">&lt;/<span class="title">set</span>&gt;</span>
+</code></pre><p>&#x4E0A;&#x9762;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x7684;&#x6A21;&#x677F;&#x3002;&#x81F3;&#x4E8E;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x7684;&#x4F7F;&#x7528;,<code>Animation</code>&#x8FD8;&#x6709;&#x5982;&#x4E0B;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x5B9E;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x4ECB;&#x7ECD;&#x3002;<br><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/2.png" alt=""></p>
+<p>&#x65E2;&#x7136;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x53EA;&#x80FD;&#x7ED9;<code>View</code>&#x4F7F;&#x7528;,&#x90A3;&#x5C31;&#x6765;&#x770B;&#x770B;<code>View</code>&#x4E2D;&#x548C;&#x52A8;&#x753B;&#x76F8;&#x5173;&#x7684;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x5427;&#x3002;&#x5982;&#x4E0B;:</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/3.png" alt=""></p>
+<font color="red">&#x63D0;&#x793A;&#x91CD;&#x70B9;:&#x7279;&#x522B;&#x7279;&#x522B;&#x6CE8;&#x610F;:&#x8865;&#x95F4;&#x52A8;&#x753B;&#x6267;&#x884C;&#x4E4B;&#x540E;&#x5E76;&#x672A;&#x6539;&#x53D8;<code>View</code>&#x7684;&#x771F;&#x5B9E;&#x5E03;&#x5C40;&#x5C5E;&#x6027;&#x503C;&#x3002;&#x5207;&#x8BB0;&#x8FD9;&#x4E00;&#x70B9;,&#x8B6C;&#x5982;&#x6211;&#x4EEC;&#x5728;<code>Activity</code>&#x4E2D;&#x6709;&#x4E00;&#x4E2A;<code>Button</code>&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x65B9;&#x3002;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x4E86;&#x5E73;&#x79FB;&#x52A8;&#x753B;&#x79FB;&#x52A8;&#x5230;&#x5C4F;&#x5E55;&#x4E0B;&#x65B9;&#x7136;&#x540E;&#x4FDD;&#x6301;&#x52A8;&#x753B;&#x6700;&#x540E;&#x6267;&#x884C;&#x72B6;&#x6001;&#x5446;&#x5728;&#x5C4F;&#x5E55;&#x4E0B;&#x65B9;,&#x8FD9;&#x65F6;&#x5982;&#x679C;&#x70B9;&#x51FB;&#x5C4F;&#x5E55;&#x4E0B;&#x65B9;&#x52A8;&#x753B;&#x6267;&#x884C;&#x4E4B;&#x540E;&#x7684;Button&#x662F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x53CD;&#x5E94;&#x7684;&#xFF0C;&#x800C;&#x70B9;&#x51FB;&#x539F;&#x6765;&#x5C4F;&#x5E55;&#x4E0A;&#x65B9;&#x6CA1;&#x6709;<code>Button</code>&#x7684;&#x5730;&#x65B9;&#x5374;&#x54CD;&#x5E94;&#x7684;&#x662F;&#x70B9;&#x51FB;Button&#x7684;&#x4E8B;&#x4EF6;&#x3002;</font>
+
+<p>&#x52A8;&#x753B;&#x63D2;&#x503C;&#x5668;<code>Interpolator</code><br>&#x770B;&#x4E0A;&#x9762;&#x7684;&#x5217;&#x5B50;&#x53EF;&#x4EE5;&#x770B;&#x89C1;&#x5728;<code>rotate</code>&#x91CC;&#x9762;&#x6709;&#x4E00;&#x53E5;</p>
+<p><code>android:interpolator=&quot;@android:anim/accelerate_decelerate_interpolator&quot;</code></p>
+<p><code>Interpolator</code>&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x3002;&#x5B98;&#x65B9;&#x5DF2;&#x7ECF;&#x7ED9;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E86;&#x5E38;&#x7528;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x4E0B;&#x56FE;:</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/4.png" alt=""></p>
+<p>&#x63D2;&#x503C;&#x5668;&#x7684;&#x81EA;&#x5B9A;&#x4E49;</p>
+<p>&#x6709;&#x65F6;&#x5019;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;&#x63D2;&#x503C;&#x5668;&#x4E0D;&#x591F;&#x7528;&#xFF0C;&#x53EF;&#x80FD;&#x5C31;&#x50CF;View&#x4E00;&#x6837;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x3002;&#x6240;&#x4EE5;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x63D2;&#x503C;&#x5668;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x5173;&#x4E8E;&#x63D2;&#x503C;&#x5668;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;:xml&#x81EA;&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;&#xFF08;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5BF9;&#x73B0;&#x6709;&#x7684;&#x63D2;&#x503C;&#x5668;&#x7684;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x4FEE;&#x6539;&#x6216;&#x8005;java&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x3002;&#x5982;&#x4E0B;&#x6211;&#x4EEC;&#x6765;&#x8BF4;&#x8BF4;</p>
+<p>1.xml&#x63D2;&#x503C;&#x5668;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7528;&#x6CD5;</p>
+<p>xml&#x7684;&#x65B9;&#x5F0F;&#x4E3B;&#x8981;&#x662F;&#x4FEE;&#x6539;&#x73B0;&#x6709;&#x63D2;&#x503C;&#x5668;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x4F46;&#x662F;&#x6709;&#x4E9B;&#x5C5E;&#x6027;&#x662F;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;&#x7684;&#x3002;&#x5C5E;&#x6027;&#x5982;&#x4E0B;:</p>
+<p><code>&lt;accelerateDecelerateInterpolator&gt;</code></p>
+<p>&#x65E0;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x7684;<code>attribute</code>&#x3002;</p>
+<p><code>&lt;accelerateInterpolator&gt;</code><br><code>android:factor</code> &#x6D6E;&#x70B9;&#x503C;,&#x52A0;&#x901F;&#x901F;&#x7387;(&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;1)&#x3002;</p>
+<p><code>&lt;anticipateInterploator&gt;</code><br><code>android:tension</code> &#x6D6E;&#x70B9;&#x503C;,&#x8D77;&#x59CB;&#x70B9;&#x540E;&#x62C9;&#x7684;&#x5F20;&#x529B;&#x6570;(&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;2)&#x3002;</p>
+<p><code>&lt;anticipateOvershootInterpolator&gt;</code><br><code>android:tension</code> &#x6D6E;&#x70B9;&#x503C;,&#x8D77;&#x59CB;&#x70B9;&#x540E;&#x62C9;&#x7684;&#x5F20;&#x529B;&#x6570;(&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;2)&#x3002;<br><code>android:extraTension</code> &#x6D6E;&#x70B9;&#x503C;,&#x62C9;&#x529B;&#x7684;&#x500D;&#x6570;(&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;1.5)&#x3002;</p>
+<p><code>&lt;bounceInterpolator&gt;</code><br>&#x65E0;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x7684;<code>attribute</code>&#x3002;</p>
+<p><code>&lt;cycleInterplolator&gt;</code><br><code>android:cycles</code> &#x6574;&#x5F62;,&#x5FAA;&#x73AF;&#x7684;&#x4E2A;&#x6570;(&#x9ED8;&#x8BA4;&#x4E3A;1)&#x3002;</p>
+<p><code>&lt;decelerateInterpolator&gt;</code><br><code>android:factor</code> &#x6D6E;&#x70B9;&#x503C;,&#x51CF;&#x901F;&#x7684;&#x901F;&#x7387;(&#x9ED8;&#x8BA4;&#x4E3A;1)&#x3002;</p>
+<p><code>&lt;linearInterpolator&gt;</code><br>&#x65E0;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x7684;<code>attribute</code>&#x3002;</p>
+<p><code>&lt;overshootInterpolator&gt;</code><br><code>android:tension</code> &#x6D6E;&#x70B9;&#x503C;,&#x8D85;&#x51FA;&#x7EC8;&#x70B9;&#x540E;&#x7684;&#x5F20;&#x529B;(&#x9ED8;&#x8BA4;&#x4E3A;2)&#x3002;</p>
+<p>&#x5728;<code>xml</code>&#x4E2D;&#x5B9A;&#x4E49;</p>
+<pre><code><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="tag">&lt;<span class="title">overshootInterpolator</span>  <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="attribute">android:tension</span>=<span class="value">&quot;8.0&quot;</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">overshootInterpolator</span> &gt;</span>
+</code></pre><p>&#x7136;&#x540E;&#x5728;<code>xml</code>&#x4E2D;&#x8C03;&#x7528;</p>
+<pre><code>&lt;scale xmlns:<span class="variable">android=</span><span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>  
+    android:<span class="variable">interpolator=</span><span class="string">&quot;@anim/my_overshoot_interpolator&quot;</span>  
+    .../&gt;
+</code></pre><p>2.Java&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x503C;&#x5668;&#x7684;(Java&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x503C;&#x5668;&#x5176;&#x5B9E;&#x662F;xml&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5347;&#x7EA7;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4FEE;&#x6539;xml&#x7684;&#x5C5E;&#x6027;&#x8FD8;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#x3002;&#x90A3;&#x5C31;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x901A;&#x8FC7;Java&#x6765;&#x5B9E;&#x73B0;)&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;<code>Interpolator</code>&#x63A5;&#x53E3;:&#x56E0;&#x4E3A;&#x4E0A;&#x9762;&#x6240;&#x6709;&#x7684;<code>Interpolator</code>&#x90FD;&#x5B9E;&#x73B0;&#x4E86;<code>Interpolator</code>&#x63A5;&#x53E3;&#x3002;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;:<code>float getInterpolation(float input)</code><br>&#x6B64;&#x65B9;&#x6CD5;&#x7531;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;<code>input</code>&#x4EE3;&#x8868;&#x52A8;&#x753B;&#x7684;&#x65F6;&#x95F4;,&#x5728;0&#x548C;1&#x4E4B;&#x95F4;,&#x4E5F;&#x5C31;&#x662F;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x4E4B;&#x95F4;&#x3002;<br>&#x7EBF;&#x6027;(&#x5300;&#x901F;)&#x63D2;&#x503C;&#x5668;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;:</p>
+<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomerInterpolator</span> <span class="keyword">implements</span> <span class="title">Interpolator</span> </span>{
+
+        <span class="annotation">@Override</span>
+        <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getInterpolation</span><span class="params">(<span class="keyword">float</span> input)</span> </span>{
+            <span class="keyword">return</span> (<span class="keyword">float</span>)(Math.cos((input + <span class="number">1</span>) * Math.PI) / <span class="number">2.0f</span>) + <span class="number">0.5f</span>;
+        }
+}
+</code></pre><p>&#x5230;&#x6B64;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x57FA;&#x672C;&#x8BF4;&#x5B8C;&#x3002;</p>
+<h5 id="&#x5E27;&#x52A8;&#x753B;(FrameAnimation)">&#x5E27;&#x52A8;&#x753B;(FrameAnimation)</h5><h4 id="&#x5C5E;&#x6027;&#x52A8;&#x753B;(PropertyAnimation)">&#x5C5E;&#x6027;&#x52A8;&#x753B;(PropertyAnimation)</h4>
       
     </div>
 
@@ -560,7 +784,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么突然想起学习动画"><span class="nav-number">1.</span> <span class="nav-text">为什么突然想起学习动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android动画的分类"><span class="nav-number">2.</span> <span class="nav-text">Android动画的分类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么突然想起学习动画"><span class="nav-number">1.</span> <span class="nav-text">为什么突然想起学习动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android动画的分类"><span class="nav-number">2.</span> <span class="nav-text">Android动画的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android三种动画的分开学习"><span class="nav-number">3.</span> <span class="nav-text">Android三种动画的分开学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#补间动画(TweenAnimation)"><span class="nav-number">3.1.</span> <span class="nav-text">补间动画(TweenAnimation)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#帧动画(FrameAnimation)"><span class="nav-number">3.1.1.</span> <span class="nav-text">帧动画(FrameAnimation)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性动画(PropertyAnimation)"><span class="nav-number">3.2.</span> <span class="nav-text">属性动画(PropertyAnimation)</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
