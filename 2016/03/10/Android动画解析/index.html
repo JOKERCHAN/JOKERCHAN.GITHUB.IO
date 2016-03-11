@@ -68,7 +68,16 @@
 <meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/3.png">
 <meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/4.png">
 <meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/5.gif">
-<meta property="og:updated_time" content="2016-03-11T01:43:43.179Z">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/6.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/7.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/8.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/9.gif">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/10.gif">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/11.gif">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/12.gif">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/13.gif">
+<meta property="og:image" content="http://yoursite.com/2016/03/10/Android动画解析/15.png">
+<meta property="og:updated_time" content="2016-03-11T07:32:55.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android动画解析">
 <meta name="twitter:description" content="&amp;#x968F;&amp;#x7740;&amp;#x667A;&amp;#x80FD;&amp;#x624B;&amp;#x673A;&amp;#x7684;&amp;#x666E;&amp;#x53CA;,&amp;#x5404;&amp;#x79CD;&amp;#x5E94;&amp;#x7528;&amp;#x5C42;&amp;#x51FA;&amp;#x4E0D;&amp;#x7A77;&amp;#x3002;&amp;#x5E94;&amp;#x7528;&amp;#x4E5F;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x70AB">
@@ -560,7 +569,410 @@ show.startAnimation<span class="params">(animationSet)</span>;
 AnimationDrawable animationDrawable = <span class="params">(AnimationDrawable)</span> frame_img.getBackground<span class="params">()</span>;
 animationDrawable.start<span class="params">()</span>;
 </code></pre><p>&#x4FA6;&#x52A8;&#x753B;&#x7684;&#x4F7F;&#x7528;&#x5C31;&#x5230;&#x6B64;&#x7ED3;&#x675F;&#x3002;</p>
-<h4 id="&#x5C5E;&#x6027;&#x52A8;&#x753B;(PropertyAnimation)">&#x5C5E;&#x6027;&#x52A8;&#x753B;(PropertyAnimation)</h4>
+<h4 id="&#x5C5E;&#x6027;&#x52A8;&#x753B;(PropertyAnimation)">&#x5C5E;&#x6027;&#x52A8;&#x753B;(PropertyAnimation)</h4><h5 id="&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5F15;&#x5165;&#x7684;&#x539F;&#x56E0;">&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5F15;&#x5165;&#x7684;&#x539F;&#x56E0;</h5><p>&#x524D;&#x9762;&#x8BF4;&#x5230;&#x7684;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x53EA;&#x80FD;&#x5BF9;<code>view</code>&#x8FDB;&#x884C;&#x6E10;&#x53D8;,&#x79FB;&#x52A8;,&#x7F29;&#x653E;,&#x7FFB;&#x8F6C;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x9700;&#x6C42;&#x4E0D;&#x662F;&#x8FD9;&#x4E9B;,&#x90A3;&#x4E48;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x5219;&#x5B8C;&#x5168;&#x7528;&#x4E0D;&#x4E0A;&#x4E86;&#x3002;&#x5B83;&#x7684;&#x529F;&#x80FD;&#x548C;&#x5C40;&#x9650;&#x6027;&#x90FD;&#x5F88;&#x660E;&#x663E;&#x3002;&#x6765;&#x770B;&#x770B;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x4E0D;&#x80FD;&#x80DC;&#x4EFB;&#x7684;&#x573A;&#x666F;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5BF9;&#x4E00;&#x4E2A;&#x975E;<code>View</code>&#x7684;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x64CD;&#x4F5C;,&#x8865;&#x95F4;&#x52A8;&#x753B;&#x5C31;&#x5E2E;&#x4E0D;&#x4E0A;&#x5FD9;&#x4E86;&#x3002;&#x5217;&#x5982;&#x5B50;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;<code>view</code>&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A;<code>Point</code>&#x5BF9;&#x8C61;&#x6765;&#x7BA1;&#x7406;&#x5750;&#x6807;,&#x7136;&#x540E;&#x5728;<code>onDraw()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x901A;&#x8FC7;&#x5750;&#x6807;&#x8FDB;&#x884C;&#x7ED8;&#x5236;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5BF9;<code>Point</code>&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x64CD;&#x4F5C;,&#x90A3;&#x4E48;&#x6574;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;<code>View</code>&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;&#x5C31;&#x6709;&#x4E86;&#x3002;<br>&#x8865;&#x95F4;&#x52A8;&#x753B;&#x662F;&#x4E0D;&#x80FD;&#x5B8C;&#x6210;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x7684;&#x3002;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x7684;&#x52A8;&#x753B;&#x6539;&#x53D8;&#x7684;&#x53EA;&#x662F;<code>view</code>&#x7684;&#x663E;&#x793A;&#x6548;&#x679C;&#x800C;&#x4E0D;&#x662F;&#x6539;&#x53D8;&#x5176;&#x5C5E;&#x6027;&#x3002;&#x800C;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x771F;&#x662F;&#x6539;&#x53D8;&#x4E86;&#x5176;&#x5C5E;&#x6027;&#x3002;&#x65B0;&#x5F15;&#x5165;&#x7684;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x673A;&#x5236;&#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x662F;&#x9488;&#x5BF9;&#x4E8E;<code>view</code>&#x6765;&#x8BBE;&#x8BA1;&#x7684;&#x4E86;,&#x4E5F;&#x4E0D;&#x9650;&#x5B9A;&#x4E8E;&#x53EA;&#x80FD;&#x5B9E;&#x73B0;&#x79FB;&#x52A8;&#x3001;&#x7F29;&#x653E;&#x3001;&#x65CB;&#x8F6C;&#x548C;&#x6DE1;&#x5165;&#x6DE1;&#x51FA;&#x8FD9;&#x51E0;&#x79CD;&#x52A8;&#x753B;&#x64CD;&#x4F5C;,&#x540C;&#x65F6;&#x4E5F;&#x4E0D;&#x518D;&#x53EA;&#x662F;&#x4E00;&#x79CD;&#x89C6;&#x89C9;&#x4E0A;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;&#x4E86;&#x3002;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x79CD;&#x4E0D;&#x65AD;&#x5730;&#x5BF9;&#x503C;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x7684;&#x673A;&#x5236;,&#x5E76;&#x5C06;&#x503C;&#x8D4B;&#x503C;&#x5230;&#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x6307;&#x5B9A;&#x5C5E;&#x6027;&#x4E0A;,&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x5BF9;&#x8C61;&#x7684;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;<code>view</code>&#x8FDB;&#x884C;&#x79FB;&#x52A8;&#x6216;&#x8005;&#x7F29;&#x653E;&#x3002;&#x4F46;&#x540C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x5BF9;&#x81EA;&#x5B9A;&#x4E49;<code>view</code>&#x4E2D;&#x7684;<code>point</code>&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x544A;&#x8BC9;&#x7CFB;&#x7EDF;&#x52A8;&#x753B;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x957F;,&#x9700;&#x8981;&#x6267;&#x884C;&#x54EA;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x52A8;&#x753B;&#xFF0C;&#x4EE5;&#x53CA;&#x52A8;&#x753B;&#x7684;&#x521D;&#x59CB;&#x503C;&#x548C;&#x7ED3;&#x675F;&#x503C;,&#x5269;&#x4E0B;&#x7684;&#x5DE5;&#x4F5C;&#x5C31;&#x53EF;&#x4EE5;&#x5168;&#x90E8;&#x4EA4;&#x7ED9;&#x7CFB;&#x7EDF;&#x53BB;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<h5 id="ValueAnimator">ValueAnimator</h5><p><code>ValueAnimator</code>&#x662F;&#x6574;&#x4E2A;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x673A;&#x5236;&#x5F53;&#x4E2D;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x63D0;&#x5230;&#x4E86;,&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x8FD0;&#x884C;&#x673A;&#x5236;&#x662F;&#x901A;&#x8FC7;&#x4E0D;&#x65AD;&#x5730;&#x5BF9;&#x503C;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x800C;&#x521D;&#x59CB;&#x503C;&#x548C;&#x7ED3;&#x675F;&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x52A8;&#x753B;&#x8FC7;&#x6E21;&#x5C31;&#x662F;&#x7531;<code>ValueAnimator</code>&#x8FD9;&#x4E2A;&#x7C7B;&#x6765;&#x8D1F;&#x8D23;&#x8BA1;&#x7B97;&#x7684;&#x3002;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x4E00;&#x79CD;&#x65F6;&#x95F4;&#x5FAA;&#x73AF;&#x7684;&#x673A;&#x5236;&#x6765;&#x8BA1;&#x7B97;&#x503C;&#x4E0E;&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x52A8;&#x753B;&#x8FC7;&#x6E21;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x521D;&#x59CB;&#x503C;&#x548C;&#x7ED3;&#x675F;&#x503C;&#x63D0;&#x4F9B;&#x7ED9;<code>ValueAnimator</code>&#x5E76;&#x4E14;&#x544A;&#x8BC9;&#x5B83;&#x52A8;&#x753B;&#x6240;&#x9700;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x957F;,&#x90A3;&#x4E48;<code>ValueAnimator</code>&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x5E2E;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x4ECE;&#x521D;&#x59CB;&#x503C;&#x5E73;&#x6ED1;&#x5730;&#x8FC7;&#x6E21;&#x5230;&#x7ED3;&#x675F;&#x503C;&#x8FD9;&#x6837;&#x7684;&#x6548;&#x679C;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;<code>ValueAnimator</code>&#x8FD8;&#x8D1F;&#x8D23;&#x7BA1;&#x7406;&#x52A8;&#x753B;&#x7684;&#x64AD;&#x653E;&#x6B21;&#x6570;&#x3001;&#x64AD;&#x653E;&#x6A21;&#x5F0F;&#x3001;&#x4EE5;&#x53CA;&#x5BF9;&#x52A8;&#x753B;&#x8BBE;&#x7F6E;&#x76D1;&#x542C;&#x5668;&#x7B49;&#xFF0C;&#x786E;&#x5B9E;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x7C7B;&#x3002;<br>&#x4F46;&#x662F;<code>ValueAnimator</code>&#x7684;&#x7528;&#x6CD5;&#x5374;&#x4E00;&#x70B9;&#x90FD;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x4ECE;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529F;&#x80FD;&#x770B;&#x8D77;&#x5427;&#x3002;&#x6BD4;&#x5982;&#x8BF4;&#x60F3;&#x8981;&#x5C06;&#x4E00;&#x4E2A;&#x503C;&#x4ECE;0&#x5E73;&#x6ED1;&#x8FC7;&#x6E21;&#x5230;1,&#x65F6;&#x957F;300&#x6BEB;&#x79D2;,&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;:</p>
+<pre><code>ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, 1f)<span class="comment">;</span>
+valueAnimator.setDuration(3000)<span class="comment">;</span>
+valueAnimator.start()<span class="comment">;</span>
+</code></pre><p> &#x901A;&#x8FC7;<code>ofFloat</code>&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x521B;&#x9020;&#x51FA;&#x4E00;&#x4E2A;ValueAnimator&#x7684;&#x5B9E;&#x5217;,&#x7136;&#x540E;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x4E86;<code>setDuration(3000)</code>&#x610F;&#x601D;&#x662F;&#x4ECE;0f-1f&#x53D8;&#x5316;&#x7684;&#x65F6;&#x95F4;&#x4E3A;3000&#x6BEB;&#x79D2;,&#x7136;&#x540E;&#x8C03;&#x7528;<code>start()</code>&#x65B9;&#x6CD5;&#x5F00;&#x59CB;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5DF2;&#x7ECF;&#x8BBE;&#x7F6E;&#x597D;&#x4E86;&#x52A8;&#x753B;,&#x4F46;&#x662F;&#x6CA1;&#x770B;&#x5230;&#x52A8;&#x753B;&#x4F5C;&#x7528;&#x5728;&#x4EC0;&#x4E48;&#x5730;&#x65B9;,&#x5230;&#x5E95;&#x6709;&#x6CA1;&#x6709;&#x6548;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x5F97;&#x800C;&#x77E5;&#x3002;&#x8BD5;&#x7740;&#x8FD0;&#x884C;&#x4E86;&#x4E00;&#x4E0B;,&#x53D1;&#x73B0;&#x4E0D;&#x7BA1;&#x662F;&#x63A7;&#x5236;&#x53F0;&#x8FD8;&#x662F;&#x754C;&#x9762;&#x4E0A;&#x90FD;&#x6CA1;&#x6709;&#x6548;&#x679C;&#x3002;&#x67E5;&#x770B;<code>api</code>&#x53D1;&#x73B0;,&#x53EF;&#x4EE5;&#x5BF9;&#x52A8;&#x753B;&#x8FDB;&#x884C;&#x76D1;&#x542C;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x8FD9;&#x6837;&#x6539;&#x5199;&#x4EE3;&#x7801;:</p>
+<pre><code>ValueAnimator valueAnimator = ValueAnimator.ofFloat<span class="params">(<span class="number">0</span>f, <span class="number">1</span>f)</span>;
+valueAnimator.addUpdateListener<span class="params">(new ValueAnimator.AnimatorUpdateListener<span class="params">()</span> {
+         @Override
+         public void onAnimationUpdate<span class="params">(ValueAnimator valueAnimator)</span> {
+             float val = <span class="params">(float)</span> valueAnimator.getAnimatedValue<span class="params">()</span>;
+             Log.i<span class="params">(<span class="string">&quot;joker&quot;</span>, String.valueOf<span class="params">(val)</span>)</span>;
+        }
+})</span>;
+valueAnimator.setDuration<span class="params">(<span class="number">200</span>)</span>;
+valueAnimator.start<span class="params">()</span>;
+</code></pre><p>&#x4EE3;&#x7801;&#x4E2D;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E86;<code>addUpdateListener</code>&#x5176;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;<code>onAnimationUpdate</code>&#x65B9;&#x6CD5;&#x3002;&#x5728;&#x52A8;&#x753B;&#x7ED8;&#x5236;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x4E0D;&#x65AD;&#x7684;&#x8FDB;&#x884C;&#x56DE;&#x8C03;&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5728;&#x56DE;&#x8C03;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x5BF9;&#x503C;&#x8FDB;&#x884C;&#x4E86;&#x6253;&#x5370;,&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x63A7;&#x5236;&#x53F0;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/6.png" alt=""></p>
+<p>&#x4ECE;&#x56FE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;,&#x5728;200&#x6BEB;&#x79D2;&#x5185;,&#x4ECE;0f-1f&#x5B8C;&#x6210;&#x4E86;&#x5E73;&#x6ED1;&#x7684;&#x8FC7;&#x5EA6;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x5728;&#x6765;&#x770B;&#x770B;&#x65B9;&#x6CD5;&#x3002;&#x67E5;&#x770B;&#x6E90;&#x7801;</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="function">ValueAnimator <span class="title">ofFloat</span><span class="params">(<span class="keyword">float</span>... values)</span> </span>{
+    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">&quot;Stub!&quot;</span>);
+}
+</code></pre><p>&#x4ECE;&#x6E90;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4E3A;&#x53EF;&#x53D8;&#x53C2;&#x6570;,&#x6211;&#x4EEC;&#x518D;&#x6B21;&#x6539;&#x5199;&#x4EE3;&#x7801;:</p>
+<pre><code>ValueAnimator valueAnimator = ValueAnimator.ofFloat<span class="params">(<span class="number">0</span>f, <span class="number">1</span>f,<span class="number">0</span>f)</span>;
+valueAnimator.addUpdateListener<span class="params">(new ValueAnimator.AnimatorUpdateListener<span class="params">()</span> {
+         @Override
+         public void onAnimationUpdate<span class="params">(ValueAnimator valueAnimator)</span> {
+             float val = <span class="params">(float)</span> valueAnimator.getAnimatedValue<span class="params">()</span>;
+             Log.i<span class="params">(<span class="string">&quot;joker&quot;</span>, String.valueOf<span class="params">(val)</span>)</span>;
+        }
+})</span>;
+valueAnimator.setDuration<span class="params">(<span class="number">200</span>)</span>;
+valueAnimator.start<span class="params">()</span>;
+</code></pre><p>&#x63A7;&#x5236;&#x53F0;&#x4FE1;&#x606F;&#x5982;&#x4E0B;:</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/7.png" alt=""></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x89C1;&#x52A8;&#x753B;&#x4ECE;0f-1f&#x7136;&#x540E;&#x53C8;&#x4ECE;1f-0f&#x5B8C;&#x6210;&#x4E86;&#x5E73;&#x6ED1;&#x7684;&#x8FC7;&#x5EA6;&#x3002;&#x4F60;&#x6709;&#x65F6;&#x5019;&#x6216;&#x8BB8;&#x4E0D;&#x9700;&#x8981;&#x5C0F;&#x6570;&#x3002;&#x8FD9;&#x65F6;&#x5019;&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528;<code>ofInt</code>&#x65B9;&#x6CD5;&#x3002;&#x7528;&#x6CD5;&#x548C;<code>ofFloat</code>&#x4E00;&#x6837;&#x3002;<code>ValueAnimator</code>&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x5F53;&#x7136;&#x8FD8;&#x6709;&#x522B;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>api</code>&#x67E5;&#x770B;&#x3002;&#x5176;&#x4E2D;&#x8FD8;&#x6709;<code>ofObject</code>&#x65B9;&#x6CD5;&#x3002;<code>ofObject</code>&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x524D;&#x9762;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7A0D;&#x5FAE;&#x590D;&#x6742;&#x753B;&#x4E00;&#x4E9B;&#x3002;&#x540E;&#x9762;&#x5728;&#x89E3;&#x91CA;&#x3002;</p>
+<h5 id="ObjectAnimator">ObjectAnimator</h5><p>&#x76F8;&#x6BD4;&#x8D77;<code>ValueAnimator</code>,<code>ObjectAnimator</code>&#x5728;&#x6211;&#x4EEC;&#x7684;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#x66F4;&#x5E38;&#x7528;&#x3002;&#x6309;&#x7167;&#x540D;&#x5B57;&#x6765;&#x770B;&#x5C31;&#x77E5;&#x9053;&#x3002;&#x8FD9;&#x662F;&#x5BF9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x7684;&#x52A8;&#x753B;&#x7C7B;,&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5173;&#x8054;&#x5230;&#x5BF9;&#x8C61;&#x4E0A;&#x9762;&#x53BB;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x770B;&#x67E5;<code>ObjectAnimator</code>&#x7684;&#x6E90;&#x7801;</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/8.png" alt=""></p>
+<p>&#x4ECE;&#x6E90;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;<code>ObjectAnimator</code>&#x662F;&#x7EE7;&#x627F;<code>ValueAnimator</code>&#x7C7B;&#x3002;Object&#x7C7B;&#x53EF;&#x4EE5;&#x5BF9;&#x5BF9;&#x8C61;&#x7684;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;,&#x5217;&#x5982;<br>View&#x7684;<code>rotation</code>&#x5C5E;&#x6027;,&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x5BF9;<code>ImageView</code>&#x7684;<code>rotation</code>&#x5C5E;&#x6027;&#x7684;&#x6539;&#x53D8;&#x6765;&#x770B;&#x770B;&#x600E;&#x4E48;&#x7528;&#x8FD9;&#x4E2A;&#x7C7B;&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+<p>1.&#x9996;&#x5148;&#x5728;<code>xml</code>&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;<code>ImageView</code></p>
+<pre><code>&lt;ImageView
+    android:<span class="variable">id=</span><span class="string">&quot;@+id/show&quot;</span>
+    android:<span class="variable">layout_width=</span><span class="string">&quot;wrap_content&quot;</span>
+    android:<span class="variable">layout_height=</span><span class="string">&quot;wrap_content&quot;</span>
+    android:<span class="variable">src=</span><span class="string">&quot;@mipmap/my_head&quot;</span>
+    android:<span class="variable">layout_centerInParent=</span><span class="string">&quot;true&quot;</span> /&gt;
+</code></pre><p>2.&#x7136;&#x540E;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;</p>
+<pre><code>ObjectAnimator objectAnimator = ObjectAnimator.ofFloat<span class="params">(show, <span class="string">&quot;rotation&quot;</span>, <span class="number">0</span>f, <span class="number">360</span>f)</span>;
+objectAnimator.setDuration<span class="params">(<span class="number">3000</span>)</span>;
+objectAnimator.start<span class="params">()</span>;
+</code></pre><p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x610F;&#x601D;&#x662F;&#x5C06;<code>show</code>&#x5BF9;&#x8C61;&#x8FDB;&#x884C;0f-360f&#x7684;&#x65CB;&#x8F6C;&#x3002;&#x6548;&#x679C;&#x5982;&#x4E0B;&#x56FE;</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/9.gif" alt=""></p>
+<p>&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5BF9;<code>alpha</code>,<code>scale</code>,<code>translate</code>&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
+<p><code>alpha</code></p>
+<pre><code>ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(show, <span class="string">&quot;alpha&quot;</span>, <span class="number">1f</span>, <span class="number">0f</span>,<span class="number">1f</span>);
+objectAnimator.setDuration(<span class="number">3000</span>);
+objectAnimator.start();
+</code></pre><p>&#x6548;&#x679C;&#x5982;&#x56FE;:</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/10.gif" alt=""></p>
+<p><code>scale</code></p>
+<pre><code>ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(show, <span class="string">&quot;scaleX&quot;</span>, <span class="number">1f</span>, <span class="number">2f</span>,<span class="number">1f</span>);
+objectAnimator.setDuration(<span class="number">3000</span>);
+objectAnimator.start();
+</code></pre><p>&#x6548;&#x679C;&#x5982;&#x56FE;:</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/11.gif" alt=""></p>
+<p><code>translate</code></p>
+<pre><code>float currentX = show.getTranslationX<span class="params">()</span>;
+ObjectAnimator objectAnimator = ObjectAnimator.ofFloat<span class="params">(show, <span class="string">&quot;translationX&quot;</span>, currentX, <span class="number">500</span>, currentX)</span>;
+objectAnimator.setDuration<span class="params">(<span class="number">3000</span>)</span>;
+objectAnimator.start<span class="params">()</span>;
+</code></pre><p>&#x6548;&#x679C;&#x5982;&#x56FE;:</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/12.gif" alt=""></p>
+<p>&#x8FD9;&#x6837;&#x770B;&#x6765;<code>ObjectAnimator</code>&#x7684;&#x7528;&#x6CD5;&#x770B;&#x4F3C;&#x6CA1;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#x4E86;&#x3002;&#x4F46;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5230;&#x5E95;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x4F20;&#x5165;&#x503C;?&#x5176;&#x5B9E;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x7684;,&#x56E0;&#x4E3A;<code>ObjectAnimator</code>&#x5C31;&#x662F;&#x9488;&#x5BF9;<code>Object</code>&#x8FDB;&#x884C;&#x8BBE;&#x8BA1;&#x7684;&#x3002;&#x4ED6;&#x7684;&#x76EE;&#x6807;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x5BF9;&#x4EFB;&#x610F;&#x5BF9;&#x8C61;&#x7684;&#x719F;&#x6089;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;,&#x6765;&#x8FBE;&#x5230;&#x6539;&#x53D8;&#x4ECE;&#x800C;&#x51B3;&#x5B9A;&#x8BE5;&#x5982;&#x4F55;&#x663E;&#x793A;&#x3002;</p>
+<p>&#x5217;&#x5982;<code>ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(show, &quot;alpha&quot;, 1f, 0f,1f);</code>&#x8FD9;&#x53E5;&#x8BDD;&#x5C31;&#x662F;&#x4E0D;&#x65AD;&#x6539;&#x53D8;<code>show</code>&#x7684;<code>alpha</code>&#x5C5E;&#x6027;&#x503C;&#x4ECE;1f-0f-1f&#x7684;&#x6539;&#x53D8;&#x3002;&#x7136;&#x540E;<code>show</code>&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x6839;&#x636E;<code>alpha</code>&#x5C5E;&#x6027;&#x503C;&#x7684;&#x6539;&#x53D8;&#x6765;&#x4E0D;&#x65AD;&#x5237;&#x65B0;&#x754C;&#x9762;&#x7684;&#x663E;&#x793A;,&#x4ECE;&#x800C;&#x8BA9;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6DE1;&#x5165;&#x6DE1;&#x51FA;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;&#x3002;&#x8FD9;&#x91CC;&#x7684;<code>show</code>&#x662F;&#x4E00;&#x4E2A;<code>ImageView</code>&#x3002;</p>
+<p>&#x90A3;&#x4E48;<code>ImageView</code>&#x5BF9;&#x8C61;&#x4E2D;&#x662F;&#x4E0D;&#x662F;&#x6709;<code>alpha</code>&#x5C5E;&#x6027;&#x8FD9;&#x4E2A;&#x503C;&#x5462;?&#x6CA1;&#x6709;,&#x4E0D;&#x4EC5;<code>ImageView</code>&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8FDE;&#x5B83;&#x6240;&#x6709;&#x7684;&#x7236;&#x7C7B;&#x4E5F;&#x662F;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x3002;&#x8FD9;&#x5C31;&#x5947;&#x602A;&#x4E86;,<code>ImageView</code>&#x5F53;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;<code>alpha</code>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;,<code>ObjectAnimator</code>&#x662F;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x7684;&#x5462;?&#x5176;&#x5B9E;<code>ObjectAnimator</code>&#x5185;&#x90E8;&#x7684;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x5E76;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x5BF9;&#x6211;&#x4EEC;&#x4F20;&#x5165;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x7684;,&#x800C;&#x662F;&#x4F1A;&#x53BB;&#x5BFB;&#x627E;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x540D;&#x5BF9;&#x5E94;&#x7684;<code>get</code>&#x548C;<code>set</code>&#x65B9;&#x6CD5;&#x3002;&#x56E0;&#x6B64;<code>alpha</code>&#x5C5E;&#x6027;&#x6240;&#x5BF9;&#x5E94;&#x7684;<code>get</code>&#x548C;<code>set</code>&#x65B9;&#x6CD5;&#x5E94;&#x8BE5;&#x5C31;&#x662F;:</p>
+<pre><code><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAlpha</span>(<span class="params"><span class="keyword">float</span> <span class="keyword">value</span></span>)</span>;
+<span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getAlpha</span>(<span class="params"></span>)</span>;
+</code></pre><p>&#x90A3;&#x4E48;<code>ImageView</code>&#x5BF9;&#x8C61;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x5462;?&#x786E;&#x5B9E;&#x6709;,&#x5E76;&#x4E14;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x7531;<code>View</code>&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x4E0D;&#x4EC5;<code>ImageView</code>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x6765;&#x8FDB;&#x884C;&#x6DE1;&#x5165;&#x6DE1;&#x51FA;&#x52A8;&#x753B;&#x64CD;&#x4F5C;,&#x4EFB;&#x4F55;&#x7EE7;&#x627F;&#x81EA;<code>View</code>&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x53EF;&#x4EE5;&#x7684;&#x3002;<br>&#x65E2;&#x7136;<code>alpha</code>&#x662F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF0C;&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x4E00;&#x5B9A;&#x5DF2;&#x7ECF;&#x660E;&#x767D;&#x4E86;&#x3002;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x6240;&#x7528;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x90FD;&#x662F;&#x8FD9;&#x4E2A;&#x5DE5;&#x4F5C;&#x539F;&#x7406;,&#x90A3;&#x4E48;<code>View</code>&#x5F53;&#x4E2D;&#x4E00;&#x5B9A;&#x4E5F;&#x5B58;&#x5728;&#x7740;<code>setRotation()</code>&#x3001;<code>getRotation()</code>&#x3001;<code>setTranslationX()</code>&#x3001;<code>getTranslationX()</code>&#x3001;<code>setScaleY()</code>&#x3001;<code>getScaleY()</code>&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x3002;</p>
+<h5 id="&#x7EC4;&#x5408;&#x52A8;&#x753B;">&#x7EC4;&#x5408;&#x52A8;&#x753B;</h5><p>&#x524D;&#x9762;&#x6240;&#x63D0;&#x5230;&#x7684;&#x52A8;&#x753B;&#x90FD;&#x663E;&#x5F97;&#x5F88;&#x5355;&#x4E00;,&#x5982;&#x679C;&#x6211;&#x8981;&#x900F;&#x660E;&#x7684;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x65CB;&#x8F6C;&#x5462;?&#x5F53;&#x7136;&#x4E86;<code>google</code>&#x80AF;&#x5B9A;&#x4E0D;&#x4F1A;&#x8FD9;&#x6837;&#x7B80;&#x5355;&#x7684;&#x95EE;&#x9898;&#x90FD;&#x60F3;&#x4E0D;&#x5230;&#x3002;&#x6240;&#x4EE5;<code>google</code>&#x63D0;&#x4F9B;&#x4E86;<code>AnimatorSet</code>&#x6765;&#x5B9E;&#x73B0;,&#x8FD9;&#x4E2A;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;<code>play()</code>&#x65B9;&#x6CD5;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5411;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165;&#x4E00;&#x4E2A;<code>Animator</code>&#x5BF9;&#x8C61;<code>(ValueAnimator&#x6216;ObjectAnimator)</code>&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;AnimatorSet.Builder&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p><code>AnimatorSet.Builder</code>&#x4E2D;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x56DB;&#x4E2A;&#x65B9;&#x6CD5;:</p>
+<pre><code><span class="function"><span class="title">after</span><span class="params">(Animator anim)</span></span>   &#x5C06;&#x73B0;&#x6709;&#x52A8;&#x753B;&#x63D2;&#x5165;&#x5230;&#x4F20;&#x5165;&#x7684;&#x52A8;&#x753B;&#x4E4B;&#x540E;&#x6267;&#x884C;
+
+<span class="function"><span class="title">after</span><span class="params">(long delay)</span></span>   &#x5C06;&#x73B0;&#x6709;&#x52A8;&#x753B;&#x5EF6;&#x8FDF;&#x6307;&#x5B9A;&#x6BEB;&#x79D2;&#x540E;&#x6267;&#x884C;
+
+<span class="function"><span class="title">before</span><span class="params">(Animator anim)</span></span>   &#x5C06;&#x73B0;&#x6709;&#x52A8;&#x753B;&#x63D2;&#x5165;&#x5230;&#x4F20;&#x5165;&#x7684;&#x52A8;&#x753B;&#x4E4B;&#x524D;&#x6267;&#x884C;
+
+<span class="function"><span class="title">with</span><span class="params">(Animator anim)</span></span>   &#x5C06;&#x73B0;&#x6709;&#x52A8;&#x753B;&#x548C;&#x4F20;&#x5165;&#x7684;&#x52A8;&#x753B;&#x540C;&#x65F6;&#x6267;&#x884C;
+</code></pre><p>&#x6709;&#x4E86;&#x8FD9;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x5148;&#x524D;&#x7684;&#x52A8;&#x753B;&#x4E86;,&#x5217;&#x5982;&#x6211;&#x4EEC;&#x8BA9;&#x56FE;&#x7247;&#x5148;&#x79FB;&#x52A8;,&#x7136;&#x540E;&#x518D;&#x65CB;&#x8F6C;,&#x5728;&#x65CB;&#x8F6C;&#x7684;&#x65F6;&#x5019;&#x6E10;&#x53D8;&#x3002;</p>
+<p>&#x6548;&#x679C;&#x56FE;&#x5982;&#x4E0B;:</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/13.gif" alt=""></p>
+<p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+<pre><code>float currentX = show.getTranslationX<span class="params">()</span>;
+ObjectAnimator translation = ObjectAnimator.ofFloat<span class="params">(show, <span class="string">&quot;translationX&quot;</span>, currentX, <span class="number">500</span>, currentX)</span>;
+ObjectAnimator rotation = ObjectAnimator.ofFloat<span class="params">(show, <span class="string">&quot;rotation&quot;</span>, <span class="number">0</span>f, <span class="number">360</span>f)</span>;
+ObjectAnimator alpha = ObjectAnimator.ofFloat<span class="params">(show, <span class="string">&quot;alpha&quot;</span>, <span class="number">1</span>f, <span class="number">0</span>f,<span class="number">1</span>f)</span>;
+AnimatorSet animatorSet = new AnimatorSet<span class="params">()</span>;
+animatorSet.play<span class="params">(translation)</span>.after<span class="params">(rotation)</span>.with<span class="params">(alpha)</span>;
+animatorSet.setDuration<span class="params">(<span class="number">5000</span>)</span>;
+animatorSet.start<span class="params">()</span>;
+</code></pre><p>&#x4ECE;&#x56FE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x89C1;&#x4E09;&#x4E2A;&#x52A8;&#x753B;&#x6309;&#x7167;&#x9884;&#x5148;&#x7684;&#x8BBE;&#x8BA1;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x4E86;&#x64AD;&#x653E;&#x3002;</p>
+<h6 id="Animator&#x76D1;&#x542C;&#x5668;">Animator&#x76D1;&#x542C;&#x5668;</h6><p>&#x5728;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x76D1;&#x542C;&#x52A8;&#x753B;&#x7684;&#x4E8B;&#x4EF6;,&#x5217;&#x5982;&#x52A8;&#x753B;&#x7684;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;,&#x7136;&#x540E;&#x5728;&#x5F00;&#x59CB;&#x6216;&#x8005;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x5019;&#x53BB;&#x5904;&#x7406;&#x4E00;&#x4E9B;&#x903B;&#x8F91;&#x3002;<code>Animator</code>&#x7C7B;&#x5F53;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;<code>addListener()</code>&#x65B9;&#x6CD5;,&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;<code>AnimatorListener</code>,&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x53BB;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;<code>AnimatorListener</code>&#x5C31;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x52A8;&#x753B;&#x7684;&#x5404;&#x79CD;&#x4E8B;&#x4EF6;&#x4E86;&#x3002;<br>&#x5927;&#x5BB6;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;<code>ObjectAnimator</code>&#x662F;&#x7EE7;&#x627F;&#x81EA;<code>ValueAnimator</code>&#x7684;,&#x800C;<code>ValueAnimator</code>&#x53C8;&#x662F;&#x7EE7;&#x627F;&#x81EA;<code>Animator</code>&#x7684;,&#x56E0;&#x6B64;&#x4E0D;&#x7BA1;&#x662F;<code>ValueAnimator</code>&#x8FD8;&#x662F;<code>ObjectAnimator</code>&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>addListener()</code>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x3002;&#x53E6;&#x5916;<code>AnimatorSet</code>&#x4E5F;&#x662F;&#x7EE7;&#x627F;&#x81EA;<code>Animator</code>&#x7684;,&#x56E0;&#x6B64;<code>addListener()</code>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7B97;&#x662F;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code><span class="tag">animatorSet</span><span class="class">.addListener</span>(new Animator.<span class="function">AnimatorListener</span>() {
+    <span class="variable">@Override</span>
+    public void <span class="function">onAnimationStart</span>(Animator animator) {
+
+    }
+
+    <span class="variable">@Override</span>
+    public void <span class="function">onAnimationEnd</span>(Animator animator) {
+
+    }
+
+    <span class="variable">@Override</span>
+    public void <span class="function">onAnimationCancel</span>(Animator animator) {
+
+    }
+
+    <span class="variable">@Override</span>
+    public void <span class="function">onAnimationRepeat</span>(Animator animator) {
+
+    }
+});
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x89C1;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x91CD;&#x5199;4&#x4E2A;&#x65B9;&#x6CD5;,&#x5176;&#x4E2D;<code>onAnimationStart</code>&#x5728;&#x52A8;&#x753B;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;&#x88AB;&#x8C03;&#x7528;,<code>onAnimationEnd</code>&#x5728;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x5019;&#x88AB;&#x8C03;&#x7528;,<code>onAnimationCancel</code>&#x5728;&#x52A8;&#x753B;&#x88AB;&#x53D6;&#x6D88;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;,<code>onAnimationRepeat</code>&#x5728;&#x52A8;&#x753B;&#x88AB;&#x91CD;&#x590D;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x3002;&#x5927;&#x591A;&#x6570;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x8FD9;&#x6837;&#x591A;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x65F6;&#x5019;<code>Android</code>&#x7ED9;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x9002;&#x914D;&#x5668;&#x7C7B;,<code>AnimatorListenerAdapter</code>&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7C7B;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5BF9;&#x67D0;&#x4E00;&#x65B9;&#x6CD5;&#x7684;&#x76D1;&#x542C;&#x3002;</p>
+<pre><code><span class="tag">animatorSet</span><span class="class">.addListener</span>(<span class="tag">new</span> <span class="tag">AnimatorListenerAdapter</span>() <span class="rules">{  
+
+}</span>);
+</code></pre><p>&#x56E0;&#x4E3A;<code>AnimatorListenerAdapter</code>&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86;&#x6BCF;&#x4E2A;&#x63A5;&#x53E3;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4E0D;&#x5B9E;&#x73B0;&#x4E5F;&#x4E0D;&#x4F1A;&#x6709;&#x95EE;&#x9898;&#x3002;&#x6211;&#x4EEC;&#x8981;&#x76D1;&#x542C;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x53EA;&#x9700;&#x8981;&#x76D1;&#x542C;<code>onAnimationEnd</code>&#x65B9;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x3002;&#x7701;&#x53BB;&#x4E86;&#x5F88;&#x591A;&#x65E0;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<pre><code>animatorSet.addListener(<span class="keyword">new</span> AnimatorListenerAdapter() {
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animator animation)</span> </span>{
+
+        <span class="keyword">super</span>.onAnimationEnd(animation);
+
+    }
+});
+</code></pre><h6 id="XML&#x4E2D;&#x7F16;&#x5199;&#x5C5E;&#x6027;&#x52A8;&#x753B;">XML&#x4E2D;&#x7F16;&#x5199;&#x5C5E;&#x6027;&#x52A8;&#x753B;</h6><p>&#x8865;&#x95F4;&#x52A8;&#x753B;&#x53EF;&#x4EE5;&#x5728;<code>xml</code>&#x4E2D;&#x7F16;&#x5199;,&#x5F53;&#x7136;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;<code>xml</code>&#x4E2D;&#x7F16;&#x5199;&#x3002;&#x8981;&#x60F3;&#x4F7F;&#x7528;<code>xml</code>&#x7F16;&#x5199;&#x9996;&#x5148;&#x5728;<code>res</code>&#x76EE;&#x5F55;&#x4E0B;&#x9762;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;<code>animator</code>&#x6587;&#x4EF6;&#x5939;&#x5728;<code>xml</code>&#x4E2D;&#x6211;&#x4EEC;&#x4E00;&#x5171;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E09;&#x79CD;&#x6807;&#x7B7E;&#x3002;</p>
+<pre><code><span class="tag">&lt;<span class="title">animator</span>&gt;</span>  &#x5BF9;&#x5E94;&#x4EE3;&#x7801;&#x4E2D;&#x7684;ValueAnimator
+
+<span class="tag">&lt;<span class="title">objectAnimator</span>&gt;</span>  &#x5BF9;&#x5E94;&#x4EE3;&#x7801;&#x4E2D;&#x7684;ObjectAnimator
+
+<span class="tag">&lt;<span class="title">set</span>&gt;</span>  &#x5BF9;&#x5E94;&#x4EE3;&#x7801;&#x4E2D;&#x7684;AnimatorSet
+</code></pre><p>&#x548C;&#x5148;&#x524D;&#x4E00;&#x6837;&#x6211;&#x4EEC;&#x8981;&#x4ECE;0f&#x5E73;&#x6ED1;&#x7684;&#x8FC7;&#x5EA6;&#x5230;1f&#x5728;xml&#x4E2D;&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7F16;&#x5199;&#x3002;</p>
+<pre><code><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="tag">&lt;<span class="title">animator</span> <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+
+    <span class="attribute">android:duration</span>=<span class="value">&quot;300&quot;</span>
+    <span class="attribute">android:valueFrom</span>=<span class="value">&quot;0f&quot;</span>
+    <span class="attribute">android:valueTo</span>=<span class="value">&quot;1f&quot;</span>
+    <span class="attribute">android:valueType</span>=<span class="value">&quot;floatType&quot;</span> 
+
+/&gt;</span>
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x975E;&#x5E38;&#x7684;&#x7B80;&#x5355;&#x6613;&#x61C2;&#x53EF;&#x8BFB;&#x6027;&#x4E5F;&#x5F88;&#x9AD8;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5982;&#x679C;&#x8981;&#x6539;&#x53D8;<code>alpha</code>&#x5C5E;&#x6027;&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#x3002;</p>
+<pre><code><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="tag">&lt;<span class="title">objectAnimator</span> <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+
+    <span class="attribute">android:duration</span>=<span class="value">&quot;300&quot;</span>
+    <span class="attribute">android:propertyName</span>=<span class="value">&quot;alpha&quot;</span>
+    <span class="attribute">android:valueFrom</span>=<span class="value">&quot;0f&quot;</span>
+    <span class="attribute">android:valueTo</span>=<span class="value">&quot;1f&quot;</span>
+    <span class="attribute">android:valueType</span>=<span class="value">&quot;floatType&quot;</span>
+
+ /&gt;</span>
+</code></pre><p>&#x590D;&#x6742;&#x7684;&#x52A8;&#x753B;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;<code>xml</code>&#x6765;&#x7F16;&#x5199;,&#x8FD9;&#x65F6;&#x5019;&#x9700;&#x8981;<code>set</code>&#x6807;&#x7B7E;</p>
+<pre><code>&lt;set xmlns:<span class="variable">android=</span><span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    android:<span class="variable">ordering=</span><span class="string">&quot;sequentially&quot;</span>&gt;
+
+    &lt;objectAnimator
+        android:<span class="variable">duration=</span><span class="string">&quot;2000&quot;</span>
+        android:<span class="variable">propertyName=</span><span class="string">&quot;translationX&quot;</span>
+        android:<span class="variable">valueFrom=</span><span class="string">&quot;-500&quot;</span>
+        android:<span class="variable">valueTo=</span><span class="string">&quot;0&quot;</span>
+        android:<span class="variable">valueType=</span><span class="string">&quot;floatType&quot;</span> /&gt;
+
+    &lt;set android:<span class="variable">ordering=</span><span class="string">&quot;together&quot;</span>&gt;
+        &lt;objectAnimator
+            android:<span class="variable">duration=</span><span class="string">&quot;3000&quot;</span>
+            android:<span class="variable">propertyName=</span><span class="string">&quot;rotation&quot;</span>
+            android:<span class="variable">valueFrom=</span><span class="string">&quot;0&quot;</span>
+            android:<span class="variable">valueTo=</span><span class="string">&quot;360&quot;</span>
+            android:<span class="variable">valueType=</span><span class="string">&quot;floatType&quot;</span> /&gt;
+
+        &lt;set android:<span class="variable">ordering=</span><span class="string">&quot;sequentially&quot;</span>&gt;
+            &lt;objectAnimator
+                android:<span class="variable">duration=</span><span class="string">&quot;1500&quot;</span>
+                android:<span class="variable">propertyName=</span><span class="string">&quot;alpha&quot;</span>
+                android:<span class="variable">valueFrom=</span><span class="string">&quot;1&quot;</span>
+                android:<span class="variable">valueTo=</span><span class="string">&quot;0&quot;</span>
+                android:<span class="variable">valueType=</span><span class="string">&quot;floatType&quot;</span> /&gt;
+            &lt;objectAnimator
+                android:<span class="variable">duration=</span><span class="string">&quot;1500&quot;</span>
+                android:<span class="variable">propertyName=</span><span class="string">&quot;alpha&quot;</span>
+                android:<span class="variable">valueFrom=</span><span class="string">&quot;0&quot;</span>
+                android:<span class="variable">valueTo=</span><span class="string">&quot;1&quot;</span>
+                android:<span class="variable">valueType=</span><span class="string">&quot;floatType&quot;</span> /&gt;
+        &lt;/set&gt;
+    &lt;/set&gt;
+
+&lt;/set&gt;
+</code></pre><p>&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;&#x7F16;&#x5199;&#x597D;&#x7684;&#x52A8;&#x753B;&#x3002;</p>
+<pre><code>Animator animator = AnimatorInflater.loadAnimator(context, R.animator.anim_file)<span class="comment">;  </span>
+animator.setTarget(view)<span class="comment">;  </span>
+animator.start()<span class="comment">;  </span>
+</code></pre><h5 id="ValueAnimator&#x4E4B;TypeEvaluator">ValueAnimator&#x4E4B;<code>TypeEvaluator</code></h5><p>&#x524D;&#x9762;&#x5DF2;&#x7ECF;&#x8BF4;&#x4E86;<code>ValueAnimator</code>,&#x90A3;&#x8FD9;&#x4E2A;<code>TypeEvaluator</code>&#x5230;&#x5E95;&#x662F;&#x7528;&#x6765;&#x5E72;&#x561B;&#x7684;?&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x544A;&#x8BC9;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x4ECE;&#x521D;&#x59CB;&#x503C;&#x8FC7;&#x5EA6;&#x5230;&#x7ED3;&#x675F;&#x503C;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#x5B66;&#x5230;&#x7684;<code>ValueAnimator.ofFloat()</code>&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x5B9E;&#x73B0;&#x4E86;&#x521D;&#x59CB;&#x503C;&#x4E0E;&#x7ED3;&#x675F;&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x5E73;&#x6ED1;&#x8FC7;&#x5EA6;,&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x5E73;&#x6ED1;&#x8FC7;&#x5EA6;&#x662F;&#x600E;&#x4E48;&#x505A;&#x5230;&#x7684;&#x5462;?&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x7CFB;&#x7EDF;&#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;<code>FloatEvaluator</code>&#x5B83;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x544A;&#x77E5;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x4ECE;&#x521D;&#x59CB;&#x503C;&#x8FC7;&#x5EA6;&#x5230;&#x7ED3;&#x675F;&#x503C;,&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;<code>FloatEvaluator</code>&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;:</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> FloatEvaluator implements TypeEvaluator {  
+    <span class="keyword">public</span> Object evaluate(<span class="built_in">float</span> <span class="built_in">fraction</span>, Object startValue, Object endValue) {  
+        <span class="built_in">float</span> startFloat = ((<span class="keyword">Number</span>) startValue).floatValue();  
+        <span class="keyword">return</span> startFloat + <span class="built_in">fraction</span> * (((<span class="keyword">Number</span>) endValue).floatValue() - startFloat);  
+    }  
+}
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;<code>FloatEvaluator</code>&#x5B9E;&#x73B0;&#x4E86;<code>TypeEvaluator</code>&#x63A5;&#x53E3;,&#x7136;&#x540E;&#x91CD;&#x5199;<code>evaluate()</code>&#x65B9;&#x6CD5;&#x3002;<code>evaluate()</code>&#x65B9;&#x6CD5;&#x5F53;&#x4E2D;&#x4F20;&#x5165;&#x4E86;&#x4E09;&#x4E2A;&#x53C2;&#x6570;,&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;<code>fraction</code>&#x975E;&#x5E38;&#x91CD;&#x8981;,&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x52A8;&#x753B;&#x7684;&#x5B8C;&#x6210;&#x5EA6;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x6839;&#x636E;&#x5B83;&#x6765;&#x8BA1;&#x7B97;&#x5F53;&#x524D;&#x52A8;&#x753B;&#x7684;&#x503C;&#x5E94;&#x8BE5;&#x662F;&#x591A;&#x5C11;,&#x7B2C;&#x4E8C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x5206;&#x522B;&#x8868;&#x793A;&#x52A8;&#x753B;&#x7684;&#x521D;&#x59CB;&#x503C;&#x548C;&#x7ED3;&#x675F;&#x503C;&#x3002;&#x90A3;&#x4E48;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x7684;&#x903B;&#x8F91;&#x5C31;&#x6BD4;&#x8F83;&#x6E05;&#x6670;&#x4E86;,&#x7528;&#x7ED3;&#x675F;&#x503C;&#x51CF;&#x53BB;&#x521D;&#x59CB;&#x503C;,&#x7B97;&#x51FA;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x503C;,&#x7136;&#x540E;&#x4E58;&#x4EE5;<code>fraction</code>&#x8FD9;&#x4E2A;&#x7CFB;&#x6570;&#x518D;&#x52A0;&#x4E0A;&#x521D;&#x59CB;&#x503C;,&#x90A3;&#x4E48;&#x5C31;&#x5F97;&#x5230;&#x5F53;&#x524D;&#x52A8;&#x753B;&#x7684;&#x503C;&#x4E86;&#x3002;<br>&#x597D;&#x7684;,&#x90A3;<code>FloatEvaluator</code>&#x662F;&#x7CFB;&#x7EDF;&#x5185;&#x7F6E;&#x597D;&#x7684;&#x529F;&#x80FD;,&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x53BB;&#x7F16;&#x5199;,&#x4F46;&#x4ECB;&#x7ECD;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x662F;&#x8981;&#x4E3A;&#x6211;&#x4EEC;&#x540E;&#x9762;&#x7684;&#x529F;&#x80FD;&#x94FA;&#x8DEF;&#x7684;&#x3002;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8FC7;&#x4E86;<code>ValueAnimator</code>&#x7684;<code>ofFloat()</code>&#x548C;<code>ofInt()</code>&#x65B9;&#x6CD5;,&#x5206;&#x522B;&#x7528;&#x4E8E;&#x5BF9;&#x6D6E;&#x70B9;&#x578B;&#x548C;&#x6574;&#x578B;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x7684;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;<code>ValueAnimator</code>&#x4E2D;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;<code>ofObject()</code>&#x65B9;&#x6CD5;,&#x662F;&#x7528;&#x4E8E;&#x5BF9;&#x4EFB;&#x610F;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x7684;&#x3002;&#x4F46;&#x662F;&#x76F8;&#x6BD4;&#x4E8E;&#x6D6E;&#x70B9;&#x578B;&#x6216;&#x6574;&#x578B;&#x6570;&#x636E;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x660E;&#x663E;&#x8981;&#x66F4;&#x590D;&#x6742;&#x4E00;&#x4E9B;,&#x56E0;&#x4E3A;&#x7CFB;&#x7EDF;&#x5C06;&#x5B8C;&#x5168;&#x65E0;&#x6CD5;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x4ECE;&#x521D;&#x59CB;&#x5BF9;&#x8C61;&#x8FC7;&#x5EA6;&#x5230;&#x7ED3;&#x675F;&#x5BF9;&#x8C61;,&#x56E0;&#x6B64;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;<code>TypeEvaluator</code>&#x6765;&#x544A;&#x77E5;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x8FC7;&#x5EA6;&#x3002;</p>
+<p>&#x524D;&#x9762;&#x8BF4;&#x5230;&#x7684;&#x81EA;&#x5B9A;&#x4E49;<code>view</code>&#x7528;<code>point</code>&#x6765;&#x7BA1;&#x7406;&#x5750;&#x6807;&#x548C;<code>ofObject</code>&#x3002;&#x76F8;&#x6BD4;&#x4E8E;&#x6D6E;&#x70B9;&#x578B;&#x6216;&#x6574;&#x578B;&#x6570;&#x636E;,&#x5BF9;&#x8C61;&#x7684;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x660E;&#x663E;&#x8981;&#x66F4;&#x590D;&#x6742;&#x4E00;&#x4E9B;,&#x56E0;&#x4E3A;&#x7CFB;&#x7EDF;&#x5C06;&#x5B8C;&#x5168;&#x65E0;&#x6CD5;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x4ECE;&#x521D;&#x59CB;&#x5BF9;&#x8C61;&#x8FC7;&#x5EA6;&#x5230;&#x7ED3;&#x675F;&#x5BF9;&#x8C61;,&#x56E0;&#x6B64;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;<code>TypeEvaluator</code>&#x6765;&#x544A;&#x77E5;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x8FC7;&#x5EA6;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>Point</code>&#x7C7B;</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Point</span> {
+
+    <span class="keyword">private</span> <span class="keyword">int</span> x;
+    <span class="keyword">private</span> <span class="keyword">int</span> y;
+
+    <span class="function"><span class="keyword">public</span> <span class="title">Point</span>(<span class="params"><span class="keyword">int</span> x, <span class="keyword">int</span> y</span>) </span>{
+        <span class="keyword">this</span>.x = x;
+        <span class="keyword">this</span>.y = y;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getX</span>(<span class="params"></span>) </span>{
+        <span class="keyword">return</span> x;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setX</span>(<span class="params"><span class="keyword">int</span> x</span>) </span>{
+        <span class="keyword">this</span>.x = x;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getY</span>(<span class="params"></span>) </span>{
+        <span class="keyword">return</span> y;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setY</span>(<span class="params"><span class="keyword">int</span> y</span>) </span>{
+        <span class="keyword">this</span>.y = y;
+    }
+
+}
+</code></pre><p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;<code>PointEvaluator</code></p>
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> PointEvaluator implements TypeEvaluator&lt;Point&gt; {
+
+        @Override
+        <span class="keyword">public</span> Point evaluate(<span class="built_in">float</span> <span class="built_in">fraction</span>, Point start, Point <span class="keyword">end</span>) {
+            <span class="built_in">float</span> startX = start.getX();
+            <span class="built_in">float</span> startY = start.getY();
+            <span class="built_in">float</span> endX = <span class="keyword">end</span>.getX();
+            <span class="built_in">float</span> endY = <span class="keyword">end</span>.getY();
+            <span class="built_in">float</span> x = startX + <span class="built_in">fraction</span> * (endX - startX);
+            <span class="built_in">float</span> y = startY + <span class="built_in">fraction</span> * (endY - startY);
+            <span class="keyword">return</span> new Point(x, y);
+        }
+}
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;,<code>PointEvaluator</code>&#x540C;&#x6837;&#x5B9E;&#x73B0;&#x4E86;<code>TypeEvaluator</code>&#x63A5;&#x53E3;&#x5E76;&#x91CD;&#x5199;&#x4E86;<code>evaluate()</code>&#x65B9;&#x6CD5;&#x3002;&#x5176;&#x5B9E;<code>evaluate()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x903B;&#x8F91;&#x8FD8;&#x662F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;,&#x5148;&#x662F;&#x5C06;<code>startValue</code>&#x548C;<code>endValue</code>&#x5F3A;&#x8F6C;&#x6210;<code>Point</code>&#x5BF9;&#x8C61;,&#x7136;&#x540E;&#x540C;&#x6837;&#x6839;&#x636E;<code>fraction</code>&#x6765;&#x8BA1;&#x7B97;&#x5F53;&#x524D;&#x52A8;&#x753B;&#x7684;<code>x</code>&#x548C;<code>y</code>&#x7684;&#x503C;,&#x6700;&#x540E;&#x7EC4;&#x88C5;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;<code>Point</code>&#x5BF9;&#x8C61;&#x5F53;&#x4E2D;&#x5E76;&#x8FD4;&#x56DE;&#x3002;<br>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x5C06;<code>PointEvaluator</code>&#x7F16;&#x5199;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x8F7B;&#x677E;&#x5730;&#x5BF9;<code>Point</code>&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x4E86;,&#x6BD4;&#x5982;&#x8BF4;&#x6211;&#x4EEC;&#x6709;&#x4E24;&#x4E2A;<code>Point</code>&#x5BF9;&#x8C61;&#xFF0C;&#x73B0;&#x5728;&#x9700;&#x8981;&#x5C06;<code>Point1</code>&#x901A;&#x8FC7;&#x52A8;&#x753B;&#x5E73;&#x6ED1;&#x8FC7;&#x5EA6;&#x5230;<code>Point2</code>&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;:</p>
+<pre><code>Point point1 = <span class="keyword">new</span> Point(<span class="number">0f</span>, <span class="number">0f</span>);
+Point point2 = <span class="keyword">new</span> Point(<span class="number">500f</span>, <span class="number">500f</span>);
+ValueAnimator animator = ObjectAnimator.ofObject(<span class="keyword">new</span> PointEvaluator(),point1,point2);
+animator.setDuration(<span class="number">500</span>);
+animator.start();
+</code></pre><p>&#x4EE3;&#x7801;&#x5F88;&#x7B80;&#x5355;,&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5148;&#x662F;<code>new</code>&#x51FA;&#x4E86;&#x4E24;&#x4E2A;<code>Point</code>&#x5BF9;&#x8C61;,&#x5E76;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x4E86;&#x5B83;&#x4EEC;&#x7684;&#x5750;&#x6807;&#x70B9;&#x3002;&#x7136;&#x540E;&#x8C03;&#x7528;<code>ValueAnimator</code>&#x7684;<code>ofObject()</code>&#x65B9;&#x6CD5;&#x6765;&#x6784;&#x5EFA;<code>ValueAnimator</code>&#x7684;&#x5B9E;&#x4F8B;,&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;,<code>ofObject()</code>&#x65B9;&#x6CD5;&#x8981;&#x6C42;&#x591A;&#x4F20;&#x5165;&#x4E00;&#x4E2A;<code>TypeEvaluator</code>&#x53C2;&#x6570;,&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x4F20;&#x5165;&#x521A;&#x624D;&#x5B9A;&#x4E49;&#x597D;&#x7684;<code>PointEvaluator</code>&#x7684;&#x5B9E;&#x4F8B;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;<br>&#x597D;&#x7684;,&#x8FD9;&#x5C31;&#x662F;&#x81EA;&#x5B9A;&#x4E49;<code>TypeEvaluator</code>&#x7684;&#x5168;&#x90E8;&#x7528;&#x6CD5;&#x3002;&#x638C;&#x63E1;&#x4E86;&#x8FD9;&#x4E9B;&#x77E5;&#x8BC6;&#x4E4B;&#x540E;,&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x6765;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x5BF9;<code>Point</code>&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x64CD;&#x4F5C;,&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x6574;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;<code>View</code>&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x81EA;&#x5B9A;&#x4E49;<code>view</code>&#x7684;&#x4EE3;&#x7801;:</p>
+<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShowView</span> <span class="keyword">extends</span> <span class="title">View</span> </span>{
+
+
+    <span class="keyword">private</span> Point point;
+    <span class="keyword">private</span> Paint paint;
+    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">float</span> RADIUS = <span class="number">50</span>;
+
+    <span class="function"><span class="keyword">public</span> <span class="title">ShowView</span><span class="params">(Context context)</span> </span>{
+        <span class="keyword">super</span>(context);
+        paint = <span class="keyword">new</span> Paint();
+        paint.setAntiAlias(<span class="keyword">true</span>);
+        paint.setColor(Color.RED);
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="title">ShowView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>{
+        <span class="keyword">super</span>(context, attrs);
+        paint = <span class="keyword">new</span> Paint();
+        paint.setAntiAlias(<span class="keyword">true</span>);
+        paint.setColor(Color.RED);
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="title">ShowView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>{
+        <span class="keyword">super</span>(context, attrs, defStyleAttr);
+        paint = <span class="keyword">new</span> Paint();
+        paint.setAntiAlias(<span class="keyword">true</span>);
+        paint.setColor(Color.RED);
+    }
+
+
+    <span class="annotation">@Override</span>
+    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>{
+        <span class="keyword">super</span>.onDraw(canvas);
+
+        <span class="keyword">if</span> (point == <span class="keyword">null</span>) {
+            point = <span class="keyword">new</span> Point(RADIUS, RADIUS);
+            canvas.drawCircle(point.getX(), point.getY(), RADIUS, paint);
+            Point point1 = <span class="keyword">new</span> Point(<span class="number">0f</span>, <span class="number">0f</span>);
+            Point point2 = <span class="keyword">new</span> Point(getWidth(), getHeight());
+            ValueAnimator animator = ObjectAnimator.ofObject(<span class="keyword">new</span> PointEvaluator(), point1, point2);
+            animator.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() {
+                <span class="annotation">@Override</span>
+                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator valueAnimator)</span> </span>{
+                    point = (Point) valueAnimator.getAnimatedValue();
+                    invalidate();
+                }
+            });
+            animator.setDuration(<span class="number">5000</span>);
+            animator.start();
+            invalidate();
+        } <span class="keyword">else</span> {
+            canvas.drawCircle(point.getX(), point.getY(), RADIUS, paint);
+        }
+
+
+    }
+
+    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PointEvaluator</span> <span class="keyword">implements</span> <span class="title">TypeEvaluator</span>&lt;<span class="title">Point</span>&gt; </span>{
+
+        <span class="annotation">@Override</span>
+        <span class="function"><span class="keyword">public</span> Point <span class="title">evaluate</span><span class="params">(<span class="keyword">float</span> fraction, Point start, Point end)</span> </span>{
+            <span class="keyword">float</span> startX = start.getX();
+            <span class="keyword">float</span> startY = start.getY();
+            <span class="keyword">float</span> endX = end.getX();
+            <span class="keyword">float</span> endY = end.getY();
+            <span class="keyword">float</span> x = startX + fraction * (endX - startX);
+            <span class="keyword">float</span> y = startY + fraction * (endY - startY);
+            <span class="keyword">return</span> <span class="keyword">new</span> Point(x, y);
+        }
+    }
+
+}
+</code></pre><p>&#x53EA;&#x9700;&#x8981;&#x5728;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x8FD9;&#x6837;&#x5199;&#x5C31;&#x4F1A;&#x7528;&#x52A8;&#x753B;&#x6548;&#x679C;&#x4E86;:</p>
+<pre><code>&lt;<span class="tag">com</span><span class="class">.jokerchan</span><span class="class">.propertyanimation</span><span class="class">.ShowView</span>
+    <span class="rule"><span class="attribute">android</span>:<span class="value">layout_width=<span class="string">&quot;match_parent&quot;</span>
+    android:layout_height=<span class="string">&quot;match_parent&quot;</span> /&gt;</span></span>
+</code></pre><h5 id="ObjectAnimator&#x4E4B;TypeEvaluator">ObjectAnimator&#x4E4B;<code>TypeEvaluator</code></h5><p><code>ObjectAnimator&#x4E4B;TypeEvaluator</code>&#x7684;&#x7528;&#x6CD5;&#x548C;<code>ValueAnimator&#x4E4B;TypeEvaluator</code>&#x7684;&#x7528;&#x6CD5;&#x57FA;&#x672C;&#x76F8;&#x540C;&#x3002;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x518D;&#x89E3;&#x91CA;&#x3002;</p>
+<h5 id="Interpolator&#x7684;&#x7528;&#x6CD5;">Interpolator&#x7684;&#x7528;&#x6CD5;</h5><p>&#x8865;&#x95F4;&#x52A8;&#x753B;&#x7684;&#x65F6;&#x5019;&#x5DF2;&#x7ECF;&#x8BB2;&#x5230;&#x4E86;<code>Interpolator</code>&#x7684;&#x7528;&#x6CD5;&#x3002;&#x53EA;&#x4E0D;&#x8FC7;&#x5728;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x4E2D;&#x65B0;&#x589E;&#x4E86;&#x4E00;&#x4E2A;<code>TimeInterpolator</code>&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x662F;&#x7528;&#x4E8E;&#x517C;&#x5BB9;&#x4E4B;&#x524D;&#x7684;<code>Interpolator</code>&#x7684;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;&#x6240;&#x6709;&#x8FC7;&#x53BB;&#x7684;<code>Interpolator</code>&#x5B9E;&#x73B0;&#x7C7B;&#x90FD;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x62FF;&#x8FC7;&#x6765;&#x653E;&#x5230;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5F53;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x73B0;&#x5728;<code>TimeInterpolator</code>&#x63A5;&#x53E3;&#x7684;&#x6240;&#x6709;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;:</p>
+<p><img src="/2016/03/10/Android&#x52A8;&#x753B;&#x89E3;&#x6790;/15.png" alt=""></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;,<code>TimeInterpolator</code>&#x63A5;&#x53E3;&#x5DF2;&#x7ECF;&#x6709;&#x975E;&#x5E38;&#x591A;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x4E86;&#x3002;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;<code>Android</code>&#x7CFB;&#x7EDF;&#x5185;&#x7F6E;&#x597D;&#x7684;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x7684;<code>Interpolator</code>&#x3002;&#x6BCF;&#x4E2A;<code>Interpolator</code>&#x90FD;&#x6709;&#x5B83;&#x5404;&#x81EA;&#x7684;&#x5B9E;&#x73B0;&#x6548;&#x679C;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;<code>AccelerateInterpolator</code>&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x52A0;&#x901F;&#x8FD0;&#x52A8;&#x7684;<code>Interpolator</code>&#xFF0C;&#x800C;<code>DecelerateInterpolator</code>&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x51CF;&#x901F;&#x8FD0;&#x52A8;&#x7684;<code>Interpolator</code>&#x3002;</p>
+<p>&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x8BBE;&#x7F6E;:</p>
+<pre><code>anim.setInterpolator(<span class="keyword">new</span> <span class="type">BounceInterpolator</span><span class="literal">()</span>);  
+</code></pre><p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x4E00;&#x53E5;&#x4EE3;&#x7801;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x7684;<code>Interpolator</code>&#x4E86;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x53EA;&#x4F1A;&#x7528;&#x4E00;&#x4E0B;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x597D;&#x7684;<code>Interpolator</code>&#xFF0C;&#x6211;&#x4EEC;&#x663E;&#x7136;&#x5BF9;&#x81EA;&#x5DF1;&#x7684;&#x8981;&#x6C42;&#x5C31;&#x592A;&#x4F4E;&#x4E86;&#xFF0C;&#x65E2;&#x7136;&#x662F;&#x5B66;&#x4E60;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x81EA;&#x7136;&#x8981;&#x5C06;&#x5B83;&#x7814;&#x7A76;&#x900F;&#x4E86;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C31;&#x6765;&#x770B;&#x4E00;&#x4E0B;<code>Interpolator</code>&#x7684;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x673A;&#x5236;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x6765;&#x5C1D;&#x8BD5;&#x5199;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;<code>Interpolator</code>&#x3002;<br>&#x9996;&#x5148;&#x770B;&#x4E00;&#x4E0B;<code>TimeInterpolator</code>&#x7684;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>/**
+ * A <span class="property">time</span> interpolator defines <span class="keyword">the</span> rate <span class="keyword">of</span> change <span class="keyword">of</span> an animation. This allows animations
+ * <span class="keyword">to</span> have non-linear motion, such <span class="keyword">as</span> acceleration <span class="keyword">and</span> deceleration.
+ */
+public interface TimeInterpolator {
+
+    /**
+     * Maps a value representing <span class="keyword">the</span> elapsed fraction <span class="keyword">of</span> an animation <span class="keyword">to</span> a value <span class="keyword">that</span> represents
+     * <span class="keyword">the</span> interpolated fraction. This interpolated value <span class="keyword">is</span> <span class="keyword">then</span> multiplied <span class="keyword">by</span> <span class="keyword">the</span> change <span class="keyword">in</span>
+     * value <span class="keyword">of</span> an animation <span class="keyword">to</span> derive <span class="keyword">the</span> animated value <span class="keyword">at</span> <span class="keyword">the</span> current elapsed animation <span class="property">time</span>.
+     *
+     * @param input A value <span class="keyword">between</span> <span class="number">0</span> <span class="keyword">and</span> <span class="number">1.0</span> indicating our current point
+     *        <span class="keyword">in</span> <span class="keyword">the</span> animation <span class="keyword">where</span> <span class="number">0</span> represents <span class="keyword">the</span> start <span class="keyword">and</span> <span class="number">1.0</span> represents
+     *        <span class="keyword">the</span> <span class="keyword">end</span>
+     * @<span class="constant">return</span> The interpolation value. This value can be more than <span class="number">1.0</span> <span class="keyword">for</span>
+     *         interpolators which overshoot their targets, <span class="keyword">or</span> <span class="keyword">less than</span> <span class="number">0</span> <span class="keyword">for</span>
+     *         interpolators <span class="keyword">that</span> undershoot their targets.
+     */
+    float getInterpolation(float input);
+}
+</code></pre><p>OK&#xFF0C;&#x63A5;&#x53E3;&#x8FD8;&#x662F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;<code>getInterpolation()</code>&#x65B9;&#x6CD5;&#x3002;&#x5927;&#x5BB6;&#x6709;&#x5174;&#x8DA3;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6CE8;&#x91CA;&#x6765;&#x5BF9;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x8FDB;&#x884C;&#x8BE6;&#x89E3;&#x7684;&#x4E86;&#x89E3;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x5C31;&#x7B80;&#x5355;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#xFF0C;<code>getInterpolation()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x63A5;&#x6536;&#x4E00;&#x4E2A;<code>input</code>&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x503C;&#x4F1A;&#x968F;&#x7740;&#x52A8;&#x753B;&#x7684;&#x8FD0;&#x884C;&#x800C;&#x4E0D;&#x65AD;&#x53D8;&#x5316;&#xFF0C;&#x4E0D;&#x8FC7;&#x5B83;&#x7684;&#x53D8;&#x5316;&#x662F;&#x975E;&#x5E38;&#x6709;&#x89C4;&#x5F8B;&#x7684;&#xFF0C;&#x5C31;&#x662F;&#x6839;&#x636E;&#x8BBE;&#x5B9A;&#x7684;&#x52A8;&#x753B;&#x65F6;&#x957F;&#x5300;&#x901F;&#x589E;&#x52A0;&#xFF0C;&#x53D8;&#x5316;&#x8303;&#x56F4;&#x662F;0&#x5230;1&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5F53;&#x52A8;&#x753B;&#x4E00;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;<code>input</code>&#x7684;&#x503C;&#x662F;0&#xFF0C;&#x5230;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x5019;<code>input</code>&#x7684;&#x503C;&#x662F;1&#xFF0C;&#x800C;&#x4E2D;&#x95F4;&#x7684;&#x503C;&#x5219;&#x662F;&#x968F;&#x7740;&#x52A8;&#x753B;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x957F;&#x5728;0&#x5230;1&#x4E4B;&#x95F4;&#x53D8;&#x5316;&#x7684;&#x3002;<br>&#x8BF4;&#x5230;&#x8FD9;&#x4E2A;<code>input</code>&#x7684;&#x503C;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x6709;&#x4E0D;&#x5C11;&#x670B;&#x53CB;&#x53EF;&#x80FD;&#x4F1A;&#x8054;&#x60F3;&#x5230;&#x6211;&#x4EEC;&#x5728;&#x201C;&#x4E2D;&#x201D;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#x4F7F;&#x7528;&#x8FC7;&#x7684;<code>fraction</code>&#x503C;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x91CC;&#x7684;<code>input</code>&#x548C;<code>fraction</code>&#x6709;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;&#x6216;&#x8005;&#x533A;&#x522B;&#x5462;&#xFF1F;&#x7B54;&#x6848;&#x5F88;&#x7B80;&#x5355;&#xFF0C;<code>input</code>&#x7684;&#x503C;&#x51B3;&#x5B9A;&#x4E86;<code>fraction</code>&#x7684;&#x503C;&#x3002;input&#x7684;&#x503C;&#x662F;&#x7531;&#x7CFB;&#x7EDF;&#x7ECF;&#x8FC7;&#x8BA1;&#x7B97;&#x540E;&#x4F20;&#x5165;&#x5230;<code>getInterpolation()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;<code>getInterpolation()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x6839;&#x636E;<code>input</code>&#x7684;&#x503C;&#x6765;&#x8BA1;&#x7B97;&#x51FA;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#x5C31;&#x662F;<code>fraction</code>&#x4E86;&#x3002;<br>&#x56E0;&#x6B64;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x60C5;&#x51B5;&#x5C31;&#x662F;<code>input</code>&#x503C;&#x548C;<code>fraction</code>&#x503C;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x7531;&#x4E8E;<code>input</code>&#x503C;&#x662F;&#x5300;&#x901F;&#x589E;&#x52A0;&#x7684;&#xFF0C;&#x56E0;&#x800C;<code>fraction</code>&#x7684;&#x503C;&#x4E5F;&#x662F;&#x5300;&#x901F;&#x589E;&#x52A0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x52A8;&#x753B;&#x7684;&#x8FD0;&#x52A8;&#x60C5;&#x51B5;&#x4E5F;&#x662F;&#x5300;&#x901F;&#x7684;&#x3002;&#x7CFB;&#x7EDF;&#x4E2D;&#x5185;&#x7F6E;&#x7684;<code>LinearInterpolator</code>&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x5300;&#x901F;&#x8FD0;&#x52A8;&#x7684;<code>Interpolator</code>&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5B83;&#x7684;&#x6E90;&#x7801;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</p>
+<pre><code><span class="comment">/**
+ * An interpolator where the rate of change is constant
+ */</span>
+<span class="annotation">@HasNativeInterpolator</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinearInterpolator</span> <span class="keyword">extends</span> <span class="title">BaseInterpolator</span> <span class="keyword">implements</span> <span class="title">NativeInterpolatorFactory</span> </span>{
+
+    <span class="function"><span class="keyword">public</span> <span class="title">LinearInterpolator</span><span class="params">()</span> </span>{
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="title">LinearInterpolator</span><span class="params">(Context context, AttributeSet attrs)</span> </span>{
+    }
+
+    <span class="keyword">public</span> <span class="function"><span class="keyword">float</span> <span class="title">getInterpolation</span><span class="params">(<span class="keyword">float</span> input)</span> </span>{
+        <span class="keyword">return</span> input;
+    }
+
+    <span class="comment">/** <span class="doctag">@hide</span> */</span>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">long</span> <span class="title">createNativeInterpolator</span><span class="params">()</span> </span>{
+        <span class="function"><span class="keyword">return</span> NativeInterpolatorFactoryHelper.<span class="title">createLinearInterpolator</span><span class="params">()</span></span>;
+    }
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x770B;<code>getInterpolation()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x903B;&#x8F91;&#xFF0C;&#x5C31;&#x662F;&#x628A;&#x53C2;&#x6570;&#x4E2D;&#x4F20;&#x9012;&#x7684;<code>input</code>&#x503C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E86;&#xFF0C;&#x56E0;&#x6B64;<code>fraction</code>&#x7684;&#x503C;&#x5C31;&#x662F;&#x7B49;&#x4E8E;<code>input</code>&#x7684;&#x503C;&#x7684;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5300;&#x901F;&#x8FD0;&#x52A8;&#x7684;<code>Interpolator</code>&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x3002;<br>&#x5F53;&#x7136;&#x8FD9;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x4E00;&#x79CD;<code>Interpolator</code>&#x7684;&#x5B9E;&#x73B0;&#x4E86;&#x3002;&#x73B0;&#x5728;&#x8981;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x4E5F;&#x5F88;&#x5BB9;&#x6613;&#x4E86;&#x3002;</p>
+<h5 id="ViewPropertyAnimator&#x7684;&#x7528;&#x6CD5;">ViewPropertyAnimator&#x7684;&#x7528;&#x6CD5;</h5><p><code>ViewPropertyAnimator</code>&#x662F;3.1&#x4E2D;&#x5F15;&#x8FDB;&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x90FD;&#x77E5;&#x9053;,&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x673A;&#x5236;&#x5DF2;&#x7ECF;&#x4E0D;&#x662F;&#x518D;&#x9488;&#x5BF9;&#x4E8E;<code>View</code>&#x800C;&#x8FDB;&#x884C;&#x8BBE;&#x8BA1;&#x7684;&#x4E86;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x79CD;&#x4E0D;&#x65AD;&#x5730;&#x5BF9;&#x503C;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x7684;&#x673A;&#x5236;,&#x5B83;&#x53EF;&#x4EE5;&#x5C06;&#x503C;&#x8D4B;&#x503C;&#x5230;&#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x6307;&#x5B9A;&#x5C5E;&#x6027;&#x4E0A;&#x3002;&#x4F46;&#x662F;,&#x5728;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x4E3B;&#x8981;&#x90FD;&#x8FD8;&#x662F;&#x5BF9;<code>View</code>&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x7684;&#x3002;<code>Android</code>&#x5F00;&#x53D1;&#x56E2;&#x961F;&#x4E5F;&#x662F;&#x610F;&#x8BC6;&#x5230;&#x4E86;&#x8FD9;&#x4E00;&#x70B9;,&#x6CA1;&#x6709;&#x4E3A;<code>View</code>&#x7684;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x66F4;&#x52A0;&#x4FBF;&#x6377;&#x7684;&#x7528;&#x6CD5;&#x786E;&#x5B9E;&#x662F;&#x6709;&#x70B9;&#x592A;&#x4E0D;&#x4EBA;&#x6027;&#x5316;&#x4E86;,&#x4E8E;&#x662F;&#x5728;<code>Android 3.1</code>&#x7CFB;&#x7EDF;&#x5F53;&#x4E2D;&#x8865;&#x5145;&#x4E86;<code>ViewPropertyAnimator</code>&#x8FD9;&#x4E2A;&#x673A;&#x5236;&#x3002;<br>&#x90A3;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#x4E4B;&#x524D;&#x7684;&#x7528;&#x6CD5;&#x5427;,&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x8BA9;&#x4E00;&#x4E2A;<code>TextView</code>&#x4ECE;&#x5E38;&#x89C4;&#x72B6;&#x6001;&#x53D8;&#x6210;&#x900F;&#x660E;&#x72B6;&#x6001;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;:</p>
+<pre><code>ObjectAnimator animator = ObjectAnimator.ofFloat<span class="params">(textview, <span class="string">&quot;alpha&quot;</span>, <span class="number">0</span>f)</span>;  
+animator.start<span class="params">()</span>;  
+</code></pre><p>&#x770B;&#x4E0A;&#x53BB;&#x590D;&#x6742;&#x5417;?&#x597D;&#x50CF;&#x4E5F;&#x4E0D;&#x600E;&#x4E48;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x786E;&#x5B9E;&#x4E5F;&#x4E0D;&#x600E;&#x4E48;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;&#x6211;&#x4EEC;&#x8981;&#x5C06;&#x64CD;&#x4F5C;&#x7684;<code>view</code>&#x3001;&#x5C5E;&#x6027;&#x3001;&#x53D8;&#x5316;&#x7684;&#x503C;&#x90FD;&#x4E00;&#x8D77;&#x4F20;&#x5165;&#x5230;<code>ObjectAnimator.ofFloat()</code>&#x65B9;&#x6CD5;&#x5F53;&#x4E2D;&#x3002;&#x867D;&#x7136;&#x770B;&#x4E0A;&#x53BB;&#x4E5F;&#x6CA1;&#x5199;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x4F46;&#x8FD9;&#x4E0D;&#x592A;&#x50CF;&#x662F;&#x6211;&#x4EEC;&#x5E73;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x601D;&#x7EF4;&#x3002;<br>&#x90A3;&#x4E48;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C31;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x4F7F;&#x7528;<code>ViewPropertyAnimator</code>&#x6765;&#x5B9E;&#x73B0;&#x540C;&#x6837;&#x7684;&#x6548;&#x679C;,<code>ViewPropertyAnimator</code>&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x52A0;&#x6613;&#x61C2;&#x3001;&#x66F4;&#x52A0;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;API&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;:</p>
+<pre><code><span class="tag">textview</span><span class="class">.animate</span>()<span class="class">.alpha</span>(0<span class="tag">f</span>);  
+</code></pre><p>&#x679C;&#x7136;&#x975E;&#x5E38;&#x7B80;&#x5355;,&#x4E0D;&#x8FC7;<code>textview.animate()</code>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#x5462;?<code>animate()</code>&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x5728;<code>Android 3.1</code>&#x7CFB;&#x7EDF;&#x4E0A;&#x65B0;&#x589E;&#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;,&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x4E2A;<code>ViewPropertyAnimator</code>&#x5BF9;&#x8C61;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x62FF;&#x5230;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x4E4B;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5B83;&#x7684;&#x5404;&#x79CD;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x52A8;&#x753B;&#x6548;&#x679C;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x8C03;&#x7528;&#x4E86;<code>alpha()</code>&#x65B9;&#x6CD5;&#x5E76;&#x8F6C;&#x5165;0,&#x8868;&#x793A;&#x5C06;&#x5F53;&#x524D;&#x7684;<code>textview</code>&#x53D8;&#x6210;&#x900F;&#x660E;&#x72B6;&#x6001;&#x3002;<br>&#x600E;&#x4E48;&#x6837;?&#x6BD4;&#x8D77;&#x4F7F;&#x7528;<code>ObjectAnimator</code>&#x3002;<code>ViewPropertyAnimator</code>&#x7684;&#x7528;&#x6CD5;&#x660E;&#x663E;&#x66F4;&#x52A0;&#x7B80;&#x5355;&#x6613;&#x61C2;&#x5427;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;,<code>ViewPropertyAnimator</code>&#x8FD8;&#x53EF;&#x4EE5;&#x5F88;&#x8F7B;&#x677E;&#x5730;&#x5C06;&#x591A;&#x4E2A;&#x52A8;&#x753B;&#x7EC4;&#x5408;&#x5230;&#x4E00;&#x8D77;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x8BA9;<code>textview</code>&#x8FD0;&#x52A8;&#x5230;500,500&#x8FD9;&#x4E2A;&#x5750;&#x6807;&#x70B9;&#x4E0A;,&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;:</p>
+<pre><code><span class="tag">textview</span><span class="class">.animate</span>()<span class="class">.x</span>(500)<span class="class">.y</span>(500); 
+</code></pre><p>&#x7528;&#x6CD5;&#x5F88;&#x7B80;&#x5355;,&#x540C;&#x6837;&#x4E5F;&#x662F;&#x4F7F;&#x7528;&#x8FDE;&#x7F00;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x73B0;&#x5728;&#x90FD;&#x5DF2;&#x7ECF;&#x4F53;&#x9A8C;&#x51FA;&#x6765;&#x4E86;<code>ViewPropertyAnimator</code>&#x5176;&#x5B9E;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x592A;&#x591A;&#x7684;&#x6280;&#x5DE7;&#x53EF;&#x8A00;&#xFF0C;&#x7528;&#x6CD5;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x5927;&#x540C;&#x5C0F;&#x5F02;&#x7684;,&#x9700;&#x8981;&#x7528;&#x5230;&#x4EC0;&#x4E48;&#x529F;&#x80FD;&#x5C31;&#x8FDE;&#x7F00;&#x4E00;&#x4E0B;&#xFF0C;&#x56E0;&#x6B64;&#x66F4;&#x591A;&#x7684;&#x7528;&#x6CD5;&#x5927;&#x5BB6;&#x53EA;&#x9700;&#x8981;&#x53BB;&#x67E5;&#x9605;&#x4E00;&#x4E0B;&#x6587;&#x6863;,&#x770B;&#x770B;&#x8FD8;&#x652F;&#x6301;&#x54EA;&#x4E9B;&#x529F;&#x80FD;,&#x6709;&#x54EA;&#x4E9B;&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;<br>&#x90A3;&#x4E48;&#x9664;&#x4E86;&#x7528;&#x6CD5;&#x4E4B;&#x5916;,&#x5173;&#x4E8E;<code>ViewPropertyAnimator</code>&#x6709;&#x51E0;&#x4E2A;&#x7EC6;&#x8282;&#x8FD8;&#x662F;&#x503C;&#x5F97;&#x5927;&#x5BB6;&#x6CE8;&#x610F;&#x4E00;&#x4E0B;&#x7684;&#x3002;<br>&#x6574;&#x4E2A;<code>ViewPropertyAnimator</code>&#x7684;&#x529F;&#x80FD;&#x90FD;&#x662F;&#x5EFA;&#x7ACB;&#x5728;<code>View</code>&#x7C7B;&#x65B0;&#x589E;&#x7684;<code>animate()</code>&#x65B9;&#x6CD5;&#x4E4B;&#x4E0A;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x521B;&#x5EFA;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>ViewPropertyAnimator</code>&#x7684;&#x5B9E;&#x4F8B;,&#x4E4B;&#x540E;&#x7684;&#x8C03;&#x7528;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x8BBE;&#x7F6E;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F8B;&#x5B8C;&#x6210;&#x7684;&#x3002;<br>&#x5927;&#x5BB6;&#x6CE8;&#x610F;&#x5230;,&#x5728;&#x4F7F;&#x7528;<code>ViewPropertyAnimator</code>&#x65F6;,&#x6211;&#x4EEC;&#x81EA;&#x59CB;&#x81F3;&#x7EC8;&#x6CA1;&#x6709;&#x8C03;&#x7528;&#x8FC7;<code>start()</code>&#x65B9;&#x6CD5;,&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x65B0;&#x7684;&#x63A5;&#x53E3;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x9690;&#x5F0F;&#x542F;&#x52A8;&#x52A8;&#x753B;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x53EA;&#x8981;&#x6211;&#x4EEC;&#x5C06;&#x52A8;&#x753B;&#x5B9A;&#x4E49;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x52A8;&#x753B;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x542F;&#x52A8;&#x3002;&#x5E76;&#x4E14;&#x8FD9;&#x4E2A;&#x673A;&#x5236;&#x5BF9;&#x4E8E;&#x7EC4;&#x5408;&#x52A8;&#x753B;&#x4E5F;&#x540C;&#x6837;&#x6709;&#x6548;&#xFF0C;&#x53EA;&#x8981;&#x6211;&#x4EEC;&#x4E0D;&#x65AD;&#x5730;&#x8FDE;&#x7F00;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x52A8;&#x753B;&#x5C31;&#x4E0D;&#x4F1A;&#x7ACB;&#x523B;&#x6267;&#x884C;&#xFF0C;&#x7B49;&#x5230;&#x6240;&#x6709;&#x5728;<code>ViewPropertyAnimator</code>&#x4E0A;&#x8BBE;&#x7F6E;&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x52A8;&#x753B;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x542F;&#x52A8;&#x3002;&#x5F53;&#x7136;&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x4F7F;&#x7528;&#x8FD9;&#x4E00;&#x9ED8;&#x8BA4;&#x673A;&#x5236;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x663E;&#x5F0F;&#x5730;&#x8C03;&#x7528;<code>start()</code>&#x65B9;&#x6CD5;&#x6765;&#x542F;&#x52A8;&#x52A8;&#x753B;&#x3002;<br><code>ViewPropertyAnimator</code>&#x7684;&#x6240;&#x6709;&#x63A5;&#x53E3;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x8FDE;&#x7F00;&#x7684;&#x8BED;&#x6CD5;&#x6765;&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x90FD;&#x662F;&#x5B83;&#x81EA;&#x8EAB;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x56E0;&#x6B64;&#x8C03;&#x7528;&#x5B8C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FDE;&#x7F00;&#x8C03;&#x7528;&#x5B83;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x628A;&#x6240;&#x6709;&#x7684;&#x529F;&#x80FD;&#x90FD;&#x4E32;&#x63A5;&#x8D77;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x4EC5;&#x901A;&#x8FC7;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#x5C31;&#x5B8C;&#x6210;&#x4EFB;&#x610F;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x52A8;&#x753B;&#x529F;&#x80FD;&#x3002;</p>
+<p><code>Android</code>&#x52A8;&#x753B;&#x57FA;&#x672C;&#x4E5F;&#x5C31;&#x5B8C;&#x4E86;&#x3002;</p>
+<p><a href="http://blog.csdn.net/guolin_blog/article/details/43536355" target="_blank" rel="external">&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x53C2;&#x8003;</a></p>
+
       
     </div>
 
@@ -807,7 +1219,7 @@ animationDrawable.start<span class="params">()</span>;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么突然想起学习动画"><span class="nav-number">1.</span> <span class="nav-text">为什么突然想起学习动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android动画的分类"><span class="nav-number">2.</span> <span class="nav-text">Android动画的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android三种动画的分开学习"><span class="nav-number">3.</span> <span class="nav-text">Android三种动画的分开学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#补间动画(TweenAnimation)"><span class="nav-number">3.1.</span> <span class="nav-text">补间动画(TweenAnimation)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Animation属性详解"><span class="nav-number">3.1.1.</span> <span class="nav-text">Animation属性详解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#几种类型在xml的实际应用"><span class="nav-number">3.1.2.</span> <span class="nav-text">几种类型在xml的实际应用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-首先alpha动画"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">1.首先alpha动画</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-scale动画"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">2.scale动画</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-translate动画"><span class="nav-number">3.1.2.3.</span> <span class="nav-text">3.translate动画</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-rotate动画"><span class="nav-number">3.1.2.4.</span> <span class="nav-text">4.rotate动画</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#几种类型动画组合使用"><span class="nav-number">3.1.3.</span> <span class="nav-text">几种类型动画组合使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动画插值器的详解"><span class="nav-number">3.1.4.</span> <span class="nav-text">动画插值器的详解</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#插值器的自定义"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">插值器的自定义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#帧动画(FrameAnimation)"><span class="nav-number">3.2.</span> <span class="nav-text">帧动画(FrameAnimation)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#说明"><span class="nav-number">3.2.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性动画(PropertyAnimation)"><span class="nav-number">3.3.</span> <span class="nav-text">属性动画(PropertyAnimation)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么突然想起学习动画"><span class="nav-number">1.</span> <span class="nav-text">为什么突然想起学习动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android动画的分类"><span class="nav-number">2.</span> <span class="nav-text">Android动画的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android三种动画的分开学习"><span class="nav-number">3.</span> <span class="nav-text">Android三种动画的分开学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#补间动画(TweenAnimation)"><span class="nav-number">3.1.</span> <span class="nav-text">补间动画(TweenAnimation)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Animation属性详解"><span class="nav-number">3.1.1.</span> <span class="nav-text">Animation属性详解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#几种类型在xml的实际应用"><span class="nav-number">3.1.2.</span> <span class="nav-text">几种类型在xml的实际应用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-首先alpha动画"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">1.首先alpha动画</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-scale动画"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">2.scale动画</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-translate动画"><span class="nav-number">3.1.2.3.</span> <span class="nav-text">3.translate动画</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-rotate动画"><span class="nav-number">3.1.2.4.</span> <span class="nav-text">4.rotate动画</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#几种类型动画组合使用"><span class="nav-number">3.1.3.</span> <span class="nav-text">几种类型动画组合使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动画插值器的详解"><span class="nav-number">3.1.4.</span> <span class="nav-text">动画插值器的详解</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#插值器的自定义"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">插值器的自定义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#帧动画(FrameAnimation)"><span class="nav-number">3.2.</span> <span class="nav-text">帧动画(FrameAnimation)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#说明"><span class="nav-number">3.2.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性动画(PropertyAnimation)"><span class="nav-number">3.3.</span> <span class="nav-text">属性动画(PropertyAnimation)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#属性动画引入的原因"><span class="nav-number">3.3.1.</span> <span class="nav-text">属性动画引入的原因</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ValueAnimator"><span class="nav-number">3.3.2.</span> <span class="nav-text">ValueAnimator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ObjectAnimator"><span class="nav-number">3.3.3.</span> <span class="nav-text">ObjectAnimator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组合动画"><span class="nav-number">3.3.4.</span> <span class="nav-text">组合动画</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Animator监听器"><span class="nav-number">3.3.4.1.</span> <span class="nav-text">Animator监听器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#XML中编写属性动画"><span class="nav-number">3.3.4.2.</span> <span class="nav-text">XML中编写属性动画</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ValueAnimator之TypeEvaluator"><span class="nav-number">3.3.5.</span> <span class="nav-text">ValueAnimator之TypeEvaluator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ObjectAnimator之TypeEvaluator"><span class="nav-number">3.3.6.</span> <span class="nav-text">ObjectAnimator之TypeEvaluator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Interpolator的用法"><span class="nav-number">3.3.7.</span> <span class="nav-text">Interpolator的用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ViewPropertyAnimator的用法"><span class="nav-number">3.3.8.</span> <span class="nav-text">ViewPropertyAnimator的用法</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
