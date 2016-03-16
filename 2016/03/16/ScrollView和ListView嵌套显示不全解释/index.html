@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="放弃的时候，想想为何开始">
+<meta name="description" content="&amp;#x5728;Android&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#x3002;ScorllView&amp;#x5D4C;&amp;#x5957;ListView&amp;#x7684;&amp;#x60C5;&amp;#x51B5;&amp;#x5F88;&amp;#x591A;,&amp;#x5927;&amp;#x5BB6;&amp;#x90FD;&amp;#x77E5;&amp;#x9053;&amp;#x600E;&amp;#x4E48;&amp;#x89E3;&amp;#x51B3;&amp;#x4E8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ScorllView和ListView嵌套显示不全解释">
 <meta property="og:url" content="http://yoursite.com/2016/03/16/ScrollView和ListView嵌套显示不全解释/index.html">
 <meta property="og:site_name" content="JOKERCHAN's ESSaY">
-<meta property="og:description" content="放弃的时候，想想为何开始">
-<meta property="og:updated_time" content="2016-03-16T06:21:53.383Z">
+<meta property="og:description" content="&amp;#x5728;Android&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#x3002;ScorllView&amp;#x5D4C;&amp;#x5957;ListView&amp;#x7684;&amp;#x60C5;&amp;#x51B5;&amp;#x5F88;&amp;#x591A;,&amp;#x5927;&amp;#x5BB6;&amp;#x90FD;&amp;#x77E5;&amp;#x9053;&amp;#x600E;&amp;#x4E48;&amp;#x89E3;&amp;#x51B3;&amp;#x4E8">
+<meta property="og:updated_time" content="2016-03-16T06:47:04.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ScorllView和ListView嵌套显示不全解释">
-<meta name="twitter:description" content="放弃的时候，想想为何开始">
+<meta name="twitter:description" content="&amp;#x5728;Android&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#x3002;ScorllView&amp;#x5D4C;&amp;#x5957;ListView&amp;#x7684;&amp;#x60C5;&amp;#x51B5;&amp;#x5F88;&amp;#x591A;,&amp;#x5927;&amp;#x5BB6;&amp;#x90FD;&amp;#x77E5;&amp;#x9053;&amp;#x600E;&amp;#x4E48;&amp;#x89E3;&amp;#x51B3;&amp;#x4E8">
 
 
 
@@ -307,7 +307,16 @@
       
 
       
-        
+        <p>&#x5728;<code>Android</code>&#x5F00;&#x53D1;&#x4E2D;&#x3002;<code>ScorllView</code>&#x5D4C;&#x5957;<code>ListView</code>&#x7684;&#x60C5;&#x51B5;&#x5F88;&#x591A;,&#x5927;&#x5BB6;&#x90FD;&#x77E5;&#x9053;&#x600E;&#x4E48;&#x89E3;&#x51B3;&#x4E86;,&#x90A3;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FD9;&#x6837;&#x505A;&#x5462;?</p>
+<a id="more"></a>
+<p><code>ScorllView</code>&#x5D4C;&#x5957;<code>ListView</code>&#x663E;&#x793A;&#x4E0D;&#x5168;,&#x56E0;&#x4E3A;<code>listview</code>&#x7684;<code>onMeasure</code>&#x4E0D;&#x80FD;&#x6B63;&#x786E;&#x8BA1;&#x7B97;&#x51FA;&#x4ED6;&#x7684;&#x9AD8;&#x5EA6;&#x3002;&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x624B;&#x52A8;&#x8BBE;&#x7F6E;&#x9AD8;&#x5EA6;&#x6216;&#x91CD;&#x5199;<code>onMeasure</code>&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x73B0;&#x5728;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x548C;&#x6700;&#x597D;&#x7528;&#x7684;&#x5C31;&#x662F;&#x91CD;&#x5199;<code>ListView</code>&#x7684;<code>onMeasure</code>&#x51FD;&#x6570;&#x6765;&#x8BA1;&#x7B97;&#x9AD8;&#x5EA6;&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code><span class="annotation">@Override</span>
+<span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>{
+    <span class="keyword">int</span> expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; <span class="number">2</span>, MeasureSpec.AT_MOST);
+    <span class="keyword">super</span>.onMeasure(widthMeasureSpec, expandSpec);
+}
+</code></pre><p>&#x770B;&#x4EE3;&#x7801;&#x5F88;&#x7B80;&#x5355;,&#x4E3B;&#x8981;&#x4E00;&#x53E5;&#x5C31;&#x662F;<code>int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2, MeasureSpec.AT_MOST);</code>&#x53EF;&#x662F;&#x8FD9;&#x53E5;&#x8BDD;&#x7684;&#x610F;&#x601D;&#x662F;&#x4EC0;&#x4E48;&#x5462;?&#x4F30;&#x8BA1;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x4E0D;&#x77E5;&#x9053;&#x3002;&#x5176;&#x4E2D;<code>makeMeasureSpec</code>&#x662F;&#x6839;&#x636E;&#x5927;&#x5C0F;&#x548C;&#x6A21;&#x5F0F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>int</code>&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;&#x5728;<code>Android</code>&#x4E2D;&#x4E00;&#x4E2A;&#x63A7;&#x4EF6;&#x6240;&#x5360;&#x7684;&#x6A21;&#x5F0F;&#x548C;&#x5927;&#x5C0F;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x6574;&#x6570;<code>int</code>&#x6765;&#x8868;&#x793A;&#x7684;&#x3002;&#x5176;&#x4E2D;&#x524D;&#x9762;2&#x4F4D;&#x8868;&#x793A;&#x7684;&#x662F;&#x6A21;&#x5F0F;,&#x540E;&#x9762;30&#x4F4D;&#x8868;&#x793A;&#x7684;&#x662F;&#x5927;&#x5C0F;&#x3002;&#x77E5;&#x9053;&#x81EA;&#x5B9A;&#x4E49;<code>View</code>&#x7684;&#x5F00;&#x53D1;&#x8005;&#x90FD;&#x77E5;&#x9053;<code>MeasureSpec.AT_MOST</code>&#x7684;&#x542B;&#x4E49;&#x3002;&#x8FD9;&#x65F6;&#x5019;&#x5DF2;&#x7ECF;&#x660E;&#x767D;&#x4E86;&#x3002;&#x53D6;<code>int</code>&#x7684;&#x6700;&#x5927;&#x503C;&#x53F3;&#x79FB;2&#x4F4D;,&#x83B7;&#x5F97;&#x540E;&#x9762;&#x7684;30&#x4F4D;&#x8868;&#x793A;<code>view</code>&#x6700;&#x5927;&#x7684;&#x4E34;&#x754C;&#x503C;&#x3002;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x53C8;&#x6CA1;&#x90A3;&#x6837;&#x5927;&#x3002;&#x6240;&#x4EE5;&#x91C7;&#x7528;&#x4E86;<code>AT_MOST</code>&#x6A21;&#x5F0F;&#x3002;</p>
+
       
     </div>
 
