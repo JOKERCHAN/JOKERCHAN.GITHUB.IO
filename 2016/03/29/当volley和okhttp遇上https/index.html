@@ -68,7 +68,7 @@
 <meta property="og:image" content="http://yoursite.com/2016/03/29/当volley和okhttp遇上https/3.png">
 <meta property="og:image" content="http://yoursite.com/2016/03/29/当volley和okhttp遇上https/4.png">
 <meta property="og:image" content="http://yoursite.com/2016/03/29/当volley和okhttp遇上https/5.png">
-<meta property="og:updated_time" content="2016-03-29T06:58:50.029Z">
+<meta property="og:updated_time" content="2016-03-29T07:03:10.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="当volley和okhttp遇上https">
 <meta name="twitter:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x770B;Volley&amp;#x548C;OkHttp&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x770B;&amp;#x89C1;&amp;#x4E86;https&amp;#x7684;&amp;#x76F8;&amp;#x5173;&amp;#x4E1C;&amp;#x897F;,&amp;#x5FFD;&amp;#x7136;&amp;#x60F3;&amp;#x671F;&amp;#x4E0A;&amp;#x6B21;&amp;#x8001;&amp;#x5A4">
@@ -568,19 +568,29 @@ getONetWorkString<span class="list">()</span><span class="comment">;</span>
         e.printStackTrace<span class="params">()</span>;
     }
 }
-</code></pre><p>&#x8BBF;&#x95EE;<br>     public void getONetWorkString() {<br>            String url = &#x201C;<a href="https://www.12306.cn" target="_blank" rel="external">https://www.12306.cn</a>&#x201C;;<br>            final Request request = new Request.Builder().url(url).build();<br>            Call call = okHttpClient.newCall(request);<br>            call.enqueue(new Callback() {<br>                @Override<br>                public void onFailure(Request request, IOException e) {<br>                    Log.i(&#x201C;joker&#x201D;, e.getMessage());<br>                }</p>
-<pre><code>           <span class="annotation">@Override</span>
-           <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(<span class="keyword">final</span> com.squareup.okhttp.Response response)</span> <span class="keyword">throws</span> IOException </span>{
-               <span class="keyword">final</span> String res = response.body().string();
-               runOnUiThread(<span class="keyword">new</span> Runnable() {
-                   <span class="annotation">@Override</span>
-                   <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
-                       show.setText(res);
-                   }
-               });
-           }
-       });
-}
+</code></pre><p>&#x8BBF;&#x95EE;</p>
+<pre><code><span class="keyword">public</span> void getONetWorkString() {
+        <span class="built_in">String</span> url = <span class="string">&quot;https://www.12306.cn&quot;</span>;
+        final <span class="built_in">Request</span> <span class="built_in">request</span> = <span class="keyword">new</span> <span class="built_in">Request</span>.Builder().url(url).build();
+        <span class="keyword">Call</span> <span class="keyword">call</span> = okHttpClient.newCall(<span class="built_in">request</span>);
+        <span class="keyword">call</span>.enqueue(<span class="keyword">new</span> Callback() {
+            @Override
+            <span class="keyword">public</span> void onFailure(<span class="built_in">Request</span> <span class="built_in">request</span>, IOException e) {
+                <span class="built_in">Log</span>.i(<span class="string">&quot;joker&quot;</span>, e.getMessage());
+            }
+
+            @Override
+            <span class="keyword">public</span> void onResponse(final com.squareup.okhttp.<span class="built_in">Response</span> <span class="built_in">response</span>) throws IOException {
+                final <span class="built_in">String</span> res = <span class="built_in">response</span>.body().<span class="built_in">string</span>();
+                runOnUiThread(<span class="keyword">new</span> Runnable() {
+                    @Override
+                    <span class="keyword">public</span> void run() {
+                        show.setText(res);
+                    }
+                });
+            }
+        });
+ }
 </code></pre><p>&#x8C03;&#x7528;</p>
 <pre><code>try {
     setCard<span class="params">(okHttpClient, getAssets<span class="params">()</span>.open<span class="params">(<span class="string">&quot;srca.cer&quot;</span>)</span>)</span>;
