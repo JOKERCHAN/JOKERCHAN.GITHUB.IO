@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/04/19/Glide使用记录与疑惑/index.html">
 <meta property="og:site_name" content="▓">
 <meta property="og:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x6700;&amp;#x8FD1;&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;,&amp;#x51C6;&amp;#x5907;&amp;#x7528;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;&amp;#x3002;&amp;#x641C;&amp;#x7D22">
-<meta property="og:updated_time" content="2016-04-19T07:15:44.246Z">
+<meta property="og:updated_time" content="2016-04-19T07:23:15.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Glide使用记录与疑惑">
 <meta name="twitter:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x6700;&amp;#x8FD1;&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;,&amp;#x51C6;&amp;#x5907;&amp;#x7528;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;&amp;#x3002;&amp;#x641C;&amp;#x7D22">
@@ -432,9 +432,12 @@
         <span class="keyword">compile</span> <span class="string">&apos;com.github.bumptech.glide:glide:3.7.0&apos;</span>
         <span class="keyword">compile</span> <span class="string">&apos;com.android.support:support-v4:23.1.0&apos;</span>
         <span class="keyword">compile</span> <span class="string">&apos;com.github.bumptech.glide:okhttp-integration:1.4.0@aar&apos;</span>
+        <span class="keyword">compile</span> <span class="string">&apos;com.squareup.okhttp:okhttp:2.5.0&apos;</span>
 }
 </code></pre><p><code>Gradle</code> &#x4F1A;&#x81EA;&#x52A8;&#x5408;&#x5E76;&#x5FC5;&#x8981;&#x7684; <code>GlideModule</code> &#x5230;&#x4F60;&#x7684; <code>Android.Manifest</code>&#x3002;<code>Glide</code> &#x4F1A;&#x8BA4;&#x53EF;&#x5728; <code>manifest</code> &#x4E2D;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; <code>OkHttp</code> &#x505A;&#x5230;&#x6240;&#x6709;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x3002;</p>
-<p>&#x522B;&#x5FD8;&#x8BB0;&#x6DF7;&#x6DC6;&#x914D;&#x7F6E;</p>
+<p>&#x7136;&#x540E;&#x5728;<code>application</code>&#x6216;&#x8005;<code>activity</code>&#x4E2D;&#x7684;<code>oncreate</code>&#x4E2D;&#x6CE8;&#x518C;</p>
+<pre><code>Glide.<span class="keyword">get</span>(<span class="keyword">this</span>).register(GlideUrl.<span class="keyword">class</span>,InputStream.<span class="keyword">class</span>,<span class="keyword">new</span> OkHttpUrlLoader.Factory(<span class="keyword">new</span> OkHttpClient()));
+</code></pre><p>&#x522B;&#x5FD8;&#x8BB0;&#x6DF7;&#x6DC6;&#x914D;&#x7F6E;</p>
 <pre><code>-keep class com<span class="class">.bumptech</span><span class="class">.glide</span><span class="class">.integration</span><span class="class">.okhttp</span><span class="class">.OkHttpGlideModule</span>
 </code></pre><h3 id="&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x610F;&#x89C1;">&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x610F;&#x89C1;</h3><p>&#x9879;&#x76EE;&#x4E2D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5C01;&#x88C5;,&#x907F;&#x514D;&#x4EE5;&#x540E;&#x6362;&#x6846;&#x67B6;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6539;&#x7684;&#x5730;&#x65B9;&#x592A;&#x591A;&#x3002;&#x5982;&#x679C;&#x5C01;&#x88C5;&#x4E86;&#x53EA;&#x9700;&#x8981;&#x6539;&#x5C01;&#x88C5;&#x7684;&#x65B9;&#x6CD5;&#x800C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
 <h3 id="&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x89E3;">&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x89E3;</h3><p><a href="http://mrfu.me/2016/02/27/Glide_Getting_Started/" target="_blank" rel="external">&#x53C2;&#x8003;&#x6587;&#x7AE0;</a></p>
