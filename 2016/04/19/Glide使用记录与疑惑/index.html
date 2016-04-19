@@ -1,0 +1,865 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Glide,图片,图片加载,疑惑,缓存," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x524D;&amp;#x8A00;&amp;#x6700;&amp;#x8FD1;&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;,&amp;#x51C6;&amp;#x5907;&amp;#x7528;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;&amp;#x3002;&amp;#x641C;&amp;#x7D22">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Glide使用记录与疑惑">
+<meta property="og:url" content="http://yoursite.com/2016/04/19/Glide使用记录与疑惑/index.html">
+<meta property="og:site_name" content="▓">
+<meta property="og:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x6700;&amp;#x8FD1;&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;,&amp;#x51C6;&amp;#x5907;&amp;#x7528;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;&amp;#x3002;&amp;#x641C;&amp;#x7D22">
+<meta property="og:updated_time" content="2016-04-19T06:25:24.170Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Glide使用记录与疑惑">
+<meta name="twitter:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x6700;&amp;#x8FD1;&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;,&amp;#x51C6;&amp;#x5907;&amp;#x7528;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;&amp;#x3002;&amp;#x641C;&amp;#x7D22">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 12878442,
+      author: '阿祥'
+    }
+  };
+</script>
+
+  <title> Glide使用记录与疑惑 | ▓ </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?94266d93f633ea96667f11b0b09b8489";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">▓</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">You Are All</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friends">
+          <a href="/friends" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            伙伴
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'NjUXgpCQEbEusCeyEP6o','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Glide使用记录与疑惑
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-19T13:49:46+08:00" content="2016-04-19">
+              2016-04-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/19/Glide使用记录与疑惑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/19/Glide使用记录与疑惑/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/19/Glide使用记录与疑惑/" class="leancloud_visitors" data-flag-title="Glide使用记录与疑惑">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="&#x524D;&#x8A00;">&#x524D;&#x8A00;</h3><p>&#x6700;&#x8FD1;&#x516C;&#x53F8;&#x9879;&#x76EE;&#x4E2D;,&#x51C6;&#x5907;&#x7528;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x6846;&#x67B6;&#x3002;&#x641C;&#x7D22;&#x4E86;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;,&#x51B3;&#x5B9A;&#x7528;<code>Google</code>&#x63A8;&#x8350;&#x7684;&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x5E93;<code>Glide</code>&#x3002;<br><code>Glide</code>&#x7684;<code>github</code>&#x5730;&#x5740;&#x4E3A;:<a href="https://github.com/bumptech/glide" target="_blank" rel="external">Glide</a></p>
+<h3 id="&#x5728;Android&#x4E2D;&#x4F7F;&#x7528;">&#x5728;Android&#x4E2D;&#x4F7F;&#x7528;</h3><p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>gradle</code>&#x8FDB;&#x884C;&#x4F9D;&#x8D56;&#x3002;</p>
+<pre><code><span class="keyword">repositories</span> {
+    mavenCentral() <span class="comment">// jcenter() works as well because it pulls from Maven Central</span>
+}
+
+<span class="keyword">dependencies</span> {
+    <span class="keyword">compile</span> <span class="string">&apos;com.github.bumptech.glide:glide:3.7.0&apos;</span>
+    <span class="keyword">compile</span> <span class="string">&apos;com.android.support:support-v4:23.1.0&apos;</span>
+}
+</code></pre><p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x3002;&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x522B;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002;</p>
+<a id="more"></a>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;</p>
+<pre><code><span class="comment">// For a simple view:</span>
+@Override public void onCreate<span class="params">(Bundle savedInstanceState)</span> {
+  ...
+  ImageView imageView = <span class="params">(ImageView)</span> findViewById<span class="params">(R.id.my_image_view)</span>;
+
+  Glide.with<span class="params">(this)</span>.load<span class="params">(<span class="string">&quot;http://goo.gl/gEgYUd&quot;</span>)</span>.into<span class="params">(imageView)</span>;
+}
+</code></pre><p>&#x6DF7;&#x6DC6;&#x4EE3;&#x7801;<code>Proguard</code></p>
+<pre><code>-<span class="ruby">keep public <span class="class"><span class="keyword">class</span> * <span class="title">implements</span> <span class="title">com</span>.<span class="title">bumptech</span>.<span class="title">glide</span>.<span class="title">module</span>.<span class="title">GlideModule</span></span>
+</span>-<span class="ruby">keep public enum com.bumptech.glide.load.resource.bitmap.<span class="constant">ImageHeaderParser</span><span class="variable">$*</span>* {
+</span>  **[] $VALUES;
+  public *;
+}
+</code></pre><p>&#x57FA;&#x672C;&#x7528;&#x6CD5;&#x4E5F;&#x5C31;&#x8FD9;&#x6837;&#x4E86;&#x3002;&#x4E5F;&#x6CA1;&#x8FC7;&#x591A;&#x7684;&#x53BB;&#x770B;&#x522B;&#x7684;&#x3002;&#x60F3;&#x7684;&#x65F6;&#x5019;&#x5177;&#x4F53;&#x5F00;&#x59CB;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#x5728;&#x53BB;&#x770B;&#x770B;&#x3002;&#x4F46;&#x662F;&#x6628;&#x5929;&#x5403;&#x996D;&#x7684;&#x65F6;&#x5019;,&#x63D0;&#x5230;&#x4E86;&#x597D;&#x50CF;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x4E0D;&#x652F;&#x6301;&#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#x76EE;&#x5F55;&#x3002;&#x6211;&#x5E26;&#x7740;&#x7591;&#x60D1;&#x53BB;&#x67E5;&#x770B;&#x4E86;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x3002;&#x5176;&#x5B9E;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#x3002;</p>
+<h4 id="&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#x76EE;&#x5F55;">&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#x76EE;&#x5F55;</h4><p>&#x9996;&#x5148;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;<code>GlideModule</code>&#x7136;&#x540E;&#x7528;<code>GlideBuilder</code>&#x53BB;&#x5B9E;&#x73B0;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#x8DEF;&#x5F84;,&#x5927;&#x5C0F;&#x7B49;&#x3002;</p>
+<pre><code><span class="comment">/**
+ * &#x81EA;&#x5B9A;&#x4E49;glidemodule
+ * Created by JOKERCHAN on 2016/4/19.
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JGlideModule</span> <span class="keyword">implements</span> <span class="title">GlideModule</span> </span>{
+    <span class="annotation">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>{
+
+<span class="comment">//        new GlideBuilder(getApplicationContext()).setDiskCache(new DiskCache.Factory() {</span>
+<span class="comment">//            @Override</span>
+<span class="comment">//            public DiskCache build() {</span>
+<span class="comment">//                File cacheLocation = getApplicationContext().getExternalCacheDir();</span>
+<span class="comment">//                cacheLocation.mkdirs();</span>
+<span class="comment">//                return DiskLruCacheWrapper.get(cacheLocation, 250 * 1024 * 1024);</span>
+<span class="comment">//            }</span>
+<span class="comment">//        });</span>
+        String cacheDir = <span class="string">&quot;imgcache&quot;</span>;
+        <span class="comment">//builder.setDiskCache(new ExternalCacheDiskCacheFactory(context, cacheDir, 250 * 1024 * 1024));</span>
+        builder.setDiskCache(<span class="keyword">new</span> InternalCacheDiskCacheFactory(context, cacheDir, <span class="number">250</span> * <span class="number">1024</span> * <span class="number">1024</span>));
+
+<span class="comment">//        MemorySizeCalculator calculator = new MemorySizeCalculator(context);</span>
+<span class="comment">//        int defaultMemoryCacheSize = calculator.getMemoryCacheSize();</span>
+<span class="comment">//        int defaultBitmapPoolSize = calculator.getBitmapPoolSize();</span>
+<span class="comment">//</span>
+<span class="comment">//        int customMemoryCacheSize = (int) (1.2 * defaultMemoryCacheSize);</span>
+<span class="comment">//        int customBitmapPoolSize = (int) (1.2 * defaultBitmapPoolSize);</span>
+<span class="comment">//</span>
+<span class="comment">//        builder.setMemoryCache( new LruResourceCache( customMemoryCacheSize ));</span>
+<span class="comment">//        builder.setBitmapPool( new LruBitmapPool( customBitmapPoolSize ));</span>
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerComponents</span><span class="params">(Context context, Glide glide)</span> </span>{
+
+    }
+}
+</code></pre><p>&#x5176;&#x4E2D;<code>ExternalCacheDiskCacheFactory</code>&#x548C;<code>InternalCacheDiskCacheFactory</code>&#x4EE3;&#x8868;&#x7740;&#x4E00;&#x4E2A;&#x662F;<code>sdcard</code>&#x8DEF;&#x5F84;,&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5219;&#x662F;&#x81EA;&#x8EAB;&#x8DEF;&#x5F84;&#x3002;<code>cacheDir</code>&#x4EE3;&#x8868;&#x7684;&#x662F;&#x8DEF;&#x5F84;&#x4E0B;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x540D;&#x5B57;&#x3002;<br><code>ExternalCacheDiskCacheFactory&#x4EE3;&#x8868;/sdcard/Android/data/&lt;application package&gt;/cache</code><br><code>InternalCacheDiskCacheFactory&#x4EE3;&#x8868;/data/data/&lt;application package&gt;/cache</code></p>
+<p>&#x7136;&#x540E;&#x5728;<code>manifest</code>&#x4E2D;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;</p>
+<pre><code>&lt;meta-<span class="typedef"><span class="keyword">data</span></span>
+        android:name=<span class="string">&quot;com.jokerchan.baseglide.JGlideModule&quot;</span>
+        android:value=<span class="string">&quot;GlideModule&quot;</span> /&gt;
+</code></pre><p>&#x5176;&#x4E2D;<code>name</code>&#x4E00;&#x9879;&#x4E3A;&#x4F60;&#x7684;<code>GlideModule</code>&#x5168;&#x8DEF;&#x5F84;</p>
+<p>&#x6700;&#x540E;&#x522B;&#x5FD8;&#x8BB0;&#x5728;&#x8BBE;&#x7F6E;&#x6DF7;&#x6DC6;</p>
+<pre><code><span class="tag">-keepnames</span> <span class="tag">class</span> * <span class="tag">com</span><span class="class">.jokerchan</span><span class="class">.baseglide</span><span class="class">.JGlideModule</span>
+</code></pre><p>&#x8FD9;&#x6837;&#x5C31;&#x6309;&#x7167;&#x81EA;&#x5DF1;&#x7684;&#x8BBE;&#x7F6E;&#x7684;&#x8DEF;&#x5F84;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#x56FE;&#x7247;&#x4E86;&#x3002;</p>
+<h4 id="&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x610F;&#x89C1;">&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x610F;&#x89C1;</h4><p>&#x9879;&#x76EE;&#x4E2D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5C01;&#x88C5;,&#x907F;&#x514D;&#x4EE5;&#x540E;&#x6362;&#x6846;&#x67B6;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6539;&#x7684;&#x5730;&#x65B9;&#x592A;&#x591A;&#x3002;&#x5982;&#x679C;&#x5C01;&#x88C5;&#x4E86;&#x53EA;&#x9700;&#x8981;&#x6539;&#x5C01;&#x88C5;&#x7684;&#x65B9;&#x6CD5;&#x800C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<h4 id="&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x89E3;">&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x89E3;</h4><p><a href="http://mrfu.me/2016/02/27/Glide_Getting_Started/" target="_blank" rel="external">&#x53C2;&#x8003;&#x6587;&#x7AE0;</a></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Glide/" rel="tag">#Glide</a>
+          
+            <a href="/tags/图片/" rel="tag">#图片</a>
+          
+            <a href="/tags/图片加载/" rel="tag">#图片加载</a>
+          
+            <a href="/tags/疑惑/" rel="tag">#疑惑</a>
+          
+            <a href="/tags/缓存/" rel="tag">#缓存</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/18/Android-findViewById注解简单实现/" rel="next" title="Android findViewById注解简单实现">
+                <i class="fa fa-chevron-left"></i> Android findViewById注解简单实现
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/19/Glide使用记录与疑惑/"
+     data-title="Glide使用记录与疑惑"
+     data-content=""
+     data-url="http://yoursite.com/2016/04/19/Glide使用记录与疑惑/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/19/Glide使用记录与疑惑/"
+           data-title="Glide使用记录与疑惑" data-url="http://yoursite.com/2016/04/19/Glide使用记录与疑惑/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="阿　祥(CHAN)" />
+          <p class="site-author-name" itemprop="name">阿　祥(CHAN)</p>
+          <p class="site-description motion-element" itemprop="description">▒▐░▓░▒▓▐</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">56</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Android中使用"><span class="nav-number">2.</span> <span class="nav-text">在Android中使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义缓存目录"><span class="nav-number">2.1.</span> <span class="nav-text">自定义缓存目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给自己的意见"><span class="nav-number">2.2.</span> <span class="nav-text">给自己的意见</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更详细的讲解"><span class="nav-number">2.3.</span> <span class="nav-text">更详细的讲解</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿　祥(CHAN)</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jokerchan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("kNGeJpYXrch4OAOBU8R5dBKH-gzGzoHsz", "eNtKirQYod9rJaVPWYWbAMpT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
