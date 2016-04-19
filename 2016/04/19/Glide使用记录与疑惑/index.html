@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/04/19/Glide使用记录与疑惑/index.html">
 <meta property="og:site_name" content="▓">
 <meta property="og:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x6700;&amp;#x8FD1;&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;,&amp;#x51C6;&amp;#x5907;&amp;#x7528;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;&amp;#x3002;&amp;#x641C;&amp;#x7D22">
-<meta property="og:updated_time" content="2016-04-19T06:25:24.170Z">
+<meta property="og:updated_time" content="2016-04-19T06:30:40.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Glide使用记录与疑惑">
 <meta name="twitter:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x6700;&amp;#x8FD1;&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;,&amp;#x51C6;&amp;#x5907;&amp;#x7528;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;&amp;#x3002;&amp;#x641C;&amp;#x7D22">
@@ -379,7 +379,8 @@
   public *;
 }
 </code></pre><p>&#x57FA;&#x672C;&#x7528;&#x6CD5;&#x4E5F;&#x5C31;&#x8FD9;&#x6837;&#x4E86;&#x3002;&#x4E5F;&#x6CA1;&#x8FC7;&#x591A;&#x7684;&#x53BB;&#x770B;&#x522B;&#x7684;&#x3002;&#x60F3;&#x7684;&#x65F6;&#x5019;&#x5177;&#x4F53;&#x5F00;&#x59CB;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#x5728;&#x53BB;&#x770B;&#x770B;&#x3002;&#x4F46;&#x662F;&#x6628;&#x5929;&#x5403;&#x996D;&#x7684;&#x65F6;&#x5019;,&#x63D0;&#x5230;&#x4E86;&#x597D;&#x50CF;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x4E0D;&#x652F;&#x6301;&#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#x76EE;&#x5F55;&#x3002;&#x6211;&#x5E26;&#x7740;&#x7591;&#x60D1;&#x53BB;&#x67E5;&#x770B;&#x4E86;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x3002;&#x5176;&#x5B9E;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#x3002;</p>
-<h4 id="&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#x76EE;&#x5F55;">&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#x76EE;&#x5F55;</h4><p>&#x9996;&#x5148;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;<code>GlideModule</code>&#x7136;&#x540E;&#x7528;<code>GlideBuilder</code>&#x53BB;&#x5B9E;&#x73B0;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#x8DEF;&#x5F84;,&#x5927;&#x5C0F;&#x7B49;&#x3002;</p>
+<h4 id="&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#x76EE;&#x5F55;">&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#x76EE;&#x5F55;</h4><p><code>glide</code>&#x7684;&#x786C;&#x76D8;&#x7F13;&#x5B58;&#x4E5F;&#x662F;&#x7528;&#x7684;<code>disklrucache</code>&#x6240;&#x4EE5;&#x8FD8;&#x662F;&#x5E94;&#x8BE5;&#x53BB;&#x4E86;&#x89E3;&#x5185;&#x90E8;&#x7684;&#x539F;&#x7406;,&#x5728;&#x4F7F;&#x7528;&#x5F00;&#x6E90;&#x5E93;&#x7684;&#x65F6;&#x5019;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;<code>GlideModule</code>&#x7136;&#x540E;&#x7528;<code>GlideBuilder</code>&#x53BB;&#x5B9E;&#x73B0;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#x8DEF;&#x5F84;,&#x5927;&#x5C0F;&#x7B49;&#x3002;</p>
 <pre><code><span class="comment">/**
  * &#x81EA;&#x5B9A;&#x4E49;glidemodule
  * Created by JOKERCHAN on 2016/4/19.
@@ -425,8 +426,8 @@
 <p>&#x6700;&#x540E;&#x522B;&#x5FD8;&#x8BB0;&#x5728;&#x8BBE;&#x7F6E;&#x6DF7;&#x6DC6;</p>
 <pre><code><span class="tag">-keepnames</span> <span class="tag">class</span> * <span class="tag">com</span><span class="class">.jokerchan</span><span class="class">.baseglide</span><span class="class">.JGlideModule</span>
 </code></pre><p>&#x8FD9;&#x6837;&#x5C31;&#x6309;&#x7167;&#x81EA;&#x5DF1;&#x7684;&#x8BBE;&#x7F6E;&#x7684;&#x8DEF;&#x5F84;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#x56FE;&#x7247;&#x4E86;&#x3002;</p>
-<h4 id="&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x610F;&#x89C1;">&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x610F;&#x89C1;</h4><p>&#x9879;&#x76EE;&#x4E2D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5C01;&#x88C5;,&#x907F;&#x514D;&#x4EE5;&#x540E;&#x6362;&#x6846;&#x67B6;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6539;&#x7684;&#x5730;&#x65B9;&#x592A;&#x591A;&#x3002;&#x5982;&#x679C;&#x5C01;&#x88C5;&#x4E86;&#x53EA;&#x9700;&#x8981;&#x6539;&#x5C01;&#x88C5;&#x7684;&#x65B9;&#x6CD5;&#x800C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
-<h4 id="&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x89E3;">&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x89E3;</h4><p><a href="http://mrfu.me/2016/02/27/Glide_Getting_Started/" target="_blank" rel="external">&#x53C2;&#x8003;&#x6587;&#x7AE0;</a></p>
+<h3 id="&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x610F;&#x89C1;">&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x610F;&#x89C1;</h3><p>&#x9879;&#x76EE;&#x4E2D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5C01;&#x88C5;,&#x907F;&#x514D;&#x4EE5;&#x540E;&#x6362;&#x6846;&#x67B6;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6539;&#x7684;&#x5730;&#x65B9;&#x592A;&#x591A;&#x3002;&#x5982;&#x679C;&#x5C01;&#x88C5;&#x4E86;&#x53EA;&#x9700;&#x8981;&#x6539;&#x5C01;&#x88C5;&#x7684;&#x65B9;&#x6CD5;&#x800C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<h3 id="&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x89E3;">&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x89E3;</h3><p><a href="http://mrfu.me/2016/02/27/Glide_Getting_Started/" target="_blank" rel="external">&#x53C2;&#x8003;&#x6587;&#x7AE0;</a></p>
 
       
     </div>
@@ -607,7 +608,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Android中使用"><span class="nav-number">2.</span> <span class="nav-text">在Android中使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义缓存目录"><span class="nav-number">2.1.</span> <span class="nav-text">自定义缓存目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给自己的意见"><span class="nav-number">2.2.</span> <span class="nav-text">给自己的意见</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更详细的讲解"><span class="nav-number">2.3.</span> <span class="nav-text">更详细的讲解</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Android中使用"><span class="nav-number">2.</span> <span class="nav-text">在Android中使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义缓存目录"><span class="nav-number">2.1.</span> <span class="nav-text">自定义缓存目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给自己的意见"><span class="nav-number">3.</span> <span class="nav-text">给自己的意见</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更详细的讲解"><span class="nav-number">4.</span> <span class="nav-text">更详细的讲解</span></a></li></ol></div>
             
           </div>
         </section>
