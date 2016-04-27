@@ -1,0 +1,838 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ZXing,二维码,变形,扫描,拉伸,条形码," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x7531;&amp;#x4E8E;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;&amp;#x8981;&amp;#x7528;&amp;#x5230;&amp;#x4E8C;&amp;#x7EF4;&amp;#x7801;&amp;#x626B;&amp;#x63CF;&amp;#x529F;&amp;#x80FD;,&amp;#x5728;&amp;#x4E0A;&amp;#x5B66;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x4FBF;&amp;#x542C;&amp;#x8001;&amp;#x5E08">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android ZXing 踩坑">
+<meta property="og:url" content="http://yoursite.com/2016/04/27/Android-ZXing-踩坑/index.html">
+<meta property="og:site_name" content="▓">
+<meta property="og:description" content="&amp;#x7531;&amp;#x4E8E;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;&amp;#x8981;&amp;#x7528;&amp;#x5230;&amp;#x4E8C;&amp;#x7EF4;&amp;#x7801;&amp;#x626B;&amp;#x63CF;&amp;#x529F;&amp;#x80FD;,&amp;#x5728;&amp;#x4E0A;&amp;#x5B66;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x4FBF;&amp;#x542C;&amp;#x8001;&amp;#x5E08">
+<meta property="og:image" content="http://yoursite.com/2016/04/27/Android-ZXing-踩坑/1.png">
+<meta property="og:updated_time" content="2016-04-27T08:41:09.315Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android ZXing 踩坑">
+<meta name="twitter:description" content="&amp;#x7531;&amp;#x4E8E;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;&amp;#x8981;&amp;#x7528;&amp;#x5230;&amp;#x4E8C;&amp;#x7EF4;&amp;#x7801;&amp;#x626B;&amp;#x63CF;&amp;#x529F;&amp;#x80FD;,&amp;#x5728;&amp;#x4E0A;&amp;#x5B66;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x4FBF;&amp;#x542C;&amp;#x8001;&amp;#x5E08">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 12878442,
+      author: '阿祥'
+    }
+  };
+</script>
+
+  <title> Android ZXing 踩坑 | ▓ </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?94266d93f633ea96667f11b0b09b8489";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">▓</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">You Are All</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friends">
+          <a href="/friends" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            伙伴
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'NjUXgpCQEbEusCeyEP6o','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android ZXing 踩坑
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-27T16:08:50+08:00" content="2016-04-27">
+              2016-04-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/27/Android-ZXing-踩坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/Android-ZXing-踩坑/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/27/Android-ZXing-踩坑/" class="leancloud_visitors" data-flag-title="Android ZXing 踩坑">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x7531;&#x4E8E;&#x9879;&#x76EE;&#x4E2D;&#x8981;&#x7528;&#x5230;&#x4E8C;&#x7EF4;&#x7801;&#x626B;&#x63CF;&#x529F;&#x80FD;,&#x5728;&#x4E0A;&#x5B66;&#x7684;&#x65F6;&#x5019;&#x4FBF;&#x542C;&#x8001;&#x5E08;&#x8BF4;&#x8FC7;<code>ZXing</code>,&#x7B2C;&#x4E00;&#x53CD;&#x5E94;&#x5C31;&#x662F;&#x627E;<code>ZXing</code>&#x3002;&#x7ECF;&#x8FC7;&#x7F51;&#x4E0A;&#x7684;&#x67E5;&#x627E;&#x53D1;&#x73B0;<code>ZXing</code>&#x662F;&#x8C37;&#x6B4C;&#x5F00;&#x6E90;&#x7684;,&#x679C;&#x7136;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x4E3B;&#x6D41;&#x7684;&#x3002;&#x4E8E;&#x662F;&#x4FBF;&#x4E0B;&#x8F7D;&#x4E86;&#x4E00;&#x4E2A;&#x5305;&#x3002;&#x5176;&#x4E2D;<code>android</code>&#x624D;&#x662F;&#x6211;&#x5173;&#x5FC3;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x5BFC;&#x5165;&#x4E86;&#x5B98;&#x65B9;&#x5305;&#x8FD0;&#x884C;&#x4E86;&#x8D77;&#x6765;&#x3002;&#x771F;&#x662F;&#x5F88;&#x9177;&#x70AB;&#x554A;&#x3002;&#x3002;&#x3002;&#x4E3A;&#x561B;&#x662F;&#x6A2A;&#x5C4F;!!!&#x4E8E;&#x662F;&#x5F00;&#x59CB;&#x8E29;&#x5751;&#x3002;<br><a id="more"></a></p>
+<h4 id="&#x524D;&#x9762;&#x7684;&#x987A;&#x5229;">&#x524D;&#x9762;&#x7684;&#x987A;&#x5229;</h4><p>&#x6211;&#x4E0B;&#x8F7D;&#x4E86;&#x5B98;&#x65B9;&#x6700;&#x65B0;&#x7684;3.2.1&#x7684;&#x7248;&#x672C;,&#x9996;&#x5148;&#x6211;&#x518D;&#x7F51;&#x4E0A;&#x641C;&#x7D22;&#x5982;&#x4F55;&#x6539;&#x4E3A;&#x7AD6;&#x5C4F;(&#x7F51;&#x4E0A;&#x641C;&#x7D22;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x8FD9;&#x4E00;&#x6B65;&#x5F88;&#x7B80;&#x5355;)&#x3002;&#x6539;&#x597D;&#x4E4B;&#x540E;&#x53D1;&#x73B0;&#x4F3C;&#x4E4E;&#x633A;&#x7B80;&#x5355;&#x7684;&#x3002;&#x96BE;&#x9053;&#x5C31;&#x8FD9;&#x6837;&#x5BB9;&#x6613;&#x5C31;&#x641E;&#x5B9A;&#x4E86;&#x5417;&#xFF1F;&#x5F53;&#x65F6;&#x7528;&#x4E86;2&#x4E2A;<code>1920*1080</code>&#x5206;&#x8FA8;&#x7387;,&#x53D1;&#x73B0;&#x6CA1;&#x95EE;&#x9898;&#x3002;</p>
+<h4 id="&#x5F00;&#x59CB;&#x8E29;&#x5751;">&#x5F00;&#x59CB;&#x8E29;&#x5751;</h4><p>&#x5F53;&#x6211;&#x6362;&#x4E86;&#x4E00;&#x4E2A;<code>480*800</code>&#x548C;<code>1280*720</code>&#x5206;&#x8FA8;&#x7387;&#x624B;&#x673A;&#x7684;&#x65F6;&#x5019;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x4E86;&#x3002;&#x679C;&#x7136;&#x4E5F;&#x4E0D;&#x662F;&#x90A3;&#x6837;&#x7B80;&#x5355;&#x548C;&#x65E0;&#x8111;&#x7684; - -&#xFF01;</p>
+<h5 id="&#x76F8;&#x6846;&#x62C9;&#x4F38;">&#x76F8;&#x6846;&#x62C9;&#x4F38;</h5><p>&#x67E5;&#x770B;&#x4E86;&#x6E90;&#x7801;,&#x5176;&#x4E2D;&#x76F8;&#x6846;&#x7684;&#x7ED8;&#x5236;&#x662F;&#x5728;<code>ViewfinderView</code>&#x4E2D;&#x7684;<code>onDraw()</code>&#x4E2D;&#x5B9E;&#x73B0;&#x7684;,<code>onDraw</code>&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x5C31;&#x662F;</p>
+<p><code>Rect frame = cameraManager.getFramingRect();</code>&#x901A;&#x8FC7;&#x8FD9;&#x53E5;&#x8BDD;&#x4FBF;&#x77E5;&#x9053;&#x4E86;&#x662F;&#x901A;&#x8FC7;<code>CameraManager</code>&#x4E2D;<br><code>getFramingRect</code>&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5927;&#x5C0F;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x8FDB;&#x5165;&#x5230;<code>CameraManager</code>&#x4E2D;&#x91CD;&#x5199;&#x6539;&#x5199;&#x4E3A;&#x8FD9;&#x6837;</p>
+<pre><code><span class="comment">//int width = findDesiredDimensionInRange(screenResolution.x, MIN_FRAME_WIDTH, MAX_FRAME_WIDTH);</span>
+<span class="comment">//int height = findDesiredDimensionInRange(screenResolution.y, MIN_FRAME_HEIGHT, MAX_FRAME_HEIGHT);</span>
+DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+<span class="built_in">int</span>  <span class="variable">width</span> = (<span class="built_in">int</span>)  (metrics.widthPixels * <span class="number">0.6</span>);
+<span class="built_in">int</span>  <span class="variable">height</span> = <span class="variable">width</span>;
+</code></pre><p>&#x5176;&#x4E2D;&#x6CE8;&#x91CA;&#x7684;&#x90E8;&#x5206;&#x4E3A;&#x539F;&#x6765;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x6211;&#x8BB2;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#x90FD;&#x6539;&#x4E3A;&#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;&#x7684;0.6&#x500D;&#x3002;&#x8FD9;&#x65F6;&#x5019;,&#x5DF2;&#x7ECF;&#x662F;&#x6B63;&#x5E38;&#x7684;&#x6B63;&#x65B9;&#x5F62;&#x4E86;&#x3002;</p>
+<h5 id="&#x56FE;&#x50CF;&#x53D8;&#x5F62;">&#x56FE;&#x50CF;&#x53D8;&#x5F62;</h5><p>&#x7F51;&#x4E0A;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5728;<code>CameraConfigurationManager</code>&#x4E2D;&#x7684;<code>initFromCameraParameters</code>&#x65B9;&#x6CD5;&#x4E2D;&#x5728;<br><code>Log.i(TAG, &quot;Screen resolution in current orientation: &quot; + screenResolution);</code>&#x540E;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>Point screenResolutionForCamera = new Point()<span class="comment">;</span>
+    screenResolutionForCamera.x = screenResolution.x<span class="comment">;</span>
+    screenResolutionForCamera.y = screenResolution.y<span class="comment">;</span>
+    // preview size is always something like <span class="number">480*320</span>, other <span class="number">320*480</span>
+    if (screenResolution.x &lt; screenResolution.y) {
+      screenResolutionForCamera.x = screenResolution.y<span class="comment">;</span>
+      screenResolutionForCamera.y = screenResolution.x<span class="comment">;</span>
+}
+</code></pre><p>&#x5E76;&#x5C06;<code>cameraResolution = CameraConfigurationUtils.findBestPreviewSizeValue(parameters, screenResolution);</code><br>&#x66F4;&#x6539;&#x4E3A;<br><code>cameraResolution = CameraConfigurationUtils.findBestPreviewSizeValue(parameters, screenResolutionForCamera);</code><br>&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x8FD0;&#x884C;&#x5C45;&#x7136;&#x8FD8;&#x662F;&#x62C9;&#x5347;&#x72B6;&#x6001;&#x3002;&#x67E5;&#x770B;&#x4E86;&#x4EE5;&#x524D;&#x7684;&#x6E90;&#x7801;&#x53D1;&#x73B0;&#x548C;&#x73B0;&#x5728;&#x7684;&#x6709;&#x70B9;&#x4E0D;&#x540C;,&#x7F51;&#x4E0A;&#x7684;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x8BF4;&#x7684;2.x&#x7684;&#x3002;<br>&#x5728;3.2.1&#x4E2D;&#x628A;<br><code>bestPreviewSize = CameraConfigurationUtils.findBestPreviewSizeValue(parameters, screenResolution);</code><br>&#x6539;&#x4E3A;<br><code>bestPreviewSize = CameraConfigurationUtils.findBestPreviewSizeValue(parameters, screenResolutionForCamera);</code>&#x518D;&#x6B21;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x53D1;&#x73B0;&#x56FE;&#x50CF;&#x4E0D;&#x4F1A;&#x62C9;&#x5347;&#x4E86;&#x3002;</p>
+<h5 id="&#x626B;&#x63CF;&#x4E0D;&#x80FD;&#x8BC6;&#x522B;">&#x626B;&#x63CF;&#x4E0D;&#x80FD;&#x8BC6;&#x522B;</h5><p>&#x6B63;&#x5F53;&#x6211;&#x4EE5;&#x4E3A;&#x4E00;&#x5207;&#x90FD;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x5019;&#x3002;&#x6211;&#x53D1;&#x73B0;&#x626B;&#x63CF;&#x51E0;&#x4E4E;&#x4E0D;&#x80FD;&#x8BC6;&#x522B;&#x3002;&#x540E;&#x9762;&#x67E5;&#x9605;&#x540E;&#x53D1;&#x73B0;&#x539F;&#x6765;&#x662F;&#x6539;&#x4E3A;&#x7AD6;&#x5C4F;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<p>1.&#x66F4;&#x6539;<code>CameraManager</code>&#x4E2D;<code>getFramingRectInPreview</code>&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;</p>
+<pre><code>/            <span class="built_in">rect</span>.left = <span class="built_in">rect</span>.left * cameraResolution.x / screenResolution.x;
+<span class="comment">//            rect.right = rect.right * cameraResolution.x / screenResolution.x;</span>
+<span class="comment">//            rect.top = rect.top * cameraResolution.y / screenResolution.y;</span>
+<span class="comment">//            rect.bottom = rect.bottom * cameraResolution.y / screenResolution.y;</span>
+            <span class="built_in">rect</span>.left = <span class="built_in">rect</span>.left * cameraResolution.y / screenResolution.x;
+            <span class="built_in">rect</span>.right = <span class="built_in">rect</span>.right * cameraResolution.y / screenResolution.x;
+            <span class="built_in">rect</span>.top = <span class="built_in">rect</span>.top * cameraResolution.x / screenResolution.y;
+            <span class="built_in">rect</span>.bottom = <span class="built_in">rect</span>.bottom * cameraResolution.x / screenResolution.y;
+</code></pre><p>&#x6CE8;&#x91CA;&#x90E8;&#x5206;&#x4E3A;&#x539F;&#x6765;&#x7684;&#x4EE3;&#x7801;,&#x540E;&#x9762;&#x4E3A;&#x66F4;&#x6539;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x3002;<br>2.&#x5728;<code>DecodeHandler</code>&#x4E2D;<code>decode(byte[] data, int width, int height)</code>&#x65B9;&#x6CD5;<code>PlanarYUVLuminanceSource source = activity.getCameraManager().buildLuminanceSource(data, width, height);</code>&#x524D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;</p>
+<pre><code><span class="built_in">byte</span>[] rotatedData =<span class="keyword">new</span> <span class="built_in">byte</span>[data.length];
+        <span class="keyword">for</span>(<span class="built_in">int</span> y =<span class="number">0</span>; y &lt; <span class="variable">height</span>; y++) {
+            <span class="keyword">for</span>(<span class="built_in">int</span> x =<span class="number">0</span>; x &lt; <span class="variable">width</span>; x++)
+                rotatedData[x * <span class="variable">height</span> + <span class="variable">height</span> - y -<span class="number">1</span>] = data[x + y * <span class="variable">width</span>];
+        }
+        <span class="built_in">int</span> tmp = <span class="variable">width</span>;
+        <span class="variable">width</span> = <span class="variable">height</span>;
+        <span class="variable">height</span> = tmp;
+        data = rotatedData;
+</code></pre><p>&#x5230;&#x8FD9;&#x91CC;&#x524D;&#x9762;&#x9047;&#x89C1;&#x7684;&#x95EE;&#x9898;&#x4E5F;&#x5C31;&#x641E;&#x5B9A;&#x4E86;&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#x5982;&#x679C;&#x53EA;&#x6539;&#x7B2C;&#x4E00;&#x6B65;&#x4E0D;&#x6539;&#x7B2C;&#x4E8C;&#x90E8;&#x4F1A;&#x62A5;&#x9519;<br>&#x53EA;&#x6709;&#x7B2C;&#x4E8C;&#x6B65;&#x6CA1;&#x6709;&#x7B2C;&#x4E00;&#x6B65;&#x4F1A;&#x65E0;&#x6CD5;&#x8BC6;&#x522B;&#x4E8C;&#x7EF4;&#x7801;</p>
+<h4 id="&#x81EA;&#x5B9A;&#x4E49;&#x6837;&#x5F0F;">&#x81EA;&#x5B9A;&#x4E49;&#x6837;&#x5F0F;</h4><p>&#x53EA;&#x9700;&#x8981;&#x5728;<code>ViewfinderView</code>&#x4E2D;&#x7684;<code>onDraw</code>&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x53BB;&#x7ED8;&#x5236;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x65B9;&#x6CD5;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#x5C31;&#x4E0D;&#x4ECB;&#x7ECD;&#x4E86;&#x3002;&#x522B;&#x5FD8;&#x8BB0;&#x505A;&#x9002;&#x914D;,&#x53EF;&#x4EE5;&#x6539;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x7528;<code>xml</code>&#x914D;&#x7F6E;,&#x901A;&#x8FC7;<code>dimens</code>&#x6765;&#x9002;&#x914D;&#x4E0D;&#x540C;&#x5206;&#x8FA8;&#x7387;&#x3002;</p>
+<h4 id="&#x6700;&#x7EC8;&#x6548;&#x679C;">&#x6700;&#x7EC8;&#x6548;&#x679C;</h4><p><img src="/2016/04/27/Android-ZXing-&#x8E29;&#x5751;/1.png" alt=""></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ZXing/" rel="tag">#ZXing</a>
+          
+            <a href="/tags/二维码/" rel="tag">#二维码</a>
+          
+            <a href="/tags/变形/" rel="tag">#变形</a>
+          
+            <a href="/tags/扫描/" rel="tag">#扫描</a>
+          
+            <a href="/tags/拉伸/" rel="tag">#拉伸</a>
+          
+            <a href="/tags/条形码/" rel="tag">#条形码</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/19/Glide使用记录与疑惑/" rel="next" title="Glide使用记录与疑惑">
+                <i class="fa fa-chevron-left"></i> Glide使用记录与疑惑
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/27/Android-ZXing-踩坑/"
+     data-title="Android ZXing 踩坑"
+     data-content=""
+     data-url="http://yoursite.com/2016/04/27/Android-ZXing-踩坑/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/27/Android-ZXing-踩坑/"
+           data-title="Android ZXing 踩坑" data-url="http://yoursite.com/2016/04/27/Android-ZXing-踩坑/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="阿　祥(CHAN)" />
+          <p class="site-author-name" itemprop="name">阿　祥(CHAN)</p>
+          <p class="site-description motion-element" itemprop="description">▒▐░▓░▒▓▐</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前面的顺利"><span class="nav-number">1.</span> <span class="nav-text">前面的顺利</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开始踩坑"><span class="nav-number">2.</span> <span class="nav-text">开始踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#相框拉伸"><span class="nav-number">2.1.</span> <span class="nav-text">相框拉伸</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图像变形"><span class="nav-number">2.2.</span> <span class="nav-text">图像变形</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扫描不能识别"><span class="nav-number">2.3.</span> <span class="nav-text">扫描不能识别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义样式"><span class="nav-number">3.</span> <span class="nav-text">自定义样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最终效果"><span class="nav-number">4.</span> <span class="nav-text">最终效果</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿　祥(CHAN)</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jokerchan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("kNGeJpYXrch4OAOBU8R5dBKH-gzGzoHsz", "eNtKirQYod9rJaVPWYWbAMpT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
